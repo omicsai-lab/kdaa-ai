@@ -1,0 +1,12 @@
+{
+  "id": "https://openalex.org/A123456789",
+  "display_name": "Synthetic Public Researcher",
+  "ids": {
+    "openalex": "https://openalex.org/A123456789",
+    "orcid": "https://orcid.org/0000-0000-0000-000X"
+  },
+  "last_known_institutions": [
+    {"display_name": "Example University"}
+  ],
+  "works_count": 2
+}

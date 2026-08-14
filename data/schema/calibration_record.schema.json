@@ -1,0 +1,121 @@
+{
+  "$defs": {
+    "AssetCategory": {
+      "enum": [
+        "codified",
+        "tacit_procedural",
+        "relational",
+        "combinative_execution",
+        "bundle"
+      ],
+      "title": "AssetCategory",
+      "type": "string"
+    },
+    "CalibrationAction": {
+      "enum": [
+        "confirm",
+        "narrow",
+        "split",
+        "merge",
+        "reject",
+        "defer"
+      ],
+      "title": "CalibrationAction",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "asset_id": {
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "action": {
+      "$ref": "#/$defs/CalibrationAction"
+    },
+    "reviewer_role": {
+      "default": "focal_unit_representative",
+      "title": "Reviewer Role",
+      "type": "string"
+    },
+    "reviewer_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reviewer Id"
+    },
+    "notes": {
+      "default": "",
+      "title": "Notes",
+      "type": "string"
+    },
+    "revised_claim": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Revised Claim"
+    },
+    "revised_categories": {
+      "anyOf": [
+        {
+          "items": {
+            "$ref": "#/$defs/AssetCategory"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Revised Categories"
+    },
+    "additional_supporting_trace_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Additional Supporting Trace Ids",
+      "type": "array"
+    },
+    "missing_or_contradicting_evidence": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Missing Or Contradicting Evidence",
+      "type": "array"
+    },
+    "calibrated_at": {
+      "format": "date-time",
+      "title": "Calibrated At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "run_id",
+    "asset_id",
+    "action"
+  ],
+  "title": "CalibrationRecord",
+  "type": "object"
+}

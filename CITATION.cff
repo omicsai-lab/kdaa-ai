@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use KDAA-AI in research, please cite the software and the associated paper when available."
+title: "KDAA-AI: Knowledge Asset Discovery, Assessment, and Amplification"
+type: software
+authors:
+  - family-names: Li
+    given-names: James
+    affiliation: Georgetown University
+version: 0.1.0
+date-released: 2026-08-11
+license: MIT
+repository-code: "https://github.com/omicsai-lab/kdaa-ai"
+keywords:
+  - knowledge assets
+  - information systems
+  - knowledge management
+  - generative AI
+  - design science

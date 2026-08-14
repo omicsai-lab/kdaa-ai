@@ -1,0 +1,78 @@
+digraph TheoryArtifact {
+  graph [
+    rankdir=TB,
+    bgcolor="#FFFFFF",
+    pad="0.20",
+    nodesep="0.30",
+    ranksep="0.46",
+    splines=ortho,
+    fontname="Helvetica",
+    fontsize=14,
+    label="From KDAA theory to executable artifact",
+    labelloc=t,
+    labeljust=l
+  ];
+  node [
+    shape=plain,
+    fontname="Helvetica"
+  ];
+
+  map [label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8" COLOR="#475569">
+      <TR>
+        <TD BGCOLOR="#0F172A"><FONT COLOR="white"><B>Theoretical object</B></FONT></TD>
+        <TD BGCOLOR="#0F172A"><FONT COLOR="white"><B>Executable representation</B></FONT></TD>
+        <TD BGCOLOR="#0F172A"><FONT COLOR="white"><B>Primary implementation</B></FONT></TD>
+        <TD BGCOLOR="#0F172A"><FONT COLOR="white"><B>Epistemic safeguard</B></FONT></TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#EFF6FF"><B>Focal unit</B></TD>
+        <TD ALIGN="LEFT">Bounded researcher, team, lab, or organization</TD>
+        <TD ALIGN="LEFT"><FONT FACE="Courier">FocalUnit</FONT>, <FONT FACE="Courier">UnitBundle</FONT></TD>
+        <TD ALIGN="LEFT">Explicit boundary and governance notes</TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#EFF6FF"><B>Knowledge trace</B></TD>
+        <TD ALIGN="LEFT">Publication, software, grant, course, project, relation, or outcome</TD>
+        <TD ALIGN="LEFT"><FONT FACE="Courier">EvidenceTrace</FONT> + connectors</TD>
+        <TD ALIGN="LEFT">Trace is never silently promoted; duplicate support is de-weighted</TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#FFF7ED"><B>Asset hypothesis</B></TD>
+        <TD ALIGN="LEFT">Bounded claim, supporting traces, exclusions, alternatives</TD>
+        <TD ALIGN="LEFT"><FONT FACE="Courier">AssetRecord</FONT> + discovery rules</TD>
+        <TD ALIGN="LEFT">Supporting trace IDs and falsifiable non-claims required</TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#FFF7ED"><B>Asset-level credibility</B></TD>
+        <TD ALIGN="LEFT">Transparent, versioned engineering proxies</TD>
+        <TD ALIGN="LEFT"><FONT FACE="Courier">AssetAssessment</FONT></TD>
+        <TD ALIGN="LEFT">Scores labeled as proxies, not validated constructs</TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#F0FDF4"><B>Asset–opportunity fit</B></TD>
+        <TD ALIGN="LEFT">Beneficiary, problem, output container, dependencies, effort</TD>
+        <TD ALIGN="LEFT"><FONT FACE="Courier">AmplificationOpportunity</FONT></TD>
+        <TD ALIGN="LEFT">Opportunity-specific rather than global value score</TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#F0FDF4"><B>AI amplifiability</B></TD>
+        <TD ALIGN="LEFT">Human/AI task decomposition, credible baseline, gain vector, gates</TD>
+        <TD ALIGN="LEFT">Opportunity engine + <FONT FACE="Courier">GainVector</FONT></TD>
+        <TD ALIGN="LEFT">Counterfactual proxy relative to a stated baseline</TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#FEFCE8"><B>Human calibration</B></TD>
+        <TD ALIGN="LEFT">Confirm, narrow, split, reject, or defer as a versioned delta</TD>
+        <TD ALIGN="LEFT"><FONT FACE="Courier">CalibrationRecord</FONT></TD>
+        <TD ALIGN="LEFT">No automatic confirmed state</TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#FEFCE8"><B>Value and learning</B></TD>
+        <TD ALIGN="LEFT">Observed gain, realized value, captured value, causal caveats</TD>
+        <TD ALIGN="LEFT"><FONT FACE="Courier">OutcomeRecord</FONT></TD>
+        <TD ALIGN="LEFT">Outcome layer is optional and explicitly future-facing</TD>
+      </TR>
+    </TABLE>
+  >];
+}

@@ -1,0 +1,410 @@
+{
+  "$defs": {
+    "ContributionRole": {
+      "enum": [
+        "originator",
+        "lead",
+        "implementer",
+        "supervisor",
+        "advisor",
+        "contributor",
+        "participant",
+        "unknown"
+      ],
+      "title": "ContributionRole",
+      "type": "string"
+    },
+    "EvidenceTrace": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "unit_id": {
+          "minLength": 1,
+          "title": "Unit Id",
+          "type": "string"
+        },
+        "trace_type": {
+          "$ref": "#/$defs/TraceType"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "abstract": {
+          "default": "",
+          "title": "Abstract",
+          "type": "string"
+        },
+        "content": {
+          "default": "",
+          "title": "Content",
+          "type": "string"
+        },
+        "source_kind": {
+          "$ref": "#/$defs/SourceKind",
+          "default": "manual"
+        },
+        "source_name": {
+          "default": "",
+          "title": "Source Name",
+          "type": "string"
+        },
+        "source_uri": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Uri"
+        },
+        "source_record_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Record Id"
+        },
+        "observed_at": {
+          "format": "date-time",
+          "title": "Observed At",
+          "type": "string"
+        },
+        "event_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Event Date"
+        },
+        "authors_or_contributors": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Authors Or Contributors",
+          "type": "array"
+        },
+        "affiliations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Affiliations",
+          "type": "array"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Keywords",
+          "type": "array"
+        },
+        "topics": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Topics",
+          "type": "array"
+        },
+        "contribution_role": {
+          "$ref": "#/$defs/ContributionRole",
+          "default": "unknown"
+        },
+        "outcome_signals": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          },
+          "title": "Outcome Signals",
+          "type": "object"
+        },
+        "related_trace_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Related Trace Ids",
+          "type": "array"
+        },
+        "sensitive": {
+          "default": false,
+          "title": "Sensitive",
+          "type": "boolean"
+        },
+        "license": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "License"
+        },
+        "raw": {
+          "additionalProperties": true,
+          "title": "Raw",
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "unit_id",
+        "trace_type",
+        "title"
+      ],
+      "title": "EvidenceTrace",
+      "type": "object"
+    },
+    "FocalUnit": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "unit_type": {
+          "$ref": "#/$defs/UnitType"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "institution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Institution"
+        },
+        "homepage": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Homepage"
+        },
+        "identifiers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Identifiers",
+          "type": "object"
+        },
+        "members": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Members",
+          "type": "array"
+        },
+        "boundary_notes": {
+          "default": "",
+          "title": "Boundary Notes",
+          "type": "string"
+        },
+        "governance_notes": {
+          "default": "",
+          "title": "Governance Notes",
+          "type": "string"
+        },
+        "is_synthetic": {
+          "default": false,
+          "title": "Is Synthetic",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "unit_type"
+      ],
+      "title": "FocalUnit",
+      "type": "object"
+    },
+    "SourceKind": {
+      "enum": [
+        "openalex",
+        "orcid",
+        "github",
+        "cv",
+        "local_file",
+        "manual",
+        "synthetic",
+        "other"
+      ],
+      "title": "SourceKind",
+      "type": "string"
+    },
+    "StrategicGoal": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Keywords",
+          "type": "array"
+        },
+        "weight": {
+          "default": 1.0,
+          "maximum": 5.0,
+          "minimum": 0.0,
+          "title": "Weight",
+          "type": "number"
+        },
+        "horizon_months": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Horizon Months"
+        }
+      },
+      "required": [
+        "id",
+        "label"
+      ],
+      "title": "StrategicGoal",
+      "type": "object"
+    },
+    "TraceType": {
+      "enum": [
+        "publication",
+        "software_repository",
+        "dataset",
+        "grant",
+        "project",
+        "protocol",
+        "course",
+        "talk",
+        "patent",
+        "employment",
+        "award",
+        "collaboration",
+        "document",
+        "outcome",
+        "other"
+      ],
+      "title": "TraceType",
+      "type": "string"
+    },
+    "UnitType": {
+      "enum": [
+        "researcher",
+        "team",
+        "laboratory",
+        "department",
+        "firm",
+        "nonprofit",
+        "public_institution",
+        "other"
+      ],
+      "title": "UnitType",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "unit": {
+      "$ref": "#/$defs/FocalUnit"
+    },
+    "goals": {
+      "items": {
+        "$ref": "#/$defs/StrategicGoal"
+      },
+      "title": "Goals",
+      "type": "array"
+    },
+    "traces": {
+      "items": {
+        "$ref": "#/$defs/EvidenceTrace"
+      },
+      "title": "Traces",
+      "type": "array"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "title": "Metadata",
+      "type": "object"
+    }
+  },
+  "required": [
+    "unit",
+    "traces"
+  ],
+  "title": "UnitBundle",
+  "type": "object"
+}

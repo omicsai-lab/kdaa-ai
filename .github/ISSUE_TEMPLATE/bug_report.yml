@@ -1,0 +1,41 @@
+name: Bug report
+description: Report a reproducible defect in KDAA-AI
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Please remove sensitive evidence before sharing logs or input bundles.
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the expected and observed behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: KDAA-AI version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, install method, and execution mode.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed private, confidential, or personally sensitive evidence from this report.
+          required: true

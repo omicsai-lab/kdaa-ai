@@ -1,0 +1,1 @@
+"""Packaged KDAA resource files."""

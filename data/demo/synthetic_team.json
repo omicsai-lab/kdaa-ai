@@ -1,0 +1,684 @@
+{
+  "unit": {
+    "id": "synthetic:precision-evidence-team",
+    "name": "Precision Evidence Project Team",
+    "unit_type": "team",
+    "description": "Synthetic cross-functional project team translating causal, multi-omics, and software-engineering capabilities into reproducible decision support.",
+    "institution": "Synthetic Research Institute",
+    "homepage": "https://example.org/synthetic/precision-evidence-team",
+    "identifiers": {},
+    "members": [
+      "Maya Chen",
+      "Taylor Kim",
+      "Jordan Patel"
+    ],
+    "boundary_notes": "The project team is treated as a temporary focal unit; dependencies on home laboratories and individual members must be retained in later calibration.",
+    "governance_notes": "Synthetic demonstration only; all records are CC0.",
+    "is_synthetic": true
+  },
+  "goals": [
+    {
+      "id": "goal-team-pilot",
+      "label": "Deliver a reproducible pilot and methods paper",
+      "description": "",
+      "keywords": [
+        "pilot",
+        "methods paper",
+        "causal",
+        "multi-omics",
+        "repository"
+      ],
+      "weight": 1.5,
+      "horizon_months": 9
+    },
+    {
+      "id": "goal-team-transfer",
+      "label": "Transfer the workflow to additional research groups",
+      "description": "",
+      "keywords": [
+        "transfer",
+        "training",
+        "workflow",
+        "course",
+        "documentation"
+      ],
+      "weight": 1.0,
+      "horizon_months": 12
+    }
+  ],
+  "traces": [
+    {
+      "id": "trace-syn-precision-evidence-team-001",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "publication",
+      "title": "Causal estimands for heterogeneous treatment effects in clinical studies",
+      "description": "Methodological work linking estimands, treatment-effect heterogeneity, and survival outcomes.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/1",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.056943Z",
+      "event_date": "2020-06-01",
+      "authors_or_contributors": [
+        "Taylor Kim"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "causal inference",
+        "clinical trials",
+        "survival analysis",
+        "estimand"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 3
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "causal_clinical_methods"
+      }
+    },
+    {
+      "id": "trace-syn-precision-evidence-team-002",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "course",
+      "title": "AI and causal reasoning for clinical trials",
+      "description": "Graduate module covering estimands, audit trails, simulation, and human oversight.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/2",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.056952Z",
+      "event_date": "2021-07-01",
+      "authors_or_contributors": [
+        "Alex Rivera"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "clinical trial",
+        "causal inference",
+        "teaching"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": false,
+        "reuse_count": 5
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "causal_clinical_methods"
+      }
+    },
+    {
+      "id": "trace-syn-precision-evidence-team-003",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "grant",
+      "title": "Trustworthy causal AI for secondary clinical-data analysis",
+      "description": "Proposal integrating causal models, validation, and governed AI assistance.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/3",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.056962Z",
+      "event_date": "2022-09-01",
+      "authors_or_contributors": [
+        "Alex Rivera",
+        "Taylor Kim"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "causal model",
+        "clinical data",
+        "AI system"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 6
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "causal_clinical_methods"
+      }
+    },
+    {
+      "id": "trace-syn-precision-evidence-team-004",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "publication",
+      "title": "Integrating clinical and multi-omics data with attention-based models",
+      "description": "Repeated cross-validation and external validation of multimodal prediction models.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/4",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.056971Z",
+      "event_date": "2021-12-01",
+      "authors_or_contributors": [
+        "Morgan Lee",
+        "Morgan Lee",
+        "Jordan Patel"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "multi-omics",
+        "transformer",
+        "precision medicine",
+        "clinical data"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": false,
+        "reuse_count": 3
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "multiomics_integration"
+      }
+    },
+    {
+      "id": "trace-syn-precision-evidence-team-005",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "dataset",
+      "title": "Harmonized multi-cohort omics benchmark",
+      "description": "Versioned public benchmark with clinical, genomic, and transcriptomic features.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/5",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.056980Z",
+      "event_date": "2022-02-01",
+      "authors_or_contributors": [
+        "Jordan Patel"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "genomics",
+        "transcriptomics",
+        "data harmonization"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 7
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "multiomics_integration"
+      }
+    },
+    {
+      "id": "trace-syn-precision-evidence-team-006",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "protocol",
+      "title": "Multimodal validation and leakage-control protocol",
+      "description": "Reusable protocol for grouped splitting, tuning, and repeated evaluation.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/6",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.056988Z",
+      "event_date": "2023-06-01",
+      "authors_or_contributors": [
+        "Jordan Patel",
+        "Morgan Lee"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "reproducibility",
+        "cross-validation",
+        "multiomics"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 4
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "multiomics_integration"
+      }
+    },
+    {
+      "id": "trace-syn-precision-evidence-team-007",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "employment",
+      "title": "Director of research computing support",
+      "description": "Led scientific-computing support, cloud deployment, and reproducible workflow design for research groups.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/7",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.056997Z",
+      "event_date": "2024-03-01",
+      "authors_or_contributors": [
+        "Alex Rivera",
+        "Jordan Patel",
+        "Jordan Patel"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "research computing",
+        "cloud computing",
+        "scientific computing"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 4
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "research_computing_support"
+      }
+    },
+    {
+      "id": "trace-syn-precision-evidence-team-008",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "software_repository",
+      "title": "research-workflow-template",
+      "description": "Reusable Docker, CI, data-path, and audit-trail template for scientific repositories.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/8",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.057006Z",
+      "event_date": "2024-04-01",
+      "authors_or_contributors": [
+        "Jordan Patel",
+        "Morgan Lee",
+        "Alex Rivera"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "Docker",
+        "continuous integration",
+        "data pipeline",
+        "reproducibility"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 5
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "research_computing_support"
+      }
+    },
+    {
+      "id": "trace-syn-precision-evidence-team-009",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "project",
+      "title": "Laboratory workflow modernization program",
+      "description": "Converted fragmented analyses into versioned, containerized, and testable pipelines.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/9",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.057015Z",
+      "event_date": "2023-10-01",
+      "authors_or_contributors": [
+        "Alex Rivera",
+        "Jordan Patel"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "software engineering",
+        "workflow automation",
+        "data engineering"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 5
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "research_computing_support"
+      }
+    },
+    {
+      "id": "trace-syn-precision-evidence-team-010",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "course",
+      "title": "Statistical programming with AI assistance",
+      "description": "Graduate course combining R, Python, software practice, and governed use of generative AI.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/10",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.057024Z",
+      "event_date": "2023-03-01",
+      "authors_or_contributors": [
+        "Taylor Kim",
+        "Taylor Kim",
+        "Taylor Kim"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "teaching",
+        "curriculum",
+        "generative AI",
+        "statistical programming"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 3
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "ai_curriculum_design"
+      }
+    },
+    {
+      "id": "trace-syn-precision-evidence-team-011",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "document",
+      "title": "Reusable AI-assisted programming textbook",
+      "description": "A living document with exercises, code, and teaching notes for repeated course delivery.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/11",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.057032Z",
+      "event_date": "2025-06-01",
+      "authors_or_contributors": [
+        "Morgan Lee",
+        "Taylor Kim",
+        "Taylor Kim"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "textbook",
+        "course",
+        "R",
+        "Python",
+        "AI"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 2
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "ai_curriculum_design"
+      }
+    },
+    {
+      "id": "trace-syn-precision-evidence-team-012",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "talk",
+      "title": "Teaching software and data science in the generative-AI era",
+      "description": "Invited presentation on assessment, verification, and curriculum redesign.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/12",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.057041Z",
+      "event_date": "2025-02-01",
+      "authors_or_contributors": [
+        "Alex Rivera",
+        "Alex Rivera"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "teaching",
+        "AI",
+        "scientific writing"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 2
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "ai_curriculum_design"
+      }
+    },
+    {
+      "id": "trace-syn-precision-evidence-team-013",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "talk",
+      "title": "General introduction to data science",
+      "description": "A broad introductory talk with limited evidence of a distinct reusable capability.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/13",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.057077Z",
+      "event_date": "2024-11-01",
+      "authors_or_contributors": [
+        "Morgan Lee",
+        "Jordan Patel",
+        "Alex Rivera"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "data science"
+      ],
+      "topics": [],
+      "contribution_role": "participant",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 8
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": null
+      }
+    },
+    {
+      "id": "trace-syn-precision-evidence-team-014",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "collaboration",
+      "title": "Participant in an interdisciplinary working group",
+      "description": "Membership record without documented deliverables or clear contribution attribution.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/14",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.057085Z",
+      "event_date": "2024-03-01",
+      "authors_or_contributors": [
+        "Jordan Patel",
+        "Jordan Patel",
+        "Morgan Lee"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "collaboration",
+        "interdisciplinary"
+      ],
+      "topics": [],
+      "contribution_role": "participant",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 8
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": null
+      }
+    },
+    {
+      "id": "trace-syn-precision-evidence-team-015",
+      "unit_id": "synthetic:precision-evidence-team",
+      "trace_type": "award",
+      "title": "Travel support award",
+      "description": "Recognition of participation; limited direct evidence for a bounded knowledge asset.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:precision-evidence-team/15",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.057093Z",
+      "event_date": "2024-08-01",
+      "authors_or_contributors": [
+        "Morgan Lee"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "award"
+      ],
+      "topics": [],
+      "contribution_role": "participant",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": false,
+        "reuse_count": 5
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": null
+      }
+    }
+  ],
+  "metadata": {
+    "synthetic": true,
+    "scenario": "team",
+    "ground_truth_asset_keys": [
+      "ai_curriculum_design",
+      "causal_clinical_methods",
+      "multiomics_integration",
+      "research_computing_support"
+    ],
+    "ground_truth_concepts": [
+      "causal_inference",
+      "clinical_trials",
+      "data_engineering",
+      "generative_ai",
+      "genomics",
+      "machine_learning",
+      "multi_omics",
+      "precision_medicine",
+      "reproducible_research",
+      "research_computing",
+      "scientific_writing",
+      "software_engineering",
+      "statistical_modeling",
+      "survival_analysis",
+      "teaching_curriculum",
+      "transcriptomics"
+    ],
+    "generator_version": "0.1.0"
+  }
+}

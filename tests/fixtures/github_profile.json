@@ -1,0 +1,8 @@
+{
+  "login": "synthetic-user",
+  "name": "Synthetic Developer",
+  "company": "Example University",
+  "bio": "Research software and bioinformatics",
+  "blog": "https://example.org",
+  "html_url": "https://github.com/synthetic-user"
+}

@@ -1,0 +1,2219 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {},
+  "nodes": [
+    {
+      "node_type": "focal_unit",
+      "label": "Dr. Maya Chen",
+      "unit_type": "researcher",
+      "institution": "Synthetic Research Institute",
+      "synthetic": true,
+      "id": "synthetic:maya-chen"
+    },
+    {
+      "node_type": "trace",
+      "label": "An agentic framework for reproducible transcriptomic analysis",
+      "trace_type": "publication",
+      "source_kind": "synthetic",
+      "event_date": "2021-12-01",
+      "role": "lead",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-001"
+    },
+    {
+      "node_type": "contributor",
+      "label": "Alex Rivera",
+      "id": "person:alex rivera"
+    },
+    {
+      "node_type": "institution",
+      "label": "Synthetic Research Institute",
+      "id": "institution:synthetic research institute"
+    },
+    {
+      "node_type": "trace",
+      "label": "omics-agent-workbench",
+      "trace_type": "software_repository",
+      "source_kind": "synthetic",
+      "event_date": "2019-01-01",
+      "role": "originator",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-002"
+    },
+    {
+      "node_type": "contributor",
+      "label": "Taylor Kim",
+      "id": "person:taylor kim"
+    },
+    {
+      "node_type": "trace",
+      "label": "Reproducible AI-assisted secondary analysis pilot",
+      "trace_type": "project",
+      "source_kind": "synthetic",
+      "event_date": "2019-04-01",
+      "role": "lead",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-003"
+    },
+    {
+      "node_type": "contributor",
+      "label": "Jordan Patel",
+      "id": "person:jordan patel"
+    },
+    {
+      "node_type": "trace",
+      "label": "Causal estimands for heterogeneous treatment effects in clinical studies",
+      "trace_type": "publication",
+      "source_kind": "synthetic",
+      "event_date": "2020-06-01",
+      "role": "lead",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-004"
+    },
+    {
+      "node_type": "trace",
+      "label": "AI and causal reasoning for clinical trials",
+      "trace_type": "course",
+      "source_kind": "synthetic",
+      "event_date": "2021-07-01",
+      "role": "originator",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-005"
+    },
+    {
+      "node_type": "trace",
+      "label": "Trustworthy causal AI for secondary clinical-data analysis",
+      "trace_type": "grant",
+      "source_kind": "synthetic",
+      "event_date": "2022-09-01",
+      "role": "lead",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-006"
+    },
+    {
+      "node_type": "trace",
+      "label": "Integrating clinical and multi-omics data with attention-based models",
+      "trace_type": "publication",
+      "source_kind": "synthetic",
+      "event_date": "2021-12-01",
+      "role": "lead",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-007"
+    },
+    {
+      "node_type": "contributor",
+      "label": "Morgan Lee",
+      "id": "person:morgan lee"
+    },
+    {
+      "node_type": "trace",
+      "label": "Harmonized multi-cohort omics benchmark",
+      "trace_type": "dataset",
+      "source_kind": "synthetic",
+      "event_date": "2022-02-01",
+      "role": "originator",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-008"
+    },
+    {
+      "node_type": "trace",
+      "label": "Multimodal validation and leakage-control protocol",
+      "trace_type": "protocol",
+      "source_kind": "synthetic",
+      "event_date": "2023-06-01",
+      "role": "originator",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-009"
+    },
+    {
+      "node_type": "trace",
+      "label": "Director of research computing support",
+      "trace_type": "employment",
+      "source_kind": "synthetic",
+      "event_date": "2024-03-01",
+      "role": "lead",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-010"
+    },
+    {
+      "node_type": "trace",
+      "label": "research-workflow-template",
+      "trace_type": "software_repository",
+      "source_kind": "synthetic",
+      "event_date": "2024-04-01",
+      "role": "originator",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-011"
+    },
+    {
+      "node_type": "trace",
+      "label": "Laboratory workflow modernization program",
+      "trace_type": "project",
+      "source_kind": "synthetic",
+      "event_date": "2023-10-01",
+      "role": "lead",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-012"
+    },
+    {
+      "node_type": "trace",
+      "label": "Statistical programming with AI assistance",
+      "trace_type": "course",
+      "source_kind": "synthetic",
+      "event_date": "2023-03-01",
+      "role": "originator",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-013"
+    },
+    {
+      "node_type": "trace",
+      "label": "Reusable AI-assisted programming textbook",
+      "trace_type": "document",
+      "source_kind": "synthetic",
+      "event_date": "2025-06-01",
+      "role": "originator",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-014"
+    },
+    {
+      "node_type": "trace",
+      "label": "Teaching software and data science in the generative-AI era",
+      "trace_type": "talk",
+      "source_kind": "synthetic",
+      "event_date": "2025-02-01",
+      "role": "lead",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-015"
+    },
+    {
+      "node_type": "trace",
+      "label": "AI-amplified knowledge assets: conceptual framework",
+      "trace_type": "document",
+      "source_kind": "synthetic",
+      "event_date": "2026-07-01",
+      "role": "originator",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-016"
+    },
+    {
+      "node_type": "trace",
+      "label": "kdaa-ai prototype",
+      "trace_type": "software_repository",
+      "source_kind": "synthetic",
+      "event_date": "2026-11-01",
+      "role": "originator",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-017"
+    },
+    {
+      "node_type": "trace",
+      "label": "From accumulated knowledge to deployable knowledge assets",
+      "trace_type": "talk",
+      "source_kind": "synthetic",
+      "event_date": "2026-07-01",
+      "role": "lead",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-018"
+    },
+    {
+      "node_type": "trace",
+      "label": "General introduction to data science",
+      "trace_type": "talk",
+      "source_kind": "synthetic",
+      "event_date": "2024-11-01",
+      "role": "participant",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-019"
+    },
+    {
+      "node_type": "trace",
+      "label": "Participant in an interdisciplinary working group",
+      "trace_type": "collaboration",
+      "source_kind": "synthetic",
+      "event_date": "2024-03-01",
+      "role": "participant",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-020"
+    },
+    {
+      "node_type": "trace",
+      "label": "Travel support award",
+      "trace_type": "award",
+      "source_kind": "synthetic",
+      "event_date": "2024-08-01",
+      "role": "participant",
+      "sensitive": false,
+      "id": "trace-syn-maya-chen-021"
+    },
+    {
+      "node_type": "asset",
+      "label": "Repeatable capability in Generative AI",
+      "epistemic_state": "provisional",
+      "credibility": 0.8219,
+      "categories": "codified|combinative_execution",
+      "id": "asset-concept-44348e917f92"
+    },
+    {
+      "node_type": "asset",
+      "label": "End-to-end execution capability in Reproducible research",
+      "epistemic_state": "provisional",
+      "credibility": 0.8218,
+      "categories": "codified|tacit_procedural|combinative_execution|bundle",
+      "id": "asset-execution-c6f083fb59b8"
+    },
+    {
+      "node_type": "asset",
+      "label": "Repeatable capability in Reproducible research",
+      "epistemic_state": "provisional",
+      "credibility": 0.8218,
+      "categories": "codified|tacit_procedural|combinative_execution|bundle",
+      "id": "asset-concept-5779e599d617"
+    },
+    {
+      "node_type": "asset",
+      "label": "End-to-end execution capability in Knowledge management",
+      "epistemic_state": "provisional",
+      "credibility": 0.8217,
+      "categories": "codified|combinative_execution",
+      "id": "asset-execution-c5664f735553"
+    },
+    {
+      "node_type": "asset",
+      "label": "Repeatable capability in Knowledge management",
+      "epistemic_state": "provisional",
+      "credibility": 0.8217,
+      "categories": "codified|combinative_execution",
+      "id": "asset-concept-f79eed50c510"
+    },
+    {
+      "node_type": "asset",
+      "label": "Repeatable capability in Teaching and curriculum design",
+      "epistemic_state": "provisional",
+      "credibility": 0.8217,
+      "categories": "codified|combinative_execution",
+      "id": "asset-concept-8afb71e20be8"
+    },
+    {
+      "node_type": "asset",
+      "label": "Recurring collaborative linkage with Alex Rivera",
+      "epistemic_state": "provisional",
+      "credibility": 0.8132,
+      "categories": "codified|tacit_procedural|relational|combinative_execution|bundle",
+      "id": "asset-relational-07bd5ef3905d"
+    },
+    {
+      "node_type": "asset",
+      "label": "End-to-end execution capability in Data engineering",
+      "epistemic_state": "provisional",
+      "credibility": 0.8071,
+      "categories": "codified|tacit_procedural|combinative_execution|bundle",
+      "id": "asset-execution-6565b2d7adeb"
+    },
+    {
+      "node_type": "asset",
+      "label": "Repeatable capability in Data engineering",
+      "epistemic_state": "provisional",
+      "credibility": 0.8071,
+      "categories": "codified|tacit_procedural|combinative_execution|bundle",
+      "id": "asset-concept-e6cdcc252383"
+    },
+    {
+      "node_type": "asset",
+      "label": "Recurring collaborative linkage with Jordan Patel",
+      "epistemic_state": "provisional",
+      "credibility": 0.7922,
+      "categories": "codified|tacit_procedural|relational|combinative_execution|bundle",
+      "id": "asset-relational-dc0fa511cb52"
+    },
+    {
+      "node_type": "asset",
+      "label": "End-to-end execution capability in Causal inference",
+      "epistemic_state": "provisional",
+      "credibility": 0.7899,
+      "categories": "codified|combinative_execution",
+      "id": "asset-execution-b1c9716630ec"
+    },
+    {
+      "node_type": "asset",
+      "label": "Repeatable capability in Causal inference",
+      "epistemic_state": "provisional",
+      "credibility": 0.7899,
+      "categories": "codified|combinative_execution",
+      "id": "asset-concept-26a422f4e204"
+    },
+    {
+      "node_type": "asset",
+      "label": "Recurring collaborative linkage with Morgan Lee",
+      "epistemic_state": "provisional",
+      "credibility": 0.7855,
+      "categories": "codified|tacit_procedural|relational|combinative_execution|bundle",
+      "id": "asset-relational-1ace3697f2f5"
+    },
+    {
+      "node_type": "asset",
+      "label": "Repeatable capability in Transcriptomics",
+      "epistemic_state": "provisional",
+      "credibility": 0.7799,
+      "categories": "codified|tacit_procedural|combinative_execution|bundle",
+      "id": "asset-concept-38546de7c21d"
+    },
+    {
+      "node_type": "asset",
+      "label": "End-to-end execution capability in Agentic AI",
+      "epistemic_state": "provisional",
+      "credibility": 0.7618,
+      "categories": "codified|tacit_procedural|combinative_execution|bundle",
+      "id": "asset-execution-2740a1eb472f"
+    },
+    {
+      "node_type": "asset",
+      "label": "Repeatable capability in Agentic AI",
+      "epistemic_state": "provisional",
+      "credibility": 0.7618,
+      "categories": "codified|tacit_procedural|combinative_execution|bundle",
+      "id": "asset-concept-3efdcc4997ba"
+    },
+    {
+      "node_type": "asset",
+      "label": "Repeatable capability in Artificial intelligence",
+      "epistemic_state": "provisional",
+      "credibility": 0.7613,
+      "categories": "codified",
+      "id": "asset-concept-8579d7558883"
+    },
+    {
+      "node_type": "asset",
+      "label": "Repeatable capability in Software engineering",
+      "epistemic_state": "provisional",
+      "credibility": 0.7596,
+      "categories": "codified|tacit_procedural|combinative_execution|bundle",
+      "id": "asset-concept-813cd43e9679"
+    },
+    {
+      "node_type": "asset",
+      "label": "Repeatable capability in Multi-omics integration",
+      "epistemic_state": "provisional",
+      "credibility": 0.7518,
+      "categories": "codified",
+      "id": "asset-concept-314c712bdbd9"
+    },
+    {
+      "node_type": "asset",
+      "label": "Combinative capability linking Causal inference and Clinical trials",
+      "epistemic_state": "provisional",
+      "credibility": 0.7441,
+      "categories": "codified|combinative_execution",
+      "id": "asset-pair-45ed6e68041f"
+    },
+    {
+      "node_type": "asset",
+      "label": "Repeatable capability in Clinical trials",
+      "epistemic_state": "provisional",
+      "credibility": 0.7441,
+      "categories": "codified",
+      "id": "asset-concept-dd93bce0f388"
+    },
+    {
+      "node_type": "asset",
+      "label": "Reusable software artifact: kdaa-ai prototype",
+      "epistemic_state": "provisional",
+      "credibility": 0.7437,
+      "categories": "codified|combinative_execution",
+      "id": "asset-artifact-41265bb0f345"
+    },
+    {
+      "node_type": "asset",
+      "label": "Combinative capability linking Agentic AI and Bioinformatics",
+      "epistemic_state": "provisional",
+      "credibility": 0.7355,
+      "categories": "codified|combinative_execution",
+      "id": "asset-pair-35d803664347"
+    },
+    {
+      "node_type": "asset",
+      "label": "Reusable software artifact: research-workflow-template",
+      "epistemic_state": "provisional",
+      "credibility": 0.7261,
+      "categories": "codified|combinative_execution",
+      "id": "asset-artifact-9ae1aa41cc53"
+    },
+    {
+      "node_type": "asset",
+      "label": "Reusable protocol: Multimodal validation and leakage-control protocol",
+      "epistemic_state": "provisional",
+      "credibility": 0.7117,
+      "categories": "codified|combinative_execution",
+      "id": "asset-artifact-2171212514dd"
+    },
+    {
+      "node_type": "asset",
+      "label": "Reusable data resource: Harmonized multi-cohort omics benchmark",
+      "epistemic_state": "provisional",
+      "credibility": 0.7095,
+      "categories": "codified|combinative_execution",
+      "id": "asset-artifact-e6b4881d1d35"
+    },
+    {
+      "node_type": "asset",
+      "label": "Combinative capability linking Agentic AI and Reproducible research",
+      "epistemic_state": "provisional",
+      "credibility": 0.6992,
+      "categories": "codified|tacit_procedural|combinative_execution|bundle",
+      "id": "asset-pair-ec2582546053"
+    },
+    {
+      "node_type": "asset",
+      "label": "Combinative capability linking Agentic AI and Transcriptomics",
+      "epistemic_state": "provisional",
+      "credibility": 0.6992,
+      "categories": "codified|tacit_procedural|combinative_execution|bundle",
+      "id": "asset-pair-1c6071542975"
+    },
+    {
+      "node_type": "asset",
+      "label": "Combinative capability linking Reproducible research and Transcriptomics",
+      "epistemic_state": "provisional",
+      "credibility": 0.6992,
+      "categories": "codified|tacit_procedural|combinative_execution|bundle",
+      "id": "asset-pair-08886d135595"
+    },
+    {
+      "node_type": "asset",
+      "label": "Reusable curriculum asset: Statistical programming with AI assistance",
+      "epistemic_state": "provisional",
+      "credibility": 0.6988,
+      "categories": "codified|combinative_execution",
+      "id": "asset-artifact-22bd088ef92b"
+    },
+    {
+      "node_type": "asset",
+      "label": "Reusable curriculum asset: AI and causal reasoning for clinical trials",
+      "epistemic_state": "provisional",
+      "credibility": 0.6811,
+      "categories": "codified|combinative_execution",
+      "id": "asset-artifact-18eed3c9b870"
+    },
+    {
+      "node_type": "asset",
+      "label": "Reusable software artifact: omics-agent-workbench",
+      "epistemic_state": "provisional",
+      "credibility": 0.6552,
+      "categories": "codified|combinative_execution",
+      "id": "asset-artifact-18b2a51e0b89"
+    },
+    {
+      "node_type": "opportunity",
+      "label": "Build a reproducible repository around end-to-end Reproducible research + end-to-end Data engineering",
+      "container": "repository",
+      "priority": 0.7436,
+      "id": "opp-research_repository-beeed0a3d7dc"
+    },
+    {
+      "node_type": "opportunity",
+      "label": "Form a grant-ready research program around Recurring collaborative linkage with Alex Rivera + end-to-end Data engineering",
+      "container": "living_document",
+      "priority": 0.7357,
+      "id": "opp-grant_program-37a0d46c0b7c"
+    },
+    {
+      "node_type": "opportunity",
+      "label": "Publish a public tutorial or research talk on end-to-end Reproducible research + Teaching and curriculum design",
+      "container": "public_content",
+      "priority": 0.7345,
+      "id": "opp-public_content-ff79a424fdee"
+    },
+    {
+      "node_type": "opportunity",
+      "label": "Develop a methods or design-science paper from end-to-end Reproducible research + end-to-end Knowledge management",
+      "container": "living_document",
+      "priority": 0.7309,
+      "id": "opp-methods_paper-b7c61b597858"
+    },
+    {
+      "node_type": "opportunity",
+      "label": "Build a provenance-aware knowledge base for end-to-end Reproducible research + end-to-end Data engineering",
+      "container": "structured_knowledge_base",
+      "priority": 0.7304,
+      "id": "opp-structured_knowledge_base-bf0b46cf22d5"
+    },
+    {
+      "node_type": "opportunity",
+      "label": "Create a versioned living playbook for end-to-end Reproducible research + Teaching and curriculum design",
+      "container": "living_document",
+      "priority": 0.7261,
+      "id": "opp-living_playbook-b0e196a67eac"
+    },
+    {
+      "node_type": "opportunity",
+      "label": "Develop a deployable AI-assisted workflow for end-to-end Reproducible research + end-to-end Knowledge management",
+      "container": "deployable_product",
+      "priority": 0.713,
+      "id": "opp-deployable_copilot-2e07de8dfa6c"
+    }
+  ],
+  "edges": [
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-001",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-002",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-003",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-004",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-005",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-006",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-007",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-008",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-009",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-010",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-011",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-012",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-013",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-014",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-015",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-016",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-017",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-018",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-019",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-020",
+      "key": 0
+    },
+    {
+      "relation": "has_trace",
+      "source": "synthetic:maya-chen",
+      "target": "trace-syn-maya-chen-021",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-concept-44348e917f92",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-execution-c6f083fb59b8",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-concept-5779e599d617",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-execution-c5664f735553",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-concept-f79eed50c510",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-concept-8afb71e20be8",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-relational-07bd5ef3905d",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-execution-6565b2d7adeb",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-concept-e6cdcc252383",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-relational-dc0fa511cb52",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-execution-b1c9716630ec",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-concept-26a422f4e204",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-relational-1ace3697f2f5",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-concept-38546de7c21d",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-execution-2740a1eb472f",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-concept-3efdcc4997ba",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-concept-8579d7558883",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-concept-813cd43e9679",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-concept-314c712bdbd9",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-pair-45ed6e68041f",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-concept-dd93bce0f388",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-artifact-41265bb0f345",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-pair-35d803664347",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-artifact-9ae1aa41cc53",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-artifact-2171212514dd",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-artifact-e6b4881d1d35",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-pair-ec2582546053",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-pair-1c6071542975",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-pair-08886d135595",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-artifact-22bd088ef92b",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-artifact-18eed3c9b870",
+      "key": 0
+    },
+    {
+      "relation": "has_asset_hypothesis",
+      "source": "synthetic:maya-chen",
+      "target": "asset-artifact-18b2a51e0b89",
+      "key": 0
+    },
+    {
+      "relation": "has_opportunity",
+      "source": "synthetic:maya-chen",
+      "target": "opp-research_repository-beeed0a3d7dc",
+      "key": 0
+    },
+    {
+      "relation": "has_opportunity",
+      "source": "synthetic:maya-chen",
+      "target": "opp-grant_program-37a0d46c0b7c",
+      "key": 0
+    },
+    {
+      "relation": "has_opportunity",
+      "source": "synthetic:maya-chen",
+      "target": "opp-public_content-ff79a424fdee",
+      "key": 0
+    },
+    {
+      "relation": "has_opportunity",
+      "source": "synthetic:maya-chen",
+      "target": "opp-methods_paper-b7c61b597858",
+      "key": 0
+    },
+    {
+      "relation": "has_opportunity",
+      "source": "synthetic:maya-chen",
+      "target": "opp-structured_knowledge_base-bf0b46cf22d5",
+      "key": 0
+    },
+    {
+      "relation": "has_opportunity",
+      "source": "synthetic:maya-chen",
+      "target": "opp-living_playbook-b0e196a67eac",
+      "key": 0
+    },
+    {
+      "relation": "has_opportunity",
+      "source": "synthetic:maya-chen",
+      "target": "opp-deployable_copilot-2e07de8dfa6c",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-001",
+      "target": "person:alex rivera",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-001",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.96,
+      "source": "trace-syn-maya-chen-001",
+      "target": "asset-execution-c6f083fb59b8",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.96,
+      "source": "trace-syn-maya-chen-001",
+      "target": "asset-concept-5779e599d617",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.96,
+      "source": "trace-syn-maya-chen-001",
+      "target": "asset-relational-07bd5ef3905d",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.96,
+      "source": "trace-syn-maya-chen-001",
+      "target": "asset-concept-38546de7c21d",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.96,
+      "source": "trace-syn-maya-chen-001",
+      "target": "asset-execution-2740a1eb472f",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.96,
+      "source": "trace-syn-maya-chen-001",
+      "target": "asset-concept-3efdcc4997ba",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.96,
+      "source": "trace-syn-maya-chen-001",
+      "target": "asset-pair-35d803664347",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.96,
+      "source": "trace-syn-maya-chen-001",
+      "target": "asset-pair-ec2582546053",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.96,
+      "source": "trace-syn-maya-chen-001",
+      "target": "asset-pair-1c6071542975",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.96,
+      "source": "trace-syn-maya-chen-001",
+      "target": "asset-pair-08886d135595",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-002",
+      "target": "person:alex rivera",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-002",
+      "target": "person:alex rivera",
+      "key": 1
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-002",
+      "target": "person:taylor kim",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-002",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.98,
+      "source": "trace-syn-maya-chen-002",
+      "target": "asset-concept-44348e917f92",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.98,
+      "source": "trace-syn-maya-chen-002",
+      "target": "asset-relational-07bd5ef3905d",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.98,
+      "source": "trace-syn-maya-chen-002",
+      "target": "asset-execution-2740a1eb472f",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.98,
+      "source": "trace-syn-maya-chen-002",
+      "target": "asset-concept-3efdcc4997ba",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.98,
+      "source": "trace-syn-maya-chen-002",
+      "target": "asset-concept-813cd43e9679",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.98,
+      "source": "trace-syn-maya-chen-002",
+      "target": "asset-pair-35d803664347",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.98,
+      "source": "trace-syn-maya-chen-002",
+      "target": "asset-artifact-18b2a51e0b89",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-003",
+      "target": "person:alex rivera",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-003",
+      "target": "person:jordan patel",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-003",
+      "target": "person:taylor kim",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-003",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.87,
+      "source": "trace-syn-maya-chen-003",
+      "target": "asset-execution-c6f083fb59b8",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.87,
+      "source": "trace-syn-maya-chen-003",
+      "target": "asset-concept-5779e599d617",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.87,
+      "source": "trace-syn-maya-chen-003",
+      "target": "asset-relational-07bd5ef3905d",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.87,
+      "source": "trace-syn-maya-chen-003",
+      "target": "asset-relational-dc0fa511cb52",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.87,
+      "source": "trace-syn-maya-chen-003",
+      "target": "asset-concept-38546de7c21d",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.87,
+      "source": "trace-syn-maya-chen-003",
+      "target": "asset-execution-2740a1eb472f",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.87,
+      "source": "trace-syn-maya-chen-003",
+      "target": "asset-concept-3efdcc4997ba",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.87,
+      "source": "trace-syn-maya-chen-003",
+      "target": "asset-pair-ec2582546053",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.87,
+      "source": "trace-syn-maya-chen-003",
+      "target": "asset-pair-1c6071542975",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.87,
+      "source": "trace-syn-maya-chen-003",
+      "target": "asset-pair-08886d135595",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-004",
+      "target": "person:taylor kim",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-004",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.96,
+      "source": "trace-syn-maya-chen-004",
+      "target": "asset-execution-b1c9716630ec",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.96,
+      "source": "trace-syn-maya-chen-004",
+      "target": "asset-concept-26a422f4e204",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.96,
+      "source": "trace-syn-maya-chen-004",
+      "target": "asset-pair-45ed6e68041f",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.96,
+      "source": "trace-syn-maya-chen-004",
+      "target": "asset-concept-dd93bce0f388",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-005",
+      "target": "person:alex rivera",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-005",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.965,
+      "source": "trace-syn-maya-chen-005",
+      "target": "asset-concept-8afb71e20be8",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.965,
+      "source": "trace-syn-maya-chen-005",
+      "target": "asset-relational-07bd5ef3905d",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.965,
+      "source": "trace-syn-maya-chen-005",
+      "target": "asset-execution-b1c9716630ec",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.965,
+      "source": "trace-syn-maya-chen-005",
+      "target": "asset-concept-26a422f4e204",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.965,
+      "source": "trace-syn-maya-chen-005",
+      "target": "asset-pair-45ed6e68041f",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.965,
+      "source": "trace-syn-maya-chen-005",
+      "target": "asset-concept-dd93bce0f388",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.965,
+      "source": "trace-syn-maya-chen-005",
+      "target": "asset-artifact-18eed3c9b870",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-006",
+      "target": "person:alex rivera",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-006",
+      "target": "person:taylor kim",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-006",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.965,
+      "source": "trace-syn-maya-chen-006",
+      "target": "asset-relational-07bd5ef3905d",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.965,
+      "source": "trace-syn-maya-chen-006",
+      "target": "asset-execution-b1c9716630ec",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.965,
+      "source": "trace-syn-maya-chen-006",
+      "target": "asset-concept-26a422f4e204",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.965,
+      "source": "trace-syn-maya-chen-006",
+      "target": "asset-concept-8579d7558883",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-007",
+      "target": "person:morgan lee",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-007",
+      "target": "person:morgan lee",
+      "key": 1
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-007",
+      "target": "person:jordan patel",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-007",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.935,
+      "source": "trace-syn-maya-chen-007",
+      "target": "asset-relational-dc0fa511cb52",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.935,
+      "source": "trace-syn-maya-chen-007",
+      "target": "asset-relational-1ace3697f2f5",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.935,
+      "source": "trace-syn-maya-chen-007",
+      "target": "asset-concept-314c712bdbd9",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-008",
+      "target": "person:jordan patel",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-008",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-008",
+      "target": "asset-execution-6565b2d7adeb",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-008",
+      "target": "asset-concept-e6cdcc252383",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-008",
+      "target": "asset-relational-dc0fa511cb52",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-008",
+      "target": "asset-concept-38546de7c21d",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-008",
+      "target": "asset-artifact-e6b4881d1d35",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-009",
+      "target": "person:jordan patel",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-009",
+      "target": "person:morgan lee",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-009",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.9975,
+      "source": "trace-syn-maya-chen-009",
+      "target": "asset-execution-c6f083fb59b8",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.9975,
+      "source": "trace-syn-maya-chen-009",
+      "target": "asset-concept-5779e599d617",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.9975,
+      "source": "trace-syn-maya-chen-009",
+      "target": "asset-relational-dc0fa511cb52",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.9975,
+      "source": "trace-syn-maya-chen-009",
+      "target": "asset-relational-1ace3697f2f5",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.9975,
+      "source": "trace-syn-maya-chen-009",
+      "target": "asset-concept-314c712bdbd9",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.9975,
+      "source": "trace-syn-maya-chen-009",
+      "target": "asset-artifact-2171212514dd",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-010",
+      "target": "person:alex rivera",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-010",
+      "target": "person:jordan patel",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-010",
+      "target": "person:jordan patel",
+      "key": 1
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-010",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.7325,
+      "source": "trace-syn-maya-chen-010",
+      "target": "asset-relational-07bd5ef3905d",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.7325,
+      "source": "trace-syn-maya-chen-010",
+      "target": "asset-relational-dc0fa511cb52",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-011",
+      "target": "person:jordan patel",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-011",
+      "target": "person:morgan lee",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-011",
+      "target": "person:alex rivera",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-011",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-011",
+      "target": "asset-execution-c6f083fb59b8",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-011",
+      "target": "asset-concept-5779e599d617",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-011",
+      "target": "asset-relational-07bd5ef3905d",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-011",
+      "target": "asset-execution-6565b2d7adeb",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-011",
+      "target": "asset-concept-e6cdcc252383",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-011",
+      "target": "asset-relational-dc0fa511cb52",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-011",
+      "target": "asset-relational-1ace3697f2f5",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-011",
+      "target": "asset-concept-813cd43e9679",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-011",
+      "target": "asset-artifact-9ae1aa41cc53",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-012",
+      "target": "person:alex rivera",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-012",
+      "target": "person:jordan patel",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-012",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.89,
+      "source": "trace-syn-maya-chen-012",
+      "target": "asset-execution-c6f083fb59b8",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.89,
+      "source": "trace-syn-maya-chen-012",
+      "target": "asset-concept-5779e599d617",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.89,
+      "source": "trace-syn-maya-chen-012",
+      "target": "asset-relational-07bd5ef3905d",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.89,
+      "source": "trace-syn-maya-chen-012",
+      "target": "asset-execution-6565b2d7adeb",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.89,
+      "source": "trace-syn-maya-chen-012",
+      "target": "asset-concept-e6cdcc252383",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.89,
+      "source": "trace-syn-maya-chen-012",
+      "target": "asset-relational-dc0fa511cb52",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.89,
+      "source": "trace-syn-maya-chen-012",
+      "target": "asset-concept-813cd43e9679",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-013",
+      "target": "person:taylor kim",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-013",
+      "target": "person:taylor kim",
+      "key": 1
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-013",
+      "target": "person:taylor kim",
+      "key": 2
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-013",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.95,
+      "source": "trace-syn-maya-chen-013",
+      "target": "asset-concept-44348e917f92",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.95,
+      "source": "trace-syn-maya-chen-013",
+      "target": "asset-concept-8afb71e20be8",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.95,
+      "source": "trace-syn-maya-chen-013",
+      "target": "asset-artifact-22bd088ef92b",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-014",
+      "target": "person:morgan lee",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-014",
+      "target": "person:taylor kim",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-014",
+      "target": "person:taylor kim",
+      "key": 1
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-014",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.7925,
+      "source": "trace-syn-maya-chen-014",
+      "target": "asset-concept-8afb71e20be8",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.7925,
+      "source": "trace-syn-maya-chen-014",
+      "target": "asset-relational-1ace3697f2f5",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-015",
+      "target": "person:alex rivera",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-015",
+      "target": "person:alex rivera",
+      "key": 1
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-015",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.775,
+      "source": "trace-syn-maya-chen-015",
+      "target": "asset-concept-8afb71e20be8",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.775,
+      "source": "trace-syn-maya-chen-015",
+      "target": "asset-relational-07bd5ef3905d",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-016",
+      "target": "person:alex rivera",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-016",
+      "target": "person:taylor kim",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-016",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.8925,
+      "source": "trace-syn-maya-chen-016",
+      "target": "asset-concept-44348e917f92",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.8925,
+      "source": "trace-syn-maya-chen-016",
+      "target": "asset-execution-c5664f735553",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.8925,
+      "source": "trace-syn-maya-chen-016",
+      "target": "asset-concept-f79eed50c510",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.8925,
+      "source": "trace-syn-maya-chen-016",
+      "target": "asset-relational-07bd5ef3905d",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-017",
+      "target": "person:alex rivera",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-017",
+      "target": "person:alex rivera",
+      "key": 1
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-017",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-017",
+      "target": "asset-execution-c5664f735553",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-017",
+      "target": "asset-concept-f79eed50c510",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-017",
+      "target": "asset-relational-07bd5ef3905d",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-017",
+      "target": "asset-concept-8579d7558883",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 1.0,
+      "source": "trace-syn-maya-chen-017",
+      "target": "asset-artifact-41265bb0f345",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-018",
+      "target": "person:alex rivera",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-018",
+      "target": "person:morgan lee",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-018",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.735,
+      "source": "trace-syn-maya-chen-018",
+      "target": "asset-execution-c5664f735553",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.735,
+      "source": "trace-syn-maya-chen-018",
+      "target": "asset-concept-f79eed50c510",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.735,
+      "source": "trace-syn-maya-chen-018",
+      "target": "asset-relational-07bd5ef3905d",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.735,
+      "source": "trace-syn-maya-chen-018",
+      "target": "asset-relational-1ace3697f2f5",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-019",
+      "target": "person:morgan lee",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-019",
+      "target": "person:jordan patel",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-019",
+      "target": "person:alex rivera",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-019",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.6925,
+      "source": "trace-syn-maya-chen-019",
+      "target": "asset-relational-07bd5ef3905d",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.6925,
+      "source": "trace-syn-maya-chen-019",
+      "target": "asset-relational-dc0fa511cb52",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.6925,
+      "source": "trace-syn-maya-chen-019",
+      "target": "asset-relational-1ace3697f2f5",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-020",
+      "target": "person:jordan patel",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-020",
+      "target": "person:jordan patel",
+      "key": 1
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-020",
+      "target": "person:morgan lee",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-020",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.6375,
+      "source": "trace-syn-maya-chen-020",
+      "target": "asset-relational-dc0fa511cb52",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.6375,
+      "source": "trace-syn-maya-chen-020",
+      "target": "asset-relational-1ace3697f2f5",
+      "key": 0
+    },
+    {
+      "relation": "has_contributor",
+      "source": "trace-syn-maya-chen-021",
+      "target": "person:morgan lee",
+      "key": 0
+    },
+    {
+      "relation": "affiliated_with",
+      "source": "trace-syn-maya-chen-021",
+      "target": "institution:synthetic research institute",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.5625,
+      "source": "trace-syn-maya-chen-021",
+      "target": "asset-execution-c5664f735553",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.5625,
+      "source": "trace-syn-maya-chen-021",
+      "target": "asset-concept-f79eed50c510",
+      "key": 0
+    },
+    {
+      "relation": "supports",
+      "evidence_role": "supporting",
+      "weight": 0.5625,
+      "source": "trace-syn-maya-chen-021",
+      "target": "asset-relational-1ace3697f2f5",
+      "key": 0
+    },
+    {
+      "relation": "matched_to",
+      "source": "asset-execution-c6f083fb59b8",
+      "target": "opp-research_repository-beeed0a3d7dc",
+      "key": 0
+    },
+    {
+      "relation": "matched_to",
+      "source": "asset-execution-c6f083fb59b8",
+      "target": "opp-public_content-ff79a424fdee",
+      "key": 0
+    },
+    {
+      "relation": "matched_to",
+      "source": "asset-execution-c6f083fb59b8",
+      "target": "opp-methods_paper-b7c61b597858",
+      "key": 0
+    },
+    {
+      "relation": "matched_to",
+      "source": "asset-execution-c6f083fb59b8",
+      "target": "opp-structured_knowledge_base-bf0b46cf22d5",
+      "key": 0
+    },
+    {
+      "relation": "matched_to",
+      "source": "asset-execution-c6f083fb59b8",
+      "target": "opp-living_playbook-b0e196a67eac",
+      "key": 0
+    },
+    {
+      "relation": "matched_to",
+      "source": "asset-execution-c6f083fb59b8",
+      "target": "opp-deployable_copilot-2e07de8dfa6c",
+      "key": 0
+    },
+    {
+      "relation": "matched_to",
+      "source": "asset-execution-c5664f735553",
+      "target": "opp-methods_paper-b7c61b597858",
+      "key": 0
+    },
+    {
+      "relation": "matched_to",
+      "source": "asset-execution-c5664f735553",
+      "target": "opp-deployable_copilot-2e07de8dfa6c",
+      "key": 0
+    },
+    {
+      "relation": "matched_to",
+      "source": "asset-concept-8afb71e20be8",
+      "target": "opp-public_content-ff79a424fdee",
+      "key": 0
+    },
+    {
+      "relation": "matched_to",
+      "source": "asset-concept-8afb71e20be8",
+      "target": "opp-living_playbook-b0e196a67eac",
+      "key": 0
+    },
+    {
+      "relation": "matched_to",
+      "source": "asset-relational-07bd5ef3905d",
+      "target": "opp-grant_program-37a0d46c0b7c",
+      "key": 0
+    },
+    {
+      "relation": "matched_to",
+      "source": "asset-execution-6565b2d7adeb",
+      "target": "opp-research_repository-beeed0a3d7dc",
+      "key": 0
+    },
+    {
+      "relation": "matched_to",
+      "source": "asset-execution-6565b2d7adeb",
+      "target": "opp-grant_program-37a0d46c0b7c",
+      "key": 0
+    },
+    {
+      "relation": "matched_to",
+      "source": "asset-execution-6565b2d7adeb",
+      "target": "opp-structured_knowledge_base-bf0b46cf22d5",
+      "key": 0
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+name: Feature request
+description: Propose a theory-grounded extension
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or research need
+      description: What focal unit, evidence type, asset construct, or evaluation problem is not covered?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed design
+      description: Explain the expected inputs, outputs, provenance behavior, and validation path.
+    validations:
+      required: true
+  - type: textarea
+    id: theory
+    attributes:
+      label: Theory alignment
+      description: Which KDAA construct or stage does this extend?
+  - type: textarea
+    id: risks
+    attributes:
+      label: Epistemic and governance risks

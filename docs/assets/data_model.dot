@@ -1,0 +1,51 @@
+digraph DataModel {
+  graph [
+    rankdir=TB,
+    bgcolor="#FFFFFF",
+    pad="0.24",
+    nodesep="0.42",
+    ranksep="0.55",
+    splines=polyline,
+    fontname="Helvetica",
+    fontsize=16,
+    label="KDAA-AI core data model",
+    labelloc=t,
+    labeljust=l
+  ];
+  node [shape=record, style="rounded,filled", fontname="Helvetica", fontsize=10, color="#475569", fillcolor="#F8FAFC", margin="0.10,0.07", penwidth=1.25];
+  edge [fontname="Helvetica", fontsize=9, color="#64748B", arrowsize=0.72, penwidth=1.15];
+
+  bundle [label="{UnitBundle|FocalUnit • StrategicGoal[ ] • EvidenceTrace[ ]|metadata}", fillcolor="#EFF6FF", color="#3B82F6"];
+
+  { rank=same;
+    unit [label="{FocalUnit|identity • unit type • members|boundary • governance • identifiers}", fillcolor="#EFF6FF", color="#3B82F6"];
+    goal [label="{StrategicGoal|label • keywords • weight|time horizon}"];
+    trace [label="{EvidenceTrace|type • title • source • contribution role|date • contributors • topics • outcome signals}", fillcolor="#FFF7ED", color="#F97316"];
+  }
+
+  evidence_graph [label="{Evidence graph|unit • trace • relation nodes|typed provenance edges • possible_duplicate_of}", fillcolor="#FFF7ED", color="#F97316"];
+  link [label="{EvidenceLink|trace_id • supporting/contradicting/context|rationale • weight}"];
+  asset [label="{AssetRecord|bounded claim • enables • exclusions|categories • dependencies • epistemic state}", fillcolor="#FFF7ED", color="#F97316"];
+  assessment [label="{AssetAssessment|evidence • attribution • maturity • distinctiveness|tacitness • transferability • risks • AI interfaceability}"];
+  opportunity [label="{AmplificationOpportunity|beneficiary • problem • output container|credible baseline • AI/human tasks • verification gates|fit • amplifiability • readiness • governance risk}", fillcolor="#F0FDF4", color="#22C55E"];
+
+  { rank=same;
+    calibration [label="{CalibrationRecord|confirm • narrow • split|reject • defer}", fillcolor="#FEFCE8", color="#CA8A04"];
+    outcome [label="{OutcomeRecord|observed gain|realized value • captured value|causal caveats}", fillcolor="#FEFCE8", color="#CA8A04"];
+  }
+
+  run [label="{AnalysisRun|manifest • unit • traces • assets • opportunities|warnings • graph summary • calibration/outcome deltas}", fillcolor="#F5F3FF", color="#8B5CF6"];
+
+  bundle -> unit;
+  bundle -> goal;
+  bundle -> trace;
+  unit -> evidence_graph;
+  trace -> evidence_graph;
+  evidence_graph -> link -> asset -> assessment -> opportunity;
+  goal -> opportunity [label="alignment"];
+  asset -> calibration [style=dashed, label="optional"];
+  opportunity -> outcome [style=dashed, label="optional"];
+  calibration -> run [style=dashed];
+  outcome -> run [style=dashed];
+  opportunity -> run;
+}

@@ -1,0 +1,1435 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d17" for="edge" attr.name="weight" attr.type="double"/>
+<key id="d16" for="edge" attr.name="evidence_role" attr.type="string"/>
+<key id="d15" for="edge" attr.name="relation" attr.type="string"/>
+<key id="d14" for="node" attr.name="priority" attr.type="double"/>
+<key id="d13" for="node" attr.name="container" attr.type="string"/>
+<key id="d12" for="node" attr.name="categories" attr.type="string"/>
+<key id="d11" for="node" attr.name="credibility" attr.type="double"/>
+<key id="d10" for="node" attr.name="epistemic_state" attr.type="string"/>
+<key id="d9" for="node" attr.name="sensitive" attr.type="boolean"/>
+<key id="d8" for="node" attr.name="role" attr.type="string"/>
+<key id="d7" for="node" attr.name="event_date" attr.type="string"/>
+<key id="d6" for="node" attr.name="source_kind" attr.type="string"/>
+<key id="d5" for="node" attr.name="trace_type" attr.type="string"/>
+<key id="d4" for="node" attr.name="synthetic" attr.type="boolean"/>
+<key id="d3" for="node" attr.name="institution" attr.type="string"/>
+<key id="d2" for="node" attr.name="unit_type" attr.type="string"/>
+<key id="d1" for="node" attr.name="label" attr.type="string"/>
+<key id="d0" for="node" attr.name="node_type" attr.type="string"/>
+<graph edgedefault="directed"><node id="synthetic:maya-chen">
+  <data key="d0">focal_unit</data>
+  <data key="d1">Dr. Maya Chen</data>
+  <data key="d2">researcher</data>
+  <data key="d3">Synthetic Research Institute</data>
+  <data key="d4">True</data>
+</node>
+<node id="trace-syn-maya-chen-001">
+  <data key="d0">trace</data>
+  <data key="d1">An agentic framework for reproducible transcriptomic analysis</data>
+  <data key="d5">publication</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2021-12-01</data>
+  <data key="d8">lead</data>
+  <data key="d9">False</data>
+</node>
+<node id="person:alex rivera">
+  <data key="d0">contributor</data>
+  <data key="d1">Alex Rivera</data>
+</node>
+<node id="institution:synthetic research institute">
+  <data key="d0">institution</data>
+  <data key="d1">Synthetic Research Institute</data>
+</node>
+<node id="trace-syn-maya-chen-002">
+  <data key="d0">trace</data>
+  <data key="d1">omics-agent-workbench</data>
+  <data key="d5">software_repository</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2019-01-01</data>
+  <data key="d8">originator</data>
+  <data key="d9">False</data>
+</node>
+<node id="person:taylor kim">
+  <data key="d0">contributor</data>
+  <data key="d1">Taylor Kim</data>
+</node>
+<node id="trace-syn-maya-chen-003">
+  <data key="d0">trace</data>
+  <data key="d1">Reproducible AI-assisted secondary analysis pilot</data>
+  <data key="d5">project</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2019-04-01</data>
+  <data key="d8">lead</data>
+  <data key="d9">False</data>
+</node>
+<node id="person:jordan patel">
+  <data key="d0">contributor</data>
+  <data key="d1">Jordan Patel</data>
+</node>
+<node id="trace-syn-maya-chen-004">
+  <data key="d0">trace</data>
+  <data key="d1">Causal estimands for heterogeneous treatment effects in clinical studies</data>
+  <data key="d5">publication</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2020-06-01</data>
+  <data key="d8">lead</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-005">
+  <data key="d0">trace</data>
+  <data key="d1">AI and causal reasoning for clinical trials</data>
+  <data key="d5">course</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2021-07-01</data>
+  <data key="d8">originator</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-006">
+  <data key="d0">trace</data>
+  <data key="d1">Trustworthy causal AI for secondary clinical-data analysis</data>
+  <data key="d5">grant</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2022-09-01</data>
+  <data key="d8">lead</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-007">
+  <data key="d0">trace</data>
+  <data key="d1">Integrating clinical and multi-omics data with attention-based models</data>
+  <data key="d5">publication</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2021-12-01</data>
+  <data key="d8">lead</data>
+  <data key="d9">False</data>
+</node>
+<node id="person:morgan lee">
+  <data key="d0">contributor</data>
+  <data key="d1">Morgan Lee</data>
+</node>
+<node id="trace-syn-maya-chen-008">
+  <data key="d0">trace</data>
+  <data key="d1">Harmonized multi-cohort omics benchmark</data>
+  <data key="d5">dataset</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2022-02-01</data>
+  <data key="d8">originator</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-009">
+  <data key="d0">trace</data>
+  <data key="d1">Multimodal validation and leakage-control protocol</data>
+  <data key="d5">protocol</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2023-06-01</data>
+  <data key="d8">originator</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-010">
+  <data key="d0">trace</data>
+  <data key="d1">Director of research computing support</data>
+  <data key="d5">employment</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2024-03-01</data>
+  <data key="d8">lead</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-011">
+  <data key="d0">trace</data>
+  <data key="d1">research-workflow-template</data>
+  <data key="d5">software_repository</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2024-04-01</data>
+  <data key="d8">originator</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-012">
+  <data key="d0">trace</data>
+  <data key="d1">Laboratory workflow modernization program</data>
+  <data key="d5">project</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2023-10-01</data>
+  <data key="d8">lead</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-013">
+  <data key="d0">trace</data>
+  <data key="d1">Statistical programming with AI assistance</data>
+  <data key="d5">course</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2023-03-01</data>
+  <data key="d8">originator</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-014">
+  <data key="d0">trace</data>
+  <data key="d1">Reusable AI-assisted programming textbook</data>
+  <data key="d5">document</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2025-06-01</data>
+  <data key="d8">originator</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-015">
+  <data key="d0">trace</data>
+  <data key="d1">Teaching software and data science in the generative-AI era</data>
+  <data key="d5">talk</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2025-02-01</data>
+  <data key="d8">lead</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-016">
+  <data key="d0">trace</data>
+  <data key="d1">AI-amplified knowledge assets: conceptual framework</data>
+  <data key="d5">document</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2026-07-01</data>
+  <data key="d8">originator</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-017">
+  <data key="d0">trace</data>
+  <data key="d1">kdaa-ai prototype</data>
+  <data key="d5">software_repository</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2026-11-01</data>
+  <data key="d8">originator</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-018">
+  <data key="d0">trace</data>
+  <data key="d1">From accumulated knowledge to deployable knowledge assets</data>
+  <data key="d5">talk</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2026-07-01</data>
+  <data key="d8">lead</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-019">
+  <data key="d0">trace</data>
+  <data key="d1">General introduction to data science</data>
+  <data key="d5">talk</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2024-11-01</data>
+  <data key="d8">participant</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-020">
+  <data key="d0">trace</data>
+  <data key="d1">Participant in an interdisciplinary working group</data>
+  <data key="d5">collaboration</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2024-03-01</data>
+  <data key="d8">participant</data>
+  <data key="d9">False</data>
+</node>
+<node id="trace-syn-maya-chen-021">
+  <data key="d0">trace</data>
+  <data key="d1">Travel support award</data>
+  <data key="d5">award</data>
+  <data key="d6">synthetic</data>
+  <data key="d7">2024-08-01</data>
+  <data key="d8">participant</data>
+  <data key="d9">False</data>
+</node>
+<node id="asset-concept-44348e917f92">
+  <data key="d0">asset</data>
+  <data key="d1">Repeatable capability in Generative AI</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.8219</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="asset-execution-c6f083fb59b8">
+  <data key="d0">asset</data>
+  <data key="d1">End-to-end execution capability in Reproducible research</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.8218</data>
+  <data key="d12">codified|tacit_procedural|combinative_execution|bundle</data>
+</node>
+<node id="asset-concept-5779e599d617">
+  <data key="d0">asset</data>
+  <data key="d1">Repeatable capability in Reproducible research</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.8218</data>
+  <data key="d12">codified|tacit_procedural|combinative_execution|bundle</data>
+</node>
+<node id="asset-execution-c5664f735553">
+  <data key="d0">asset</data>
+  <data key="d1">End-to-end execution capability in Knowledge management</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.8217</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="asset-concept-f79eed50c510">
+  <data key="d0">asset</data>
+  <data key="d1">Repeatable capability in Knowledge management</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.8217</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="asset-concept-8afb71e20be8">
+  <data key="d0">asset</data>
+  <data key="d1">Repeatable capability in Teaching and curriculum design</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.8217</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="asset-relational-07bd5ef3905d">
+  <data key="d0">asset</data>
+  <data key="d1">Recurring collaborative linkage with Alex Rivera</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.8132</data>
+  <data key="d12">codified|tacit_procedural|relational|combinative_execution|bundle</data>
+</node>
+<node id="asset-execution-6565b2d7adeb">
+  <data key="d0">asset</data>
+  <data key="d1">End-to-end execution capability in Data engineering</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.8071</data>
+  <data key="d12">codified|tacit_procedural|combinative_execution|bundle</data>
+</node>
+<node id="asset-concept-e6cdcc252383">
+  <data key="d0">asset</data>
+  <data key="d1">Repeatable capability in Data engineering</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.8071</data>
+  <data key="d12">codified|tacit_procedural|combinative_execution|bundle</data>
+</node>
+<node id="asset-relational-dc0fa511cb52">
+  <data key="d0">asset</data>
+  <data key="d1">Recurring collaborative linkage with Jordan Patel</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7922</data>
+  <data key="d12">codified|tacit_procedural|relational|combinative_execution|bundle</data>
+</node>
+<node id="asset-execution-b1c9716630ec">
+  <data key="d0">asset</data>
+  <data key="d1">End-to-end execution capability in Causal inference</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7899</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="asset-concept-26a422f4e204">
+  <data key="d0">asset</data>
+  <data key="d1">Repeatable capability in Causal inference</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7899</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="asset-relational-1ace3697f2f5">
+  <data key="d0">asset</data>
+  <data key="d1">Recurring collaborative linkage with Morgan Lee</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7855</data>
+  <data key="d12">codified|tacit_procedural|relational|combinative_execution|bundle</data>
+</node>
+<node id="asset-concept-38546de7c21d">
+  <data key="d0">asset</data>
+  <data key="d1">Repeatable capability in Transcriptomics</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7799</data>
+  <data key="d12">codified|tacit_procedural|combinative_execution|bundle</data>
+</node>
+<node id="asset-execution-2740a1eb472f">
+  <data key="d0">asset</data>
+  <data key="d1">End-to-end execution capability in Agentic AI</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7618</data>
+  <data key="d12">codified|tacit_procedural|combinative_execution|bundle</data>
+</node>
+<node id="asset-concept-3efdcc4997ba">
+  <data key="d0">asset</data>
+  <data key="d1">Repeatable capability in Agentic AI</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7618</data>
+  <data key="d12">codified|tacit_procedural|combinative_execution|bundle</data>
+</node>
+<node id="asset-concept-8579d7558883">
+  <data key="d0">asset</data>
+  <data key="d1">Repeatable capability in Artificial intelligence</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7613</data>
+  <data key="d12">codified</data>
+</node>
+<node id="asset-concept-813cd43e9679">
+  <data key="d0">asset</data>
+  <data key="d1">Repeatable capability in Software engineering</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7596</data>
+  <data key="d12">codified|tacit_procedural|combinative_execution|bundle</data>
+</node>
+<node id="asset-concept-314c712bdbd9">
+  <data key="d0">asset</data>
+  <data key="d1">Repeatable capability in Multi-omics integration</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7518</data>
+  <data key="d12">codified</data>
+</node>
+<node id="asset-pair-45ed6e68041f">
+  <data key="d0">asset</data>
+  <data key="d1">Combinative capability linking Causal inference and Clinical trials</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7441</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="asset-concept-dd93bce0f388">
+  <data key="d0">asset</data>
+  <data key="d1">Repeatable capability in Clinical trials</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7441</data>
+  <data key="d12">codified</data>
+</node>
+<node id="asset-artifact-41265bb0f345">
+  <data key="d0">asset</data>
+  <data key="d1">Reusable software artifact: kdaa-ai prototype</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7437</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="asset-pair-35d803664347">
+  <data key="d0">asset</data>
+  <data key="d1">Combinative capability linking Agentic AI and Bioinformatics</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7355</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="asset-artifact-9ae1aa41cc53">
+  <data key="d0">asset</data>
+  <data key="d1">Reusable software artifact: research-workflow-template</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7261</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="asset-artifact-2171212514dd">
+  <data key="d0">asset</data>
+  <data key="d1">Reusable protocol: Multimodal validation and leakage-control protocol</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7117</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="asset-artifact-e6b4881d1d35">
+  <data key="d0">asset</data>
+  <data key="d1">Reusable data resource: Harmonized multi-cohort omics benchmark</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.7095</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="asset-pair-ec2582546053">
+  <data key="d0">asset</data>
+  <data key="d1">Combinative capability linking Agentic AI and Reproducible research</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.6992</data>
+  <data key="d12">codified|tacit_procedural|combinative_execution|bundle</data>
+</node>
+<node id="asset-pair-1c6071542975">
+  <data key="d0">asset</data>
+  <data key="d1">Combinative capability linking Agentic AI and Transcriptomics</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.6992</data>
+  <data key="d12">codified|tacit_procedural|combinative_execution|bundle</data>
+</node>
+<node id="asset-pair-08886d135595">
+  <data key="d0">asset</data>
+  <data key="d1">Combinative capability linking Reproducible research and Transcriptomics</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.6992</data>
+  <data key="d12">codified|tacit_procedural|combinative_execution|bundle</data>
+</node>
+<node id="asset-artifact-22bd088ef92b">
+  <data key="d0">asset</data>
+  <data key="d1">Reusable curriculum asset: Statistical programming with AI assistance</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.6988</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="asset-artifact-18eed3c9b870">
+  <data key="d0">asset</data>
+  <data key="d1">Reusable curriculum asset: AI and causal reasoning for clinical trials</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.6811</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="asset-artifact-18b2a51e0b89">
+  <data key="d0">asset</data>
+  <data key="d1">Reusable software artifact: omics-agent-workbench</data>
+  <data key="d10">provisional</data>
+  <data key="d11">0.6552</data>
+  <data key="d12">codified|combinative_execution</data>
+</node>
+<node id="opp-research_repository-beeed0a3d7dc">
+  <data key="d0">opportunity</data>
+  <data key="d1">Build a reproducible repository around end-to-end Reproducible research + end-to-end Data engineering</data>
+  <data key="d13">repository</data>
+  <data key="d14">0.7436</data>
+</node>
+<node id="opp-grant_program-37a0d46c0b7c">
+  <data key="d0">opportunity</data>
+  <data key="d1">Form a grant-ready research program around Recurring collaborative linkage with Alex Rivera + end-to-end Data engineering</data>
+  <data key="d13">living_document</data>
+  <data key="d14">0.7357</data>
+</node>
+<node id="opp-public_content-ff79a424fdee">
+  <data key="d0">opportunity</data>
+  <data key="d1">Publish a public tutorial or research talk on end-to-end Reproducible research + Teaching and curriculum design</data>
+  <data key="d13">public_content</data>
+  <data key="d14">0.7345</data>
+</node>
+<node id="opp-methods_paper-b7c61b597858">
+  <data key="d0">opportunity</data>
+  <data key="d1">Develop a methods or design-science paper from end-to-end Reproducible research + end-to-end Knowledge management</data>
+  <data key="d13">living_document</data>
+  <data key="d14">0.7309</data>
+</node>
+<node id="opp-structured_knowledge_base-bf0b46cf22d5">
+  <data key="d0">opportunity</data>
+  <data key="d1">Build a provenance-aware knowledge base for end-to-end Reproducible research + end-to-end Data engineering</data>
+  <data key="d13">structured_knowledge_base</data>
+  <data key="d14">0.7304</data>
+</node>
+<node id="opp-living_playbook-b0e196a67eac">
+  <data key="d0">opportunity</data>
+  <data key="d1">Create a versioned living playbook for end-to-end Reproducible research + Teaching and curriculum design</data>
+  <data key="d13">living_document</data>
+  <data key="d14">0.7261</data>
+</node>
+<node id="opp-deployable_copilot-2e07de8dfa6c">
+  <data key="d0">opportunity</data>
+  <data key="d1">Develop a deployable AI-assisted workflow for end-to-end Reproducible research + end-to-end Knowledge management</data>
+  <data key="d13">deployable_product</data>
+  <data key="d14">0.713</data>
+</node>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-001" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-002" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-003" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-004" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-005" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-006" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-007" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-008" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-009" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-010" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-011" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-012" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-013" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-014" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-015" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-016" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-017" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-018" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-019" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-020" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="trace-syn-maya-chen-021" id="0">
+  <data key="d15">has_trace</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-concept-44348e917f92" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-execution-c6f083fb59b8" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-concept-5779e599d617" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-execution-c5664f735553" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-concept-f79eed50c510" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-concept-8afb71e20be8" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-relational-07bd5ef3905d" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-execution-6565b2d7adeb" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-concept-e6cdcc252383" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-relational-dc0fa511cb52" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-execution-b1c9716630ec" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-concept-26a422f4e204" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-relational-1ace3697f2f5" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-concept-38546de7c21d" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-execution-2740a1eb472f" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-concept-3efdcc4997ba" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-concept-8579d7558883" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-concept-813cd43e9679" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-concept-314c712bdbd9" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-pair-45ed6e68041f" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-concept-dd93bce0f388" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-artifact-41265bb0f345" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-pair-35d803664347" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-artifact-9ae1aa41cc53" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-artifact-2171212514dd" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-artifact-e6b4881d1d35" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-pair-ec2582546053" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-pair-1c6071542975" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-pair-08886d135595" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-artifact-22bd088ef92b" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-artifact-18eed3c9b870" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="asset-artifact-18b2a51e0b89" id="0">
+  <data key="d15">has_asset_hypothesis</data>
+</edge>
+<edge source="synthetic:maya-chen" target="opp-research_repository-beeed0a3d7dc" id="0">
+  <data key="d15">has_opportunity</data>
+</edge>
+<edge source="synthetic:maya-chen" target="opp-grant_program-37a0d46c0b7c" id="0">
+  <data key="d15">has_opportunity</data>
+</edge>
+<edge source="synthetic:maya-chen" target="opp-public_content-ff79a424fdee" id="0">
+  <data key="d15">has_opportunity</data>
+</edge>
+<edge source="synthetic:maya-chen" target="opp-methods_paper-b7c61b597858" id="0">
+  <data key="d15">has_opportunity</data>
+</edge>
+<edge source="synthetic:maya-chen" target="opp-structured_knowledge_base-bf0b46cf22d5" id="0">
+  <data key="d15">has_opportunity</data>
+</edge>
+<edge source="synthetic:maya-chen" target="opp-living_playbook-b0e196a67eac" id="0">
+  <data key="d15">has_opportunity</data>
+</edge>
+<edge source="synthetic:maya-chen" target="opp-deployable_copilot-2e07de8dfa6c" id="0">
+  <data key="d15">has_opportunity</data>
+</edge>
+<edge source="trace-syn-maya-chen-001" target="person:alex rivera" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-001" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-001" target="asset-execution-c6f083fb59b8" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.96</data>
+</edge>
+<edge source="trace-syn-maya-chen-001" target="asset-concept-5779e599d617" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.96</data>
+</edge>
+<edge source="trace-syn-maya-chen-001" target="asset-relational-07bd5ef3905d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.96</data>
+</edge>
+<edge source="trace-syn-maya-chen-001" target="asset-concept-38546de7c21d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.96</data>
+</edge>
+<edge source="trace-syn-maya-chen-001" target="asset-execution-2740a1eb472f" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.96</data>
+</edge>
+<edge source="trace-syn-maya-chen-001" target="asset-concept-3efdcc4997ba" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.96</data>
+</edge>
+<edge source="trace-syn-maya-chen-001" target="asset-pair-35d803664347" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.96</data>
+</edge>
+<edge source="trace-syn-maya-chen-001" target="asset-pair-ec2582546053" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.96</data>
+</edge>
+<edge source="trace-syn-maya-chen-001" target="asset-pair-1c6071542975" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.96</data>
+</edge>
+<edge source="trace-syn-maya-chen-001" target="asset-pair-08886d135595" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.96</data>
+</edge>
+<edge source="trace-syn-maya-chen-002" target="person:alex rivera" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-002" target="person:alex rivera" id="1">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-002" target="person:taylor kim" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-002" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-002" target="asset-concept-44348e917f92" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.98</data>
+</edge>
+<edge source="trace-syn-maya-chen-002" target="asset-relational-07bd5ef3905d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.98</data>
+</edge>
+<edge source="trace-syn-maya-chen-002" target="asset-execution-2740a1eb472f" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.98</data>
+</edge>
+<edge source="trace-syn-maya-chen-002" target="asset-concept-3efdcc4997ba" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.98</data>
+</edge>
+<edge source="trace-syn-maya-chen-002" target="asset-concept-813cd43e9679" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.98</data>
+</edge>
+<edge source="trace-syn-maya-chen-002" target="asset-pair-35d803664347" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.98</data>
+</edge>
+<edge source="trace-syn-maya-chen-002" target="asset-artifact-18b2a51e0b89" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.98</data>
+</edge>
+<edge source="trace-syn-maya-chen-003" target="person:alex rivera" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-003" target="person:jordan patel" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-003" target="person:taylor kim" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-003" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-003" target="asset-execution-c6f083fb59b8" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.87</data>
+</edge>
+<edge source="trace-syn-maya-chen-003" target="asset-concept-5779e599d617" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.87</data>
+</edge>
+<edge source="trace-syn-maya-chen-003" target="asset-relational-07bd5ef3905d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.87</data>
+</edge>
+<edge source="trace-syn-maya-chen-003" target="asset-relational-dc0fa511cb52" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.87</data>
+</edge>
+<edge source="trace-syn-maya-chen-003" target="asset-concept-38546de7c21d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.87</data>
+</edge>
+<edge source="trace-syn-maya-chen-003" target="asset-execution-2740a1eb472f" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.87</data>
+</edge>
+<edge source="trace-syn-maya-chen-003" target="asset-concept-3efdcc4997ba" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.87</data>
+</edge>
+<edge source="trace-syn-maya-chen-003" target="asset-pair-ec2582546053" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.87</data>
+</edge>
+<edge source="trace-syn-maya-chen-003" target="asset-pair-1c6071542975" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.87</data>
+</edge>
+<edge source="trace-syn-maya-chen-003" target="asset-pair-08886d135595" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.87</data>
+</edge>
+<edge source="trace-syn-maya-chen-004" target="person:taylor kim" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-004" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-004" target="asset-execution-b1c9716630ec" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.96</data>
+</edge>
+<edge source="trace-syn-maya-chen-004" target="asset-concept-26a422f4e204" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.96</data>
+</edge>
+<edge source="trace-syn-maya-chen-004" target="asset-pair-45ed6e68041f" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.96</data>
+</edge>
+<edge source="trace-syn-maya-chen-004" target="asset-concept-dd93bce0f388" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.96</data>
+</edge>
+<edge source="trace-syn-maya-chen-005" target="person:alex rivera" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-005" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-005" target="asset-concept-8afb71e20be8" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.965</data>
+</edge>
+<edge source="trace-syn-maya-chen-005" target="asset-relational-07bd5ef3905d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.965</data>
+</edge>
+<edge source="trace-syn-maya-chen-005" target="asset-execution-b1c9716630ec" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.965</data>
+</edge>
+<edge source="trace-syn-maya-chen-005" target="asset-concept-26a422f4e204" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.965</data>
+</edge>
+<edge source="trace-syn-maya-chen-005" target="asset-pair-45ed6e68041f" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.965</data>
+</edge>
+<edge source="trace-syn-maya-chen-005" target="asset-concept-dd93bce0f388" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.965</data>
+</edge>
+<edge source="trace-syn-maya-chen-005" target="asset-artifact-18eed3c9b870" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.965</data>
+</edge>
+<edge source="trace-syn-maya-chen-006" target="person:alex rivera" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-006" target="person:taylor kim" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-006" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-006" target="asset-relational-07bd5ef3905d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.965</data>
+</edge>
+<edge source="trace-syn-maya-chen-006" target="asset-execution-b1c9716630ec" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.965</data>
+</edge>
+<edge source="trace-syn-maya-chen-006" target="asset-concept-26a422f4e204" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.965</data>
+</edge>
+<edge source="trace-syn-maya-chen-006" target="asset-concept-8579d7558883" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.965</data>
+</edge>
+<edge source="trace-syn-maya-chen-007" target="person:morgan lee" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-007" target="person:morgan lee" id="1">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-007" target="person:jordan patel" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-007" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-007" target="asset-relational-dc0fa511cb52" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.935</data>
+</edge>
+<edge source="trace-syn-maya-chen-007" target="asset-relational-1ace3697f2f5" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.935</data>
+</edge>
+<edge source="trace-syn-maya-chen-007" target="asset-concept-314c712bdbd9" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.935</data>
+</edge>
+<edge source="trace-syn-maya-chen-008" target="person:jordan patel" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-008" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-008" target="asset-execution-6565b2d7adeb" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-008" target="asset-concept-e6cdcc252383" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-008" target="asset-relational-dc0fa511cb52" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-008" target="asset-concept-38546de7c21d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-008" target="asset-artifact-e6b4881d1d35" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-009" target="person:jordan patel" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-009" target="person:morgan lee" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-009" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-009" target="asset-execution-c6f083fb59b8" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.9975</data>
+</edge>
+<edge source="trace-syn-maya-chen-009" target="asset-concept-5779e599d617" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.9975</data>
+</edge>
+<edge source="trace-syn-maya-chen-009" target="asset-relational-dc0fa511cb52" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.9975</data>
+</edge>
+<edge source="trace-syn-maya-chen-009" target="asset-relational-1ace3697f2f5" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.9975</data>
+</edge>
+<edge source="trace-syn-maya-chen-009" target="asset-concept-314c712bdbd9" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.9975</data>
+</edge>
+<edge source="trace-syn-maya-chen-009" target="asset-artifact-2171212514dd" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.9975</data>
+</edge>
+<edge source="trace-syn-maya-chen-010" target="person:alex rivera" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-010" target="person:jordan patel" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-010" target="person:jordan patel" id="1">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-010" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-010" target="asset-relational-07bd5ef3905d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.7325</data>
+</edge>
+<edge source="trace-syn-maya-chen-010" target="asset-relational-dc0fa511cb52" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.7325</data>
+</edge>
+<edge source="trace-syn-maya-chen-011" target="person:jordan patel" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-011" target="person:morgan lee" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-011" target="person:alex rivera" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-011" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-011" target="asset-execution-c6f083fb59b8" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-011" target="asset-concept-5779e599d617" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-011" target="asset-relational-07bd5ef3905d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-011" target="asset-execution-6565b2d7adeb" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-011" target="asset-concept-e6cdcc252383" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-011" target="asset-relational-dc0fa511cb52" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-011" target="asset-relational-1ace3697f2f5" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-011" target="asset-concept-813cd43e9679" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-011" target="asset-artifact-9ae1aa41cc53" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-012" target="person:alex rivera" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-012" target="person:jordan patel" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-012" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-012" target="asset-execution-c6f083fb59b8" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.89</data>
+</edge>
+<edge source="trace-syn-maya-chen-012" target="asset-concept-5779e599d617" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.89</data>
+</edge>
+<edge source="trace-syn-maya-chen-012" target="asset-relational-07bd5ef3905d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.89</data>
+</edge>
+<edge source="trace-syn-maya-chen-012" target="asset-execution-6565b2d7adeb" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.89</data>
+</edge>
+<edge source="trace-syn-maya-chen-012" target="asset-concept-e6cdcc252383" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.89</data>
+</edge>
+<edge source="trace-syn-maya-chen-012" target="asset-relational-dc0fa511cb52" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.89</data>
+</edge>
+<edge source="trace-syn-maya-chen-012" target="asset-concept-813cd43e9679" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.89</data>
+</edge>
+<edge source="trace-syn-maya-chen-013" target="person:taylor kim" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-013" target="person:taylor kim" id="1">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-013" target="person:taylor kim" id="2">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-013" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-013" target="asset-concept-44348e917f92" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.95</data>
+</edge>
+<edge source="trace-syn-maya-chen-013" target="asset-concept-8afb71e20be8" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.95</data>
+</edge>
+<edge source="trace-syn-maya-chen-013" target="asset-artifact-22bd088ef92b" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.95</data>
+</edge>
+<edge source="trace-syn-maya-chen-014" target="person:morgan lee" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-014" target="person:taylor kim" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-014" target="person:taylor kim" id="1">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-014" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-014" target="asset-concept-8afb71e20be8" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.7925</data>
+</edge>
+<edge source="trace-syn-maya-chen-014" target="asset-relational-1ace3697f2f5" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.7925</data>
+</edge>
+<edge source="trace-syn-maya-chen-015" target="person:alex rivera" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-015" target="person:alex rivera" id="1">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-015" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-015" target="asset-concept-8afb71e20be8" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.775</data>
+</edge>
+<edge source="trace-syn-maya-chen-015" target="asset-relational-07bd5ef3905d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.775</data>
+</edge>
+<edge source="trace-syn-maya-chen-016" target="person:alex rivera" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-016" target="person:taylor kim" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-016" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-016" target="asset-concept-44348e917f92" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.8925</data>
+</edge>
+<edge source="trace-syn-maya-chen-016" target="asset-execution-c5664f735553" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.8925</data>
+</edge>
+<edge source="trace-syn-maya-chen-016" target="asset-concept-f79eed50c510" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.8925</data>
+</edge>
+<edge source="trace-syn-maya-chen-016" target="asset-relational-07bd5ef3905d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.8925</data>
+</edge>
+<edge source="trace-syn-maya-chen-017" target="person:alex rivera" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-017" target="person:alex rivera" id="1">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-017" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-017" target="asset-execution-c5664f735553" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-017" target="asset-concept-f79eed50c510" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-017" target="asset-relational-07bd5ef3905d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-017" target="asset-concept-8579d7558883" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-017" target="asset-artifact-41265bb0f345" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">1.0</data>
+</edge>
+<edge source="trace-syn-maya-chen-018" target="person:alex rivera" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-018" target="person:morgan lee" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-018" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-018" target="asset-execution-c5664f735553" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.735</data>
+</edge>
+<edge source="trace-syn-maya-chen-018" target="asset-concept-f79eed50c510" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.735</data>
+</edge>
+<edge source="trace-syn-maya-chen-018" target="asset-relational-07bd5ef3905d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.735</data>
+</edge>
+<edge source="trace-syn-maya-chen-018" target="asset-relational-1ace3697f2f5" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.735</data>
+</edge>
+<edge source="trace-syn-maya-chen-019" target="person:morgan lee" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-019" target="person:jordan patel" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-019" target="person:alex rivera" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-019" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-019" target="asset-relational-07bd5ef3905d" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.6925</data>
+</edge>
+<edge source="trace-syn-maya-chen-019" target="asset-relational-dc0fa511cb52" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.6925</data>
+</edge>
+<edge source="trace-syn-maya-chen-019" target="asset-relational-1ace3697f2f5" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.6925</data>
+</edge>
+<edge source="trace-syn-maya-chen-020" target="person:jordan patel" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-020" target="person:jordan patel" id="1">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-020" target="person:morgan lee" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-020" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-020" target="asset-relational-dc0fa511cb52" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.6375</data>
+</edge>
+<edge source="trace-syn-maya-chen-020" target="asset-relational-1ace3697f2f5" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.6375</data>
+</edge>
+<edge source="trace-syn-maya-chen-021" target="person:morgan lee" id="0">
+  <data key="d15">has_contributor</data>
+</edge>
+<edge source="trace-syn-maya-chen-021" target="institution:synthetic research institute" id="0">
+  <data key="d15">affiliated_with</data>
+</edge>
+<edge source="trace-syn-maya-chen-021" target="asset-execution-c5664f735553" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.5625</data>
+</edge>
+<edge source="trace-syn-maya-chen-021" target="asset-concept-f79eed50c510" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.5625</data>
+</edge>
+<edge source="trace-syn-maya-chen-021" target="asset-relational-1ace3697f2f5" id="0">
+  <data key="d15">supports</data>
+  <data key="d16">supporting</data>
+  <data key="d17">0.5625</data>
+</edge>
+<edge source="asset-execution-c6f083fb59b8" target="opp-research_repository-beeed0a3d7dc" id="0">
+  <data key="d15">matched_to</data>
+</edge>
+<edge source="asset-execution-c6f083fb59b8" target="opp-public_content-ff79a424fdee" id="0">
+  <data key="d15">matched_to</data>
+</edge>
+<edge source="asset-execution-c6f083fb59b8" target="opp-methods_paper-b7c61b597858" id="0">
+  <data key="d15">matched_to</data>
+</edge>
+<edge source="asset-execution-c6f083fb59b8" target="opp-structured_knowledge_base-bf0b46cf22d5" id="0">
+  <data key="d15">matched_to</data>
+</edge>
+<edge source="asset-execution-c6f083fb59b8" target="opp-living_playbook-b0e196a67eac" id="0">
+  <data key="d15">matched_to</data>
+</edge>
+<edge source="asset-execution-c6f083fb59b8" target="opp-deployable_copilot-2e07de8dfa6c" id="0">
+  <data key="d15">matched_to</data>
+</edge>
+<edge source="asset-execution-c5664f735553" target="opp-methods_paper-b7c61b597858" id="0">
+  <data key="d15">matched_to</data>
+</edge>
+<edge source="asset-execution-c5664f735553" target="opp-deployable_copilot-2e07de8dfa6c" id="0">
+  <data key="d15">matched_to</data>
+</edge>
+<edge source="asset-concept-8afb71e20be8" target="opp-public_content-ff79a424fdee" id="0">
+  <data key="d15">matched_to</data>
+</edge>
+<edge source="asset-concept-8afb71e20be8" target="opp-living_playbook-b0e196a67eac" id="0">
+  <data key="d15">matched_to</data>
+</edge>
+<edge source="asset-relational-07bd5ef3905d" target="opp-grant_program-37a0d46c0b7c" id="0">
+  <data key="d15">matched_to</data>
+</edge>
+<edge source="asset-execution-6565b2d7adeb" target="opp-research_repository-beeed0a3d7dc" id="0">
+  <data key="d15">matched_to</data>
+</edge>
+<edge source="asset-execution-6565b2d7adeb" target="opp-grant_program-37a0d46c0b7c" id="0">
+  <data key="d15">matched_to</data>
+</edge>
+<edge source="asset-execution-6565b2d7adeb" target="opp-structured_knowledge_base-bf0b46cf22d5" id="0">
+  <data key="d15">matched_to</data>
+</edge>
+</graph></graphml>

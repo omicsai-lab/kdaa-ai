@@ -1,0 +1,56 @@
+version: "0.1.0"
+random_seed: 42
+mode: deterministic
+
+discovery:
+  min_trace_support: 3
+  max_topic_assets: 8
+  max_pair_assets: 4
+  min_pair_support: 3
+  include_single_artifact_assets: true
+  max_relational_assets: 2
+  max_execution_assets: 3
+
+assessment:
+  provisional_threshold: 0.68
+  human_review_threshold: 0.82
+  tacitness_review_threshold: 0.45
+  recency_half_life_years: 4.0
+  weights:
+    evidence_strength: 0.28
+    attribution_confidence: 0.22
+    maturity: 0.15
+    transferability: 0.10
+    recency: 0.08
+    source_diversity: 0.10
+    contradiction_penalty: 0.12
+
+opportunities:
+  max_opportunities: 8
+  min_fit_score: 0.38
+  pairwise_candidates: true
+  include_all_five_containers: true
+
+llm:
+  enabled: false
+  provider: openai_compatible
+  base_url: https://api.openai.com/v1
+  model: ""
+  api_key_env: KDAA_LLM_API_KEY
+  timeout_seconds: 90
+  allow_sensitive_traces: false
+  temperature: 0.0
+
+external_data:
+  openalex_api_key_env: OPENALEX_API_KEY
+  openalex_email_env: OPENALEX_EMAIL
+  github_token_env: GITHUB_TOKEN
+  request_timeout_seconds: 30
+  user_agent: kdaa-ai/0.1.0
+
+export:
+  write_json: true
+  write_markdown: true
+  write_csv: true
+  write_graphml: true
+  write_html: true

@@ -1,0 +1,89 @@
+digraph KDAAArchitecture {
+  graph [
+    rankdir=TB,
+    bgcolor="#FFFFFF",
+    pad="0.24",
+    nodesep="0.46",
+    ranksep="0.48",
+    splines=ortho,
+    fontname="Helvetica",
+    fontsize=16,
+    label="KDAA-AI v0.1 — Provenance-first system architecture",
+    labelloc=t,
+    labeljust=l
+  ];
+  node [
+    shape=box,
+    style="rounded,filled",
+    fontname="Helvetica",
+    fontsize=10.5,
+    margin="0.15,0.09",
+    penwidth=1.3,
+    color="#334155",
+    fillcolor="#F8FAFC",
+    width=2.55
+  ];
+  edge [
+    color="#64748B",
+    penwidth=1.2,
+    arrowsize=0.72,
+    fontname="Helvetica",
+    fontsize=9
+  ];
+
+  subgraph cluster_inputs {
+    label="Evidence inputs";
+    color="#CBD5E1";
+    style="rounded";
+    penwidth=1.1;
+    { rank=same;
+      local [label="Local evidence\nJSON / YAML / CV / PDF", fillcolor="#EFF6FF", color="#3B82F6", width=2.15];
+      openalex [label="OpenAlex\nauthor + works", fillcolor="#EFF6FF", color="#3B82F6", width=2.15];
+      github [label="GitHub\nprofile + repositories", fillcolor="#EFF6FF", color="#3B82F6", width=2.15];
+      synthetic [label="Synthetic scenarios\nand benchmark", fillcolor="#F0FDF4", color="#22C55E", width=2.15];
+    }
+  }
+
+  normalize [label="Normalize focal unit, strategic goals,\nand typed evidence traces", width=3.25];
+  dedup [label="Duplicate-aware evidence control\nretain every trace in provenance\nselect canonical analysis records", fillcolor="#ECFEFF", color="#0891B2", width=3.25];
+
+  subgraph cluster_core {
+    label="Deterministic core — no remote model or human confirmation required";
+    color="#94A3B8";
+    style="rounded";
+    penwidth=1.2;
+    margin=18;
+
+    evidence_graph [label="1. Provenance-aware evidence graph", fillcolor="#FFF7ED", color="#F97316", width=3.25];
+    discover [label="2. Falsifiable asset-hypothesis discovery", fillcolor="#FFF7ED", color="#F97316", width=3.25];
+    assess [label="3. Asset-level assessment proxies", fillcolor="#FFF7ED", color="#F97316", width=3.25];
+    match [label="4. Asset–opportunity matching", fillcolor="#FFF7ED", color="#F97316", width=3.25];
+    amplify [label="5. Baseline, human/AI task map, gates, and gain vector", fillcolor="#FFF7ED", color="#F97316", width=3.55];
+    outputs [label="Versioned outputs\nJSON • CSV • Markdown • HTML • GraphML • graph JSON", fillcolor="#F5F3FF", color="#8B5CF6", width=3.75];
+
+    evidence_graph -> discover -> assess -> match -> amplify -> outputs;
+  }
+
+  llm [label="Optional provenance-gated LLM\nreceives permitted traces only\nvalid trace IDs required", style="rounded,dashed,filled", fillcolor="#FAF5FF", color="#A855F7", width=2.75];
+  llm -> discover [style=dashed, color="#A855F7", constraint=false];
+
+  subgraph cluster_empirical {
+    label="Optional empirical extension — retained as versioned deltas";
+    color="#EAB308";
+    style="rounded,dashed";
+    penwidth=1.1;
+    { rank=same;
+      human [label="Human calibration\nconfirm • narrow • split\nreject • defer", style="rounded,dashed,filled", fillcolor="#FEFCE8", color="#CA8A04", width=2.35];
+      outcomes [label="Outcome records\nobserved gain • realized value\ncaptured value • causal caveats", style="rounded,dashed,filled", fillcolor="#FEFCE8", color="#CA8A04", width=2.65];
+      update [label="6. Closed-loop portfolio learning\nupdates a future run", style="rounded,dashed,filled", fillcolor="#FEFCE8", color="#CA8A04", width=2.65];
+    }
+    human -> outcomes -> update [style=dashed, color="#CA8A04"];
+  }
+
+  local -> normalize;
+  openalex -> normalize;
+  github -> normalize;
+  synthetic -> normalize;
+  normalize -> dedup -> evidence_graph;
+  outputs -> human [style=dashed, color="#CA8A04"];
+}

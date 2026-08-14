@@ -1,0 +1,169 @@
+version: "0.1.0"
+concepts:
+  artificial_intelligence:
+    label: Artificial intelligence
+    group: method
+    terms: [artificial intelligence, ai system, intelligent system]
+  machine_learning:
+    label: Machine learning
+    group: method
+    terms: [machine learning, statistical learning, predictive modeling, predictive modelling]
+  deep_learning:
+    label: Deep learning
+    group: method
+    terms: [deep learning, neural network, neural networks]
+  transformer_models:
+    label: Transformer models
+    group: method
+    terms: [transformer, transformers, attention model, tabtransformer]
+  generative_ai:
+    label: Generative AI
+    group: method
+    terms: [generative ai, genai, large language model, large language models, llm, llms]
+  agentic_ai:
+    label: Agentic AI
+    group: method
+    terms: [agentic ai, ai agent, ai agents, multi-agent, multi agent, autonomous agent]
+  retrieval_augmented_generation:
+    label: Retrieval-augmented generation
+    group: method
+    terms: [retrieval augmented generation, retrieval-augmented generation, rag, vector search]
+  causal_inference:
+    label: Causal inference
+    group: method
+    terms: [causal inference, causal model, treatment effect, propensity score, instrumental variable]
+  statistical_modeling:
+    label: Statistical modeling
+    group: method
+    terms: [statistical model, statistical modeling, regression, generalized linear model, mixed effects]
+  survival_analysis:
+    label: Survival analysis
+    group: method
+    terms: [survival analysis, cox model, time-to-event, competing risks]
+  bayesian_methods:
+    label: Bayesian methods
+    group: method
+    terms: [bayesian, posterior, prior distribution, probabilistic model]
+  clinical_trials:
+    label: Clinical trials
+    group: domain
+    terms: [clinical trial, clinical trials, randomized trial, randomised trial, estimand, protocol design]
+  bioinformatics:
+    label: Bioinformatics
+    group: domain
+    terms: [bioinformatics, computational biology, biological data analysis]
+  genomics:
+    label: Genomics
+    group: domain
+    terms: [genomics, genome, whole genome sequencing, wgs, exome, wes]
+  transcriptomics:
+    label: Transcriptomics
+    group: domain
+    terms: [transcriptomics, rna-seq, rnaseq, gene expression, single-cell rna]
+  epigenomics:
+    label: Epigenomics
+    group: domain
+    terms: [epigenomics, atac-seq, chip-seq, chromatin accessibility, methylation]
+  proteomics:
+    label: Proteomics
+    group: domain
+    terms: [proteomics, protein expression, mass spectrometry]
+  metabolomics:
+    label: Metabolomics
+    group: domain
+    terms: [metabolomics, metabolite profiling]
+  multi_omics:
+    label: Multi-omics integration
+    group: domain
+    terms: [multi-omics, multiomics, omics integration, multimodal omics]
+  precision_medicine:
+    label: Precision medicine
+    group: domain
+    terms: [precision medicine, personalized medicine, biomarker, biomarkers]
+  cancer_research:
+    label: Cancer research
+    group: domain
+    terms: [cancer, oncology, tumor, tumour, neoplasm]
+  public_health:
+    label: Public health
+    group: domain
+    terms: [public health, population health, epidemiology]
+  knowledge_management:
+    label: Knowledge management
+    group: domain
+    terms: [knowledge management, knowledge asset, knowledge assets, organizational knowledge]
+  information_systems:
+    label: Information systems
+    group: domain
+    terms: [information systems, information system, decision support system, digital platform]
+  research_computing:
+    label: Research computing
+    group: execution
+    terms: [research computing, high performance computing, hpc, cloud computing, scientific computing]
+  software_engineering:
+    label: Software engineering
+    group: execution
+    terms: [software engineering, python package, api development, docker, continuous integration, ci/cd]
+  data_engineering:
+    label: Data engineering
+    group: execution
+    terms: [data engineering, data pipeline, etl, data harmonization, data harmonisation]
+  reproducible_research:
+    label: Reproducible research
+    group: execution
+    terms: [reproducible research, reproducibility, version control, workflow automation, containerization]
+  scientific_writing:
+    label: Scientific writing
+    group: execution
+    terms: [scientific writing, manuscript, journal article, peer review, literature review]
+  grant_development:
+    label: Grant development
+    group: execution
+    terms: [grant proposal, grant writing, funded grant, research grant, specific aims]
+  teaching_curriculum:
+    label: Teaching and curriculum design
+    group: execution
+    terms: [teaching, course, curriculum, syllabus, textbook, training program]
+  mentoring_leadership:
+    label: Mentoring and research leadership
+    group: relational
+    terms: [mentoring, mentor, supervision, research leadership, program director, principal investigator]
+  collaboration_network:
+    label: Collaboration network
+    group: relational
+    terms: [collaboration, collaborator, consortium, multidisciplinary, interdisciplinary]
+  consulting_translation:
+    label: Consulting and translation
+    group: execution
+    terms: [consulting, advisory, implementation, deployment, stakeholder, translation]
+  product_development:
+    label: Product development
+    group: execution
+    terms: [product development, minimum viable product, mvp, proof of concept, poc, production system]
+
+trace_type_weights:
+  publication: 0.85
+  software_repository: 0.90
+  dataset: 0.85
+  grant: 0.75
+  project: 0.65
+  protocol: 0.85
+  course: 0.80
+  talk: 0.55
+  patent: 0.90
+  employment: 0.40
+  award: 0.45
+  collaboration: 0.45
+  document: 0.55
+  outcome: 0.90
+  other: 0.35
+
+role_weights:
+  originator: 1.00
+  lead: 0.95
+  implementer: 0.90
+  supervisor: 0.80
+  advisor: 0.55
+  contributor: 0.65
+  participant: 0.40
+  unknown: 0.35

@@ -1,0 +1,61 @@
+{
+  "meta": {"count": 2, "per_page": 25},
+  "results": [
+    {
+      "id": "https://openalex.org/W111",
+      "doi": "https://doi.org/10.0000/example.1",
+      "display_name": "Agentic AI for Reproducible Bioinformatics",
+      "publication_date": "2025-05-01",
+      "type": "article",
+      "cited_by_count": 12,
+      "abstract_inverted_index": {
+        "Agentic": [0],
+        "AI": [1],
+        "supports": [2],
+        "reproducible": [3],
+        "bioinformatics": [4]
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "is_corresponding": true,
+          "author": {"id": "https://openalex.org/A123456789", "display_name": "Synthetic Public Researcher"},
+          "institutions": [{"display_name": "Example University"}]
+        },
+        {
+          "author_position": "last",
+          "is_corresponding": false,
+          "author": {"id": "https://openalex.org/A987", "display_name": "Collaborator A"},
+          "institutions": [{"display_name": "Example Institute"}]
+        }
+      ],
+      "topics": [{"display_name": "Bioinformatics"}, {"display_name": "Artificial Intelligence"}],
+      "keywords": [{"display_name": "Agentic AI"}, {"display_name": "Reproducibility"}],
+      "primary_location": {"source": {"display_name": "Example Journal"}, "license": "cc-by"},
+      "open_access": {"is_oa": true},
+      "awards": []
+    },
+    {
+      "id": "https://openalex.org/W222",
+      "doi": "https://doi.org/10.0000/example.2",
+      "display_name": "Clinical and Multi-omics Integration",
+      "publication_date": "2024-03-10",
+      "type": "article",
+      "cited_by_count": 5,
+      "abstract_inverted_index": null,
+      "authorships": [
+        {
+          "author_position": "last",
+          "is_corresponding": false,
+          "author": {"id": "https://openalex.org/A123456789", "display_name": "Synthetic Public Researcher"},
+          "institutions": [{"display_name": "Example University"}]
+        }
+      ],
+      "topics": [{"display_name": "Multi-omics"}],
+      "keywords": [{"display_name": "Genomics"}, {"display_name": "Transcriptomics"}],
+      "primary_location": {"source": {"display_name": "Example Journal"}, "license": "cc-by"},
+      "open_access": {"is_oa": true},
+      "awards": [{"funder_award_id": "R01-TEST"}]
+    }
+  ]
+}

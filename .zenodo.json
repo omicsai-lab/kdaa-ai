@@ -1,0 +1,21 @@
+{
+  "title": "KDAA-AI: Knowledge Asset Discovery, Assessment, and Amplification",
+  "description": "A provenance-aware research platform that operationalizes the KDAA theoretical framework as versioned evidence traces, falsifiable asset hypotheses, transparent assessments, opportunity-specific amplification workflows, optional calibration, and outcome learning.",
+  "creators": [
+    {
+      "name": "Li, James",
+      "affiliation": "Georgetown University"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "knowledge assets",
+    "information systems",
+    "knowledge management",
+    "generative AI",
+    "design science",
+    "provenance"
+  ],
+  "upload_type": "software",
+  "access_right": "open"
+}

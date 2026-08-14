@@ -1,0 +1,179 @@
+{
+  "$defs": {
+    "GainVector": {
+      "additionalProperties": false,
+      "properties": {
+        "time": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": -1.0,
+          "title": "Time",
+          "type": "number"
+        },
+        "quality": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": -1.0,
+          "title": "Quality",
+          "type": "number"
+        },
+        "scale": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": -1.0,
+          "title": "Scale",
+          "type": "number"
+        },
+        "accessibility": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": -1.0,
+          "title": "Accessibility",
+          "type": "number"
+        },
+        "reuse": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": -1.0,
+          "title": "Reuse",
+          "type": "number"
+        },
+        "recombination": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": -1.0,
+          "title": "Recombination",
+          "type": "number"
+        },
+        "execution_span": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": -1.0,
+          "title": "Execution Span",
+          "type": "number"
+        },
+        "learning": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": -1.0,
+          "title": "Learning",
+          "type": "number"
+        },
+        "cost": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": -1.0,
+          "title": "Cost",
+          "type": "number"
+        },
+        "risk": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": -1.0,
+          "title": "Risk",
+          "type": "number"
+        }
+      },
+      "title": "GainVector",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "opportunity_id": {
+      "title": "Opportunity Id",
+      "type": "string"
+    },
+    "baseline_description": {
+      "title": "Baseline Description",
+      "type": "string"
+    },
+    "intervention_description": {
+      "title": "Intervention Description",
+      "type": "string"
+    },
+    "observed_gain": {
+      "$ref": "#/$defs/GainVector"
+    },
+    "quality_notes": {
+      "default": "",
+      "title": "Quality Notes",
+      "type": "string"
+    },
+    "attribution_notes": {
+      "default": "",
+      "title": "Attribution Notes",
+      "type": "string"
+    },
+    "realized_value": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "boolean"
+          }
+        ]
+      },
+      "title": "Realized Value",
+      "type": "object"
+    },
+    "captured_value": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "boolean"
+          }
+        ]
+      },
+      "title": "Captured Value",
+      "type": "object"
+    },
+    "causal_caveats": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Causal Caveats",
+      "type": "array"
+    },
+    "observed_at": {
+      "format": "date-time",
+      "title": "Observed At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "run_id",
+    "opportunity_id",
+    "baseline_description",
+    "intervention_description",
+    "observed_gain"
+  ],
+  "title": "OutcomeRecord",
+  "type": "object"
+}

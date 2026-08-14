@@ -1,0 +1,7 @@
+case,traces,assets,mean_credibility,mean_attribution_confidence,signature_jaccard_vs_base,provenance_complete,auto_confirmed_assets
+base,21,32,0.7605968750000001,0.957646875,1.0,True,0
+duplicate,24,32,0.7605968750000001,0.957646875,1.0,True,0
+stale,21,32,0.71674375,0.957646875,1.0,True,0
+unknown_role,21,32,0.62519375,0.35,1.0,True,0
+dropped_trace,20,28,0.7647535714285715,0.9599178571428572,0.7647058823529411,True,0
+irrelevant_noise,26,32,0.7605968750000001,0.957646875,1.0,True,0

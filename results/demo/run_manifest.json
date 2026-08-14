@@ -1,0 +1,15 @@
+{
+  "run_id": "run-0b6bab618f6c",
+  "created_at": "2026-08-12T03:07:18.065116Z",
+  "kdaa_version": "0.1.0",
+  "config_digest": "adfb9699f93377dd",
+  "input_digest": "2ba8e08a0efeabe8",
+  "random_seed": 42,
+  "mode": "deterministic",
+  "llm_model": null,
+  "notes": [
+    "Trace-to-asset separation enforced.",
+    "No asset is confirmed without a calibration record.",
+    "AI amplifiability is evaluated relative to a stated opportunity and baseline."
+  ]
+}

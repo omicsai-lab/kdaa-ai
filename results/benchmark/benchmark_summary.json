@@ -1,0 +1,23 @@
+{
+  "n_units": 50,
+  "seed": 42,
+  "baseline_concept_precision": 0.8171428571428572,
+  "baseline_concept_recall": 0.5669380929527988,
+  "baseline_concept_f1": 0.6610129948333475,
+  "kdaa_concept_precision": 0.8008361638361639,
+  "kdaa_concept_recall": 0.6732881252734194,
+  "kdaa_concept_f1": 0.7257098779476004,
+  "baseline_provenance_completeness": 0.0,
+  "kdaa_provenance_completeness": 1.0,
+  "baseline_unsupported_claim_rate": 1.0,
+  "kdaa_unsupported_claim_rate": 0.0,
+  "kdaa_confirmed_without_human_rate": 0.0,
+  "kdaa_determinism_rate": 1,
+  "mean_runtime_seconds": 0.013773117660002753,
+  "notes": [
+    "Synthetic ground truth is generated from the same declared ontology but not exposed to the pipeline at run time.",
+    "Concept recovery is an engineering smoke test, not evidence that real latent assets are valid.",
+    "The flat-profile baseline intentionally omits claim-level provenance and epistemic state.",
+    "Human calibration and realized/captured value require later empirical studies."
+  ]
+}

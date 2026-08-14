@@ -1,0 +1,944 @@
+{
+  "unit": {
+    "id": "synthetic:maya-chen",
+    "name": "Dr. Maya Chen",
+    "unit_type": "researcher",
+    "description": "Synthetic computational biomedical researcher used to demonstrate KDAA-AI. No person or career record is represented.",
+    "institution": "Synthetic Research Institute",
+    "homepage": "https://example.org/synthetic/maya-chen",
+    "identifiers": {},
+    "members": [],
+    "boundary_notes": "All evidence and outcomes are synthetic and may be freely redistributed.",
+    "governance_notes": "Demo data only; do not interpret scores as claims about a real person.",
+    "is_synthetic": true
+  },
+  "goals": [
+    {
+      "id": "goal-independent-program",
+      "label": "Build an independent AI research program",
+      "description": "Create theory, software, and empirical work that form a coherent research trajectory.",
+      "keywords": [
+        "AI",
+        "knowledge assets",
+        "research program",
+        "software",
+        "paper"
+      ],
+      "weight": 1.4,
+      "horizon_months": 24
+    },
+    {
+      "id": "goal-reusable-assets",
+      "label": "Maximize reusable scholarly assets",
+      "description": "Prefer repositories, living documents, structured knowledge bases, deployable products, and public content.",
+      "keywords": [
+        "repository",
+        "reproducibility",
+        "course",
+        "software",
+        "knowledge base"
+      ],
+      "weight": 1.2,
+      "horizon_months": 12
+    },
+    {
+      "id": "goal-scientific-impact",
+      "label": "Increase scientific and educational impact",
+      "description": "Translate methods into reliable tools, training, and publishable evidence.",
+      "keywords": [
+        "scientific",
+        "education",
+        "clinical",
+        "bioinformatics"
+      ],
+      "weight": 1.0,
+      "horizon_months": 36
+    }
+  ],
+  "traces": [
+    {
+      "id": "trace-syn-maya-chen-001",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "publication",
+      "title": "An agentic framework for reproducible transcriptomic analysis",
+      "description": "A peer-reviewed methods paper on multi-agent planning, evidence retrieval, and RNA-seq interpretation.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/1",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055653Z",
+      "event_date": "2021-12-01",
+      "authors_or_contributors": [
+        "Alex Rivera"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "agentic AI",
+        "RNA-seq",
+        "reproducibility",
+        "bioinformatics"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 3
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "agentic_omics_workflows"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-002",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "software_repository",
+      "title": "omics-agent-workbench",
+      "description": "Dockerized Python application with planner, executor, evidence review, and report generation modules.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/2",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055704Z",
+      "event_date": "2019-01-01",
+      "authors_or_contributors": [
+        "Alex Rivera",
+        "Alex Rivera",
+        "Taylor Kim"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "Python",
+        "Docker",
+        "LLM",
+        "multi-agent",
+        "bioinformatics"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": false,
+        "reuse_count": 3
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "agentic_omics_workflows"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-003",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "project",
+      "title": "Reproducible AI-assisted secondary analysis pilot",
+      "description": "Integrated public gene-expression data, pathway analysis, and evidence-grounded synthesis into a repeatable workflow.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/3",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055720Z",
+      "event_date": "2019-04-01",
+      "authors_or_contributors": [
+        "Alex Rivera",
+        "Jordan Patel",
+        "Taylor Kim"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "gene expression",
+        "workflow automation",
+        "agentic AI"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 4
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "agentic_omics_workflows"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-004",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "publication",
+      "title": "Causal estimands for heterogeneous treatment effects in clinical studies",
+      "description": "Methodological work linking estimands, treatment-effect heterogeneity, and survival outcomes.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/4",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055738Z",
+      "event_date": "2020-06-01",
+      "authors_or_contributors": [
+        "Taylor Kim"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "causal inference",
+        "clinical trials",
+        "survival analysis",
+        "estimand"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 3
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "causal_clinical_methods"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-005",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "course",
+      "title": "AI and causal reasoning for clinical trials",
+      "description": "Graduate module covering estimands, audit trails, simulation, and human oversight.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/5",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055750Z",
+      "event_date": "2021-07-01",
+      "authors_or_contributors": [
+        "Alex Rivera"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "clinical trial",
+        "causal inference",
+        "teaching"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": false,
+        "reuse_count": 5
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "causal_clinical_methods"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-006",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "grant",
+      "title": "Trustworthy causal AI for secondary clinical-data analysis",
+      "description": "Proposal integrating causal models, validation, and governed AI assistance.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/6",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055761Z",
+      "event_date": "2022-09-01",
+      "authors_or_contributors": [
+        "Alex Rivera",
+        "Taylor Kim"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "causal model",
+        "clinical data",
+        "AI system"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 6
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "causal_clinical_methods"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-007",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "publication",
+      "title": "Integrating clinical and multi-omics data with attention-based models",
+      "description": "Repeated cross-validation and external validation of multimodal prediction models.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/7",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055771Z",
+      "event_date": "2021-12-01",
+      "authors_or_contributors": [
+        "Morgan Lee",
+        "Morgan Lee",
+        "Jordan Patel"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "multi-omics",
+        "transformer",
+        "precision medicine",
+        "clinical data"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": false,
+        "reuse_count": 3
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "multiomics_integration"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-008",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "dataset",
+      "title": "Harmonized multi-cohort omics benchmark",
+      "description": "Versioned public benchmark with clinical, genomic, and transcriptomic features.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/8",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055781Z",
+      "event_date": "2022-02-01",
+      "authors_or_contributors": [
+        "Jordan Patel"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "genomics",
+        "transcriptomics",
+        "data harmonization"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 7
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "multiomics_integration"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-009",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "protocol",
+      "title": "Multimodal validation and leakage-control protocol",
+      "description": "Reusable protocol for grouped splitting, tuning, and repeated evaluation.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/9",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055790Z",
+      "event_date": "2023-06-01",
+      "authors_or_contributors": [
+        "Jordan Patel",
+        "Morgan Lee"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "reproducibility",
+        "cross-validation",
+        "multiomics"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 4
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "multiomics_integration"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-010",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "employment",
+      "title": "Director of research computing support",
+      "description": "Led scientific-computing support, cloud deployment, and reproducible workflow design for research groups.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/10",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055800Z",
+      "event_date": "2024-03-01",
+      "authors_or_contributors": [
+        "Alex Rivera",
+        "Jordan Patel",
+        "Jordan Patel"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "research computing",
+        "cloud computing",
+        "scientific computing"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 4
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "research_computing_support"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-011",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "software_repository",
+      "title": "research-workflow-template",
+      "description": "Reusable Docker, CI, data-path, and audit-trail template for scientific repositories.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/11",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055811Z",
+      "event_date": "2024-04-01",
+      "authors_or_contributors": [
+        "Jordan Patel",
+        "Morgan Lee",
+        "Alex Rivera"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "Docker",
+        "continuous integration",
+        "data pipeline",
+        "reproducibility"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 5
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "research_computing_support"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-012",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "project",
+      "title": "Laboratory workflow modernization program",
+      "description": "Converted fragmented analyses into versioned, containerized, and testable pipelines.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/12",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055821Z",
+      "event_date": "2023-10-01",
+      "authors_or_contributors": [
+        "Alex Rivera",
+        "Jordan Patel"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "software engineering",
+        "workflow automation",
+        "data engineering"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 5
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "research_computing_support"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-013",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "course",
+      "title": "Statistical programming with AI assistance",
+      "description": "Graduate course combining R, Python, software practice, and governed use of generative AI.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/13",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055831Z",
+      "event_date": "2023-03-01",
+      "authors_or_contributors": [
+        "Taylor Kim",
+        "Taylor Kim",
+        "Taylor Kim"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "teaching",
+        "curriculum",
+        "generative AI",
+        "statistical programming"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 3
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "ai_curriculum_design"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-014",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "document",
+      "title": "Reusable AI-assisted programming textbook",
+      "description": "A living document with exercises, code, and teaching notes for repeated course delivery.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/14",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055840Z",
+      "event_date": "2025-06-01",
+      "authors_or_contributors": [
+        "Morgan Lee",
+        "Taylor Kim",
+        "Taylor Kim"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "textbook",
+        "course",
+        "R",
+        "Python",
+        "AI"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 2
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "ai_curriculum_design"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-015",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "talk",
+      "title": "Teaching software and data science in the generative-AI era",
+      "description": "Invited presentation on assessment, verification, and curriculum redesign.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/15",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055852Z",
+      "event_date": "2025-02-01",
+      "authors_or_contributors": [
+        "Alex Rivera",
+        "Alex Rivera"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "teaching",
+        "AI",
+        "scientific writing"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 2
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "ai_curriculum_design"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-016",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "document",
+      "title": "AI-amplified knowledge assets: conceptual framework",
+      "description": "Theory manuscript defining trace, asset hypothesis, credibility, opportunity fit, amplification, and value capture.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/16",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055861Z",
+      "event_date": "2026-07-01",
+      "authors_or_contributors": [
+        "Alex Rivera",
+        "Taylor Kim"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "knowledge assets",
+        "information systems",
+        "generative AI"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 7
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "knowledge_asset_systems"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-017",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "software_repository",
+      "title": "kdaa-ai prototype",
+      "description": "Provenance-aware application for discovery, assessment, opportunity matching, and portfolio export.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/17",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055870Z",
+      "event_date": "2026-11-01",
+      "authors_or_contributors": [
+        "Alex Rivera",
+        "Alex Rivera"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "knowledge management",
+        "MVP",
+        "AI system",
+        "evidence graph"
+      ],
+      "topics": [],
+      "contribution_role": "originator",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 4
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "knowledge_asset_systems"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-018",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "talk",
+      "title": "From accumulated knowledge to deployable knowledge assets",
+      "description": "Research seminar on AI, knowledge work, and value realization.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/18",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055878Z",
+      "event_date": "2026-07-01",
+      "authors_or_contributors": [
+        "Alex Rivera",
+        "Morgan Lee"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "knowledge asset",
+        "AI",
+        "information systems"
+      ],
+      "topics": [],
+      "contribution_role": "lead",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 0
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": "knowledge_asset_systems"
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-019",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "talk",
+      "title": "General introduction to data science",
+      "description": "A broad introductory talk with limited evidence of a distinct reusable capability.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/19",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055888Z",
+      "event_date": "2024-11-01",
+      "authors_or_contributors": [
+        "Morgan Lee",
+        "Jordan Patel",
+        "Alex Rivera"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "data science"
+      ],
+      "topics": [],
+      "contribution_role": "participant",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 8
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": null
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-020",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "collaboration",
+      "title": "Participant in an interdisciplinary working group",
+      "description": "Membership record without documented deliverables or clear contribution attribution.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/20",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055899Z",
+      "event_date": "2024-03-01",
+      "authors_or_contributors": [
+        "Jordan Patel",
+        "Jordan Patel",
+        "Morgan Lee"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "collaboration",
+        "interdisciplinary"
+      ],
+      "topics": [],
+      "contribution_role": "participant",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": true,
+        "reuse_count": 8
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": null
+      }
+    },
+    {
+      "id": "trace-syn-maya-chen-021",
+      "unit_id": "synthetic:maya-chen",
+      "trace_type": "award",
+      "title": "Travel support award",
+      "description": "Recognition of participation; limited direct evidence for a bounded knowledge asset.",
+      "abstract": "",
+      "content": "",
+      "source_kind": "synthetic",
+      "source_name": "KDAA synthetic generator",
+      "source_uri": "synthetic://synthetic:maya-chen/21",
+      "source_record_id": null,
+      "observed_at": "2026-08-12T03:10:43.055908Z",
+      "event_date": "2024-08-01",
+      "authors_or_contributors": [
+        "Morgan Lee"
+      ],
+      "affiliations": [
+        "Synthetic Research Institute"
+      ],
+      "keywords": [
+        "award"
+      ],
+      "topics": [],
+      "contribution_role": "participant",
+      "outcome_signals": {
+        "synthetic": true,
+        "completed": false,
+        "reuse_count": 5
+      },
+      "related_trace_ids": [],
+      "sensitive": false,
+      "license": "CC0-1.0",
+      "raw": {
+        "synthetic_asset_key": null
+      }
+    }
+  ],
+  "metadata": {
+    "synthetic": true,
+    "ground_truth_asset_keys": [
+      "agentic_omics_workflows",
+      "causal_clinical_methods",
+      "multiomics_integration",
+      "research_computing_support",
+      "ai_curriculum_design",
+      "knowledge_asset_systems"
+    ],
+    "ground_truth_concepts": [
+      "agentic_ai",
+      "bioinformatics",
+      "causal_inference",
+      "clinical_trials",
+      "data_engineering",
+      "generative_ai",
+      "genomics",
+      "information_systems",
+      "knowledge_management",
+      "machine_learning",
+      "multi_omics",
+      "precision_medicine",
+      "product_development",
+      "reproducible_research",
+      "research_computing",
+      "scientific_writing",
+      "software_engineering",
+      "statistical_modeling",
+      "survival_analysis",
+      "teaching_curriculum",
+      "transcriptomics"
+    ],
+    "generator_version": "0.1.0"
+  }
+}

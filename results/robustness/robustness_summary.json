@@ -1,0 +1,22 @@
+{
+  "base_asset_count": 32,
+  "base_mean_credibility": 0.7605968750000001,
+  "duplicate_signature_jaccard": 1.0,
+  "duplicate_asset_count_delta": 0,
+  "duplicate_mean_credibility_delta": 0.0,
+  "stale_signature_jaccard": 1.0,
+  "stale_mean_credibility_delta": -0.04385312500000005,
+  "unknown_role_signature_jaccard": 1.0,
+  "unknown_role_attribution_delta": -0.607646875,
+  "dropped_trace_signature_jaccard": 0.7647058823529411,
+  "irrelevant_noise_signature_jaccard": 1.0,
+  "all_cases_provenance_complete": true,
+  "all_cases_zero_auto_confirmation": true,
+  "notes": [
+    "Perturbations are synthetic engineering checks, not empirical validity evidence.",
+    "Exact/source-record-equivalent duplicates are retained in provenance but excluded from analytical support counts.",
+    "Stale dates should reduce credibility through the declared recency component without changing the ontology.",
+    "Unknown contribution roles should reduce attribution confidence without automatically deleting evidence.",
+    "Irrelevant administrative noise should not materially alter the asset signature."
+  ]
+}
