@@ -21,7 +21,6 @@ from kdaa.models import (
 )
 from kdaa.ontology import Ontology
 
-
 CODIFIED_TRACE_TYPES = {
     TraceType.PUBLICATION,
     TraceType.SOFTWARE,

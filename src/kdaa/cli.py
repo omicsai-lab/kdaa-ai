@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Optional
 
 import typer
 from rich.console import Console
@@ -62,7 +61,7 @@ def _print_run_summary(run) -> None:
 @app.command()
 def demo(
     output: Path = typer.Option(Path("results/demo"), "--output", "-o"),
-    config: Optional[Path] = typer.Option(None, "--config", "-c"),
+    config: Path | None = typer.Option(None, "--config", "-c"),
     scenario: str = typer.Option(
         "researcher",
         "--scenario",
@@ -86,7 +85,7 @@ def demo(
 def analyze(
     input_path: Path = typer.Argument(..., exists=True, readable=True),
     output: Path = typer.Option(Path("results/run"), "--output", "-o"),
-    config: Optional[Path] = typer.Option(None, "--config", "-c"),
+    config: Path | None = typer.Option(None, "--config", "-c"),
 ) -> None:
     """Analyze a UnitBundle JSON/YAML file."""
 
@@ -102,7 +101,7 @@ def ingest_cv(
     document: Path = typer.Argument(..., exists=True, readable=True),
     unit_id: str = typer.Option(..., "--unit-id", help="Stable focal-unit identifier"),
     unit_name: str = typer.Option(..., "--unit-name", help="Focal-unit display name"),
-    institution: Optional[str] = typer.Option(None, "--institution"),
+    institution: str | None = typer.Option(None, "--institution"),
     unit_type: UnitType = typer.Option(UnitType.RESEARCHER, "--unit-type"),
     output: Path = typer.Option(Path("data/cv_bundle.json"), "--output", "-o"),
 ) -> None:
@@ -161,7 +160,7 @@ def benchmark(
     n_units: int = typer.Option(50, "--n-units", min=5, max=500),
     seed: int = typer.Option(42),
     output: Path = typer.Option(Path("results/benchmark"), "--output", "-o"),
-    config: Optional[Path] = typer.Option(None, "--config", "-c"),
+    config: Path | None = typer.Option(None, "--config", "-c"),
 ) -> None:
     """Run the controlled synthetic engineering benchmark."""
 
@@ -178,7 +177,7 @@ def benchmark(
 @app.command("stress-test")
 def stress_test(
     output: Path = typer.Option(Path("results/robustness"), "--output", "-o"),
-    config: Optional[Path] = typer.Option(None, "--config", "-c"),
+    config: Path | None = typer.Option(None, "--config", "-c"),
 ) -> None:
     """Run deterministic duplicate, staleness, attribution, drop, and noise perturbations."""
 
@@ -207,7 +206,7 @@ def merge(
 
 
 @app.command()
-def schema(output: Optional[Path] = typer.Option(None, "--output", "-o")) -> None:
+def schema(output: Path | None = typer.Option(None, "--output", "-o")) -> None:
     """Print or save the JSON schema for an input UnitBundle."""
 
     from kdaa.models import UnitBundle

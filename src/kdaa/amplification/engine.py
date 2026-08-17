@@ -92,9 +92,7 @@ def _asset_set_allowed(template: OpportunityTemplate, assets: list[AssetRecord])
         and not namespaces & {"artifact", "execution", "pair"}
     ):
         return False
-    if len(assets) == 2 and len({asset.id for asset in assets}) < 2:
-        return False
-    return True
+    return not (len(assets) == 2 and len({asset.id for asset in assets}) < 2)
 
 
 def _aggregate_asset_score(assets: list[AssetRecord], field: str, default: float = 0.4) -> float:

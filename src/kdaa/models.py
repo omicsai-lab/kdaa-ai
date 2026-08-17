@@ -244,7 +244,7 @@ class AssetRecord(StrictModel):
     notes: list[str] = Field(default_factory=list)
 
     @model_validator(mode="after")
-    def hypothesis_requires_evidence(self) -> "AssetRecord":
+    def hypothesis_requires_evidence(self) -> AssetRecord:
         if (
             self.epistemic_state not in {AssetState.REJECTED, AssetState.RETIRED}
             and not any(link.role == EvidenceRole.SUPPORTING for link in self.evidence_links)
@@ -340,7 +340,7 @@ class UnitBundle(StrictModel):
     metadata: dict[str, Any] = Field(default_factory=dict)
 
     @model_validator(mode="after")
-    def all_traces_belong_to_unit(self) -> "UnitBundle":
+    def all_traces_belong_to_unit(self) -> UnitBundle:
         wrong = [trace.id for trace in self.traces if trace.unit_id != self.unit.id]
         if wrong:
             raise ValueError(f"Trace unit_id mismatch for: {wrong}")

@@ -71,10 +71,10 @@ def _parse_json_object(text: str) -> dict[str, Any]:
             stripped = stripped[4:].lstrip()
     try:
         value = json.loads(stripped)
-    except json.JSONDecodeError:
+    except json.JSONDecodeError as exc:
         start, end = stripped.find("{"), stripped.rfind("}")
         if start < 0 or end <= start:
-            raise ValueError("Provider response did not contain a JSON object")
+            raise ValueError("Provider response did not contain a JSON object") from exc
         value = json.loads(stripped[start : end + 1])
     if not isinstance(value, dict):
         raise ValueError("Provider JSON response must be an object")

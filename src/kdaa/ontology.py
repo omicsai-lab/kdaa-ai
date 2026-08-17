@@ -50,19 +50,19 @@ class Ontology:
             self._patterns[key] = patterns
 
     @classmethod
-    def default(cls) -> "Ontology":
+    def default(cls) -> Ontology:
         resource = files("kdaa.resources").joinpath("ontology.yaml")
         with resource.open(encoding="utf-8") as handle:
             payload = yaml.safe_load(handle)
         return cls.from_dict(payload)
 
     @classmethod
-    def from_path(cls, path: str | Path) -> "Ontology":
+    def from_path(cls, path: str | Path) -> Ontology:
         with Path(path).open(encoding="utf-8") as handle:
             return cls.from_dict(yaml.safe_load(handle))
 
     @classmethod
-    def from_dict(cls, payload: dict) -> "Ontology":
+    def from_dict(cls, payload: dict) -> Ontology:
         concepts = {
             key: ConceptDefinition(
                 key=key,

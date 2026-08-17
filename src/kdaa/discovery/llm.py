@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from kdaa.models import (

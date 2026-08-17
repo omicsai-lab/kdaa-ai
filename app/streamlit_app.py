@@ -37,7 +37,6 @@ from kdaa.pipeline import KDAAPipeline
 from kdaa.providers.openai_compatible import OpenAICompatibleProvider
 from kdaa.report import render_html, render_markdown, write_run_outputs
 
-
 st.set_page_config(
     page_title="KDAA-AI",
     page_icon="🧭",

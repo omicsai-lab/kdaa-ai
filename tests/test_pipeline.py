@@ -28,6 +28,6 @@ def test_pipeline_is_deterministic_except_run_id() -> None:
     pipeline = KDAAPipeline(KDAAConfig())
     first, _ = pipeline.analyze(bundle)
     second, _ = pipeline.analyze(bundle)
-    first_assets = [(a.label, a.bounded_claim, [l.trace_id for l in a.evidence_links]) for a in first.assets]
-    second_assets = [(a.label, a.bounded_claim, [l.trace_id for l in a.evidence_links]) for a in second.assets]
+    first_assets = [(a.label, a.bounded_claim, [link.trace_id for link in a.evidence_links]) for a in first.assets]
+    second_assets = [(a.label, a.bounded_claim, [link.trace_id for link in a.evidence_links]) for a in second.assets]
     assert first_assets == second_assets
