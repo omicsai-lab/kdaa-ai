@@ -348,6 +348,8 @@ See [Architecture](docs/architecture.md) and [Scoring reference](docs/scoring_re
 
 The boundaries are developed in [Paper B scope](docs/paper_b_scope.md), [Paper A integration](docs/paper_a_integration.md), and [Paper C human loop](docs/paper_c_human_loop.md).
 
+Paper B's scientific claims and evaluation protocol are frozen for a **Knowledge-Based Systems (KBS)** first submission, with **Expert Systems with Applications (ESWA)** as fallback. The authoritative, non-paraphrased specification is [Paper B KBS claims and evaluation freeze](docs/paper_b_kbs_claims_evaluation_freeze.md) plus [protocol clarifications v1.0.1](docs/paper_b_protocol_clarifications_v1.0.1.md), audited against [repository baseline `main@80df46c`](docs/paper_b_repo_baseline.md). See also the [publication firewall](docs/publication_boundaries.md), [reviewer attack map](docs/paper_b_reviewer_attack_map.md), [protocol deviations log](docs/protocol_deviations.md), and the machine-readable [experiment lock](configs/paper_b/experiment_lock.yaml). These documents govern later Paper B work packages; v0.1 runtime behavior, tests, and legacy results are unchanged by them.
+
 ## Reproducibility
 
 ```bash

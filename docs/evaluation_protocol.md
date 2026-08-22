@@ -103,7 +103,11 @@ The suite starts from the fully synthetic researcher case and applies one contro
 
 The exact-duplicate safeguard is conservative: it uses source-record identifiers or normalized source/trace identity. It does not resolve semantic near-duplicates, derivative records, or dependence among nominally different sources.
 
-## Required Paper B extensions
+## Frozen Paper B (KBS) evaluation protocol
+
+The extensions sketched below are now superseded by a frozen, versioned specification: [Paper B KBS claims and evaluation freeze](paper_b_kbs_claims_evaluation_freeze.md) (Part II — Step 2), read together with [protocol clarifications v1.0.1](paper_b_protocol_clarifications_v1.0.1.md) and the machine-readable [experiment lock](../configs/paper_b/experiment_lock.yaml). That document fixes case counts, comparators, primary endpoints, ablations, perturbations, and statistical analysis; it is authoritative over the informal list in this section. The v0.1 benchmark and perturbation suite above remain the legacy smoke/regression tests and are unchanged.
+
+## Required Paper B extensions (superseded by the frozen protocol above)
 
 A publishable artifact paper should go beyond these smoke tests:
 

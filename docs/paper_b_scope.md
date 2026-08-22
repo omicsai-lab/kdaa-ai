@@ -108,6 +108,8 @@ These additions should not turn human participation into the critical path.
 
 ## Journal positioning
 
+> **Frozen as of the KBS claims and evaluation freeze:** first-submission target is **Knowledge-Based Systems (KBS)**; fallback is **Expert Systems with Applications (ESWA)**. See [Paper B KBS claims and evaluation freeze](paper_b_kbs_claims_evaluation_freeze.md), [protocol clarifications v1.0.1](paper_b_protocol_clarifications_v1.0.1.md), and [repository baseline](paper_b_repo_baseline.md). The candidate-journal discussion below predates that freeze and is retained as background context, not as the current decision.
+
 ### Expert Systems with Applications
 
 Best fit when the paper emphasizes intelligent-system architecture, implementation, baselines, robustness, and applied knowledge-management use.

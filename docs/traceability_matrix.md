@@ -2,6 +2,8 @@
 
 This matrix links the theory manuscript, software objects, implementation modules, tests, exports, and remaining evidence gaps.
 
+Paper B's evaluation endpoints, comparators, ablations, and case counts (columns below marked "remaining gap") are being closed against the frozen [Paper B KBS claims and evaluation freeze](paper_b_kbs_claims_evaluation_freeze.md) and its machine-readable [experiment lock](../configs/paper_b/experiment_lock.yaml), tracked work package by work package starting at [repository baseline `main@80df46c`](paper_b_repo_baseline.md).
+
 | Theory construct / requirement | Domain object | Main module(s) | Test or artifact | Remaining gap |
 |---|---|---|---|---|
 | focal unit | `FocalUnit` | `models.py`, ingestion | synthetic researcher/lab/team tests | real boundary validation |

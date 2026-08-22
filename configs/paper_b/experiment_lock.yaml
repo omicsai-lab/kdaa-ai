@@ -1,0 +1,208 @@
+document_id: KDAA-PB-KBS-EXP-001
+version: "1.0"
+status: frozen_for_implementation
+freeze_date: "2026-08-22"
+target_journal: Knowledge-Based Systems
+fallback_journal: Expert Systems with Applications
+
+research_questions:
+  RQ1: computational_operationalizability_and_invariants
+  RQ2: comparative_knowledge_inference
+  RQ3: mechanism_necessity_robustness_and_cost
+
+data:
+  development:
+    n_min: 60
+    reported_as_final: false
+    disjoint_from_final: true
+  final_synthetic:
+    total_n: 240
+    core_n: 180
+    challenge_n: 60
+    core_factorial:
+      unit_type: [individual_researcher, team, laboratory]
+      evidence_density: [sparse, dense]
+      domain_breadth: [single_domain, interdisciplinary]
+      attribution_regime: [clear_individual, shared_collective, unknown_ambiguous]
+      replicates_per_cell: 5
+    challenge_categories:
+      - ontology_shift_and_unseen_synonyms
+      - interdisciplinary_composite_assets
+      - trace_as_asset_and_prestige_decoys
+      - semantic_duplicates_and_source_dependence
+      - stale_current_conflict_and_contradiction
+      - collaborator_heavy_and_unknown_roles
+      - identity_collision_and_resolution_error
+      - sparse_and_missing_support
+      - irrelevant_noise_and_sensitive_traces
+      - opportunity_context_reversal_and_unsafe_delegation
+  llm_subset:
+    n: 60
+    core_n: 30
+    challenge_n: 30
+    intended_repeats: 3
+  ablation_subset:
+    n: 48
+    core_n: 24
+    challenge_n: 24
+    intended_repeats_when_stochastic: 3
+  resource_matched_subset:
+    n: 30
+    intended_repeats: 3
+  model_prompt_robustness_subset:
+    n_min: 24
+  public_cases:
+    independent_n: 12
+    approximate_individual_n: 8
+    approximate_collective_n: 4
+    minimum_domains: 3
+    author_controlled_case:
+      allowed: true
+      included_in_aggregate: false
+
+comparators:
+  C0_L:
+    name: legacy_flat_lexical_profile
+    role: supplementary_continuity
+  C0_S:
+    name: strong_flat_semantic_profile
+    role: primary_deterministic_baseline
+    max_asset_candidates: 10
+    opportunity_candidates: 10
+    tuning_data: development_only
+  C1:
+    name: generic_single_shot_llm
+    role: primary_llm_baseline
+    kdaa_design_knowledge: false
+    evidence_ids_required: false
+  C2:
+    name: generic_evidence_id_rag_llm
+    role: primary_rag_baseline
+    kdaa_design_knowledge: false
+    evidence_ids_required: true
+  C3:
+    name: kdaa_deterministic
+    role: deterministic_anchor
+  C4:
+    name: kdaa_hybrid_full
+    role: full_system
+  C4_R:
+    name: kdaa_resource_matched
+    role: resource_sensitivity
+
+primary_contrasts:
+  - [C3, C0_S]
+  - [C4, C1]
+  - [C4, C2]
+
+secondary_contrasts:
+  - [C2, C1]
+  - [C4, C3]
+  - [C4_R, C2]
+  - [C0_S, C0_L]
+
+primary_endpoints:
+  E1:
+    name: macro_asset_concept_f1
+    direction: higher_is_better
+  E2:
+    name: semantic_unsupported_claim_rate
+    direction: lower_is_better
+  E3:
+    name: false_individualization_rate
+    direction: lower_is_better
+  E4:
+    name: opportunity_ndcg_at_5
+    direction: higher_is_better
+
+hard_invariants:
+  provenance_completeness_after_validation: 1.0
+  invalid_trace_reference_rate_after_validation: 0.0
+  automatic_confirmation_without_calibration: 0.0
+  illegal_state_transition_acceptance_rate: 0.0
+  sensitive_trace_remote_transmission_default: 0.0
+  deterministic_exact_reproducibility: 1.0
+  opportunities_with_asset_reference: 1.0
+  public_report_warning_completeness: 1.0
+
+main_ablations:
+  A1: no_provenance_gate
+  A2: no_duplicate_or_dependence_control
+  A3: no_attribution_or_dependency_adjustment
+  A4: unit_level_profile
+  A6: no_opportunity_specific_matching
+  A7: no_human_ai_tasks_or_verification_gates
+
+supplementary_ablations:
+  A5: flat_assessment
+  A8: unconstrained_recombination
+  A9:
+    name: collapsed_epistemic_states
+    governance_stress_only: true
+    normal_execution_mode: false
+
+perturbation_families:
+  - redundancy_and_dependence
+  - recency_and_missingness
+  - attribution_and_collectivity
+  - contradiction
+  - identity
+  - noise_and_sensitivity
+  - ontology_shift
+  - opportunity_context
+  - model_and_prompt
+
+statistics:
+  unit_of_analysis: focal_unit
+  bootstrap_resamples: 10000
+  bootstrap_type: paired_case_level
+  llm_case_summary: mean_of_all_intended_runs
+  best_of_n_selection_allowed: false
+  primary_test_adjustment: holm
+  secondary_test_adjustment: benjamini_hochberg
+  practical_effect_reference:
+    f1_absolute: 0.05
+    ndcg_at_5_absolute: 0.05
+    unsupported_claim_rate_absolute: -0.10
+    false_individualization_rate_absolute: -0.10
+
+failure_policy:
+  max_automatic_retries: 2
+  preserve_all_attempts: true
+  f1_failed_run_value: 0.0
+  ndcg_failed_run_value: 0.0
+  rate_endpoint_worst_case_sensitivity: true
+  successful_run_only_primary_analysis: false
+
+fairness:
+  same_model_snapshot_for_C1_C2_C4_C4R: true
+  same_semantic_evidence_content: true
+  same_opportunity_catalog: true
+  max_asset_candidates: 10
+  max_ranked_opportunities: 10
+  fixed_case_input_order: true
+  output_adapter_may_add_content: false
+  model_shopping_on_final_results: false
+  report_calls_tokens_latency_cost: true
+
+leakage_control:
+  truth_outside_model_visible_bundle: true
+  truth_hash_before_final_runs: true
+  inference_before_scoring_access: true
+  final_case_replacement_allowed: false
+  final_threshold_tuning_allowed: false
+  prompt_truth_token_scan: true
+
+public_case_interpretation:
+  proves_asset_truth: false
+  proves_human_usefulness: false
+  held_out_anchor_is_complete_ground_truth: false
+  cross_person_ranking_allowed: false
+  high_stakes_use_allowed: false
+
+reproducibility:
+  top_level_command: make paper-b-eval
+  programmatic_tables_and_figures: true
+  raw_parsed_validated_outputs_retained: true
+  clean_environment_nonpaid_reproduction: true
+  protocol_deviations_file_required: true
