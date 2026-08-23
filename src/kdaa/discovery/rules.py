@@ -189,15 +189,27 @@ def discover_asset_hypotheses(
             concept_keys = features[trace.id].concept_keys
             asset_kind = artifact_types[trace.trace_type]
             label = f"{asset_kind}: {trace.title}"
+            artifact_kind_text = trace.trace_type.value.replace("_", " ")
+            if trace.contribution_role.value == "unknown":
+                # No explicit independent contribution evidence: do not claim control or
+                # material contribution (e.g. GitHub repository ownership alone does not
+                # establish authorship -- see kdaa.ingestion.github).
+                claim = (
+                    f"The evidence documents a reusable {artifact_kind_text} publicly "
+                    f"associated with the focal unit, represented by '{trace.title}'; "
+                    "independent contribution has not been established."
+                )
+            else:
+                claim = (
+                    f"The focal unit appears to control or materially contribute to a reusable "
+                    f"{artifact_kind_text} represented by '{trace.title}'."
+                )
             assets.append(
                 _build_asset(
                     bundle=bundle,
                     namespace="artifact",
                     label=label,
-                    claim=(
-                        f"The focal unit appears to control or materially contribute to a reusable "
-                        f"{trace.trace_type.value.replace('_', ' ')} represented by '{trace.title}'."
-                    ),
+                    claim=claim,
                     enables=[
                         "reuse or adaptation of the documented artifact",
                         "future externalization into one or more output containers",

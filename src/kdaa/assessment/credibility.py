@@ -124,15 +124,25 @@ def assess_asset_records(
             ontology.role_weights.get(trace.contribution_role.value, 0.35) for trace in linked
         ]
         attribution_value = mean(role_values) if role_values else 0.25
+        role_based_uncertainty = (
+            0.15 if all(trace.contribution_role.value != "unknown" for trace in linked) else 0.42
+        )
+        unresolved_ownership = asset.ownership_state == OwnershipState.UNRESOLVED
+        attribution_uncertainty = max(
+            role_based_uncertainty,
+            0.42 if unresolved_ownership else 0.0,
+        )
         attribution_confidence = _dimension(
             attribution_value,
-            "contribution_role_weight_average_v0.1",
+            "contribution_role_weight_average_with_ownership_uncertainty_v0.2",
             (
                 "Average of explicit contribution-role weights across supporting traces. "
                 "Contribution role is trace-level evidence about how a trace was produced; "
-                "it is not ownership and does not by itself establish sole ownership."
+                "it is not ownership and does not by itself establish sole ownership. "
+                "Unresolved typed ownership widens uncertainty to at least 0.42 regardless "
+                "of role weights, since no ownership evidence has been resolved."
             ),
-            uncertainty=0.15 if all(trace.contribution_role.value != "unknown" for trace in linked) else 0.42,
+            uncertainty=attribution_uncertainty,
         )
 
         reuse_values: list[float] = []
@@ -340,6 +350,7 @@ def assess_asset_records(
             ai_interfaceability=ai_interfaceability,
             privacy_risk=privacy_risk,
             overall_credibility=overall_credibility,
+            scoring_version="0.2.0",
         )
         state = (
             AssetState.PROVISIONAL
@@ -351,6 +362,7 @@ def assess_asset_records(
             or tacitness_value >= config.tacitness_review_threshold
             or attribution_value < 0.75
             or dependency_value > 0.55
+            or unresolved_ownership
         )
         assessed.append(
             asset.model_copy(
