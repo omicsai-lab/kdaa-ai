@@ -125,7 +125,11 @@ class GitHubConnector:
             event_date=cls._parse_date(repo.get("pushed_at") or repo.get("updated_at")),
             keywords=[str(item) for item in keywords if item],
             topics=[str(item) for item in topics if item],
-            contribution_role=ContributionRole.LEAD,
+            # Repository/account ownership alone (username, owner endpoint, stars, forks,
+            # default branch, or other repository metadata) does not establish authorship
+            # or a lead contribution role. A later public-case process may add contribution
+            # evidence from separate sources.
+            contribution_role=ContributionRole.UNKNOWN,
             outcome_signals={
                 "stars": int(repo.get("stargazers_count") or 0),
                 "forks": int(repo.get("forks_count") or 0),

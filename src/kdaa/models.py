@@ -73,6 +73,39 @@ class ContributionRole(str, Enum):
     UNKNOWN = "unknown"
 
 
+class OwnershipState(str, Enum):
+    """Typed, evaluation-neutral ownership state for an asset hypothesis.
+
+    Trace-level ``ContributionRole`` is evidence that may inform ownership; it is not
+    ownership itself, and the two remain independent fields (see ``AssetRecord``). Values
+    are chosen to match ``kdaa.evaluation.paper_b.OwnershipLabel`` (WP1, protocol
+    clarification PC-03) so a later adapter can map by value with no semantic translation;
+    see ``test_ownership_state_matches_paper_b_ownership_label_value_set`` in
+    ``tests/test_models.py``. This module must not import ``kdaa.evaluation.paper_b`` --
+    the dependency direction runs the other way (evaluation/adapters may import production).
+    """
+
+    FOCAL_UNIT = "focal_unit"
+    SHARED = "shared"
+    ORGANIZATIONAL = "organizational"
+    EXTERNAL = "external"
+    UNRESOLVED = "unresolved"
+
+
+_LEGACY_OWNERSHIP_TOKENS = frozenset(member.value for member in OwnershipState)
+
+
+class TraceRelationType(str, Enum):
+    EXACT_DUPLICATE = "exact_duplicate"
+    SOURCE_RECORD_EQUIVALENT = "source_record_equivalent"
+    DERIVATIVE = "derivative"
+    SEMANTIC_NEAR_DUPLICATE = "semantic_near_duplicate"
+    CONTRADICTS = "contradicts"
+    CONTEXTUALIZES = "contextualizes"
+    INDEPENDENT_SUPPORT = "independent_support"
+    OTHER = "other"
+
+
 class AssetCategory(str, Enum):
     CODIFIED = "codified"
     TACIT_PROCEDURAL = "tacit_procedural"
@@ -194,6 +227,30 @@ class EvidenceLink(StrictModel):
     weight: float = Field(default=1.0, ge=0.0, le=1.0)
 
 
+class TraceRelation(StrictModel):
+    """A typed relationship between two evidence traces within the same bundle.
+
+    WP2 provides this representation plus exact/source-record-equivalence detection only
+    (see ``kdaa.ingestion.dedup``). Semantic near-duplicate, derivative, contradiction, and
+    independent-support detection are represented here but not automatically populated
+    until later work packages implement that policy.
+    """
+
+    id: str = Field(min_length=1)
+    source_trace_id: str = Field(min_length=1)
+    target_trace_id: str = Field(min_length=1)
+    relation_type: TraceRelationType
+    confidence: float = Field(default=1.0, ge=0.0, le=1.0)
+    rationale: str = ""
+    detection_method: str = "unspecified"
+
+    @model_validator(mode="after")
+    def source_and_target_differ(self) -> TraceRelation:
+        if self.source_trace_id == self.target_trace_id:
+            raise ValueError("TraceRelation source_trace_id and target_trace_id must differ")
+        return self
+
+
 class ScoreDimension(StrictModel):
     value: float = Field(ge=0.0, le=1.0)
     method: str
@@ -232,7 +289,14 @@ class AssetRecord(StrictModel):
     evidence_links: list[EvidenceLink]
     alternative_explanations: list[str] = Field(default_factory=list)
     dependencies: list[str] = Field(default_factory=list)
+    # Deprecated legacy free-text display field. Not authoritative for Paper B scoring or
+    # dependency calculations; use `ownership_state` instead. Retained only so pre-WP2
+    # serialized records continue to load and display.
     hypothesized_owner: str = "focal_unit"
+    ownership_state: OwnershipState = OwnershipState.UNRESOLVED
+    ownership_rationale: str = ""
+    attribution_trace_ids: list[str] = Field(default_factory=list)
+    attributed_contributors: list[str] = Field(default_factory=list)
     epistemic_state: AssetState = AssetState.HYPOTHESIS
     discovery_method: str = "deterministic"
     discovery_confidence: float = Field(default=0.5, ge=0.0, le=1.0)
@@ -242,6 +306,27 @@ class AssetRecord(StrictModel):
     updated_at: datetime = Field(default_factory=utc_now)
     parent_asset_ids: list[str] = Field(default_factory=list)
     notes: list[str] = Field(default_factory=list)
+
+    @model_validator(mode="before")
+    @classmethod
+    def _migrate_ownership_state(cls, data: Any) -> Any:
+        """Deterministic legacy migration (WP2 requirement A3).
+
+        If ``ownership_state`` is already present (and not None) in the input, it is
+        authoritative and this validator does nothing. Otherwise, if the legacy
+        ``hypothesized_owner`` field is present and its value is *exactly* one of the five
+        recognized typed tokens, that token is mapped across. Any other case -- an arbitrary
+        person/unit/institution/repository-owner display name, or both fields simply absent
+        -- is left unset, so the field default (``UNRESOLVED``) applies. This never infers
+        ``FOCAL_UNIT`` merely because a record belongs to a focal-unit analysis.
+        """
+        if not isinstance(data, dict) or data.get("ownership_state") is not None:
+            return data
+        legacy_value = data.get("hypothesized_owner")
+        if isinstance(legacy_value, str) and legacy_value in _LEGACY_OWNERSHIP_TOKENS:
+            data = dict(data)
+            data["ownership_state"] = OwnershipState(legacy_value)
+        return data
 
     @model_validator(mode="after")
     def hypothesis_requires_evidence(self) -> AssetRecord:
@@ -337,6 +422,11 @@ class UnitBundle(StrictModel):
     unit: FocalUnit
     goals: list[StrategicGoal] = Field(default_factory=list)
     traces: list[EvidenceTrace]
+    # Backward-compatible: absent in pre-WP2 bundles, defaults to empty. Legacy
+    # `EvidenceTrace.related_trace_ids` is preserved separately and is not automatically
+    # converted into typed relations here (see kdaa.ingestion.dedup for what WP2 does
+    # populate: typed exact/source-record-equivalent relations from deduplication).
+    trace_relations: list[TraceRelation] = Field(default_factory=list)
     metadata: dict[str, Any] = Field(default_factory=dict)
 
     @model_validator(mode="after")
@@ -349,6 +439,21 @@ class UnitBundle(StrictModel):
             raise ValueError("Trace IDs must be unique within a bundle")
         return self
 
+    @model_validator(mode="after")
+    def trace_relations_are_well_formed(self) -> UnitBundle:
+        relation_ids = [relation.id for relation in self.trace_relations]
+        if len(relation_ids) != len(set(relation_ids)):
+            raise ValueError("Trace relation IDs must be unique within a bundle")
+        trace_ids = {trace.id for trace in self.traces}
+        unknown = [
+            relation.id
+            for relation in self.trace_relations
+            if relation.source_trace_id not in trace_ids or relation.target_trace_id not in trace_ids
+        ]
+        if unknown:
+            raise ValueError(f"Trace relations reference unknown trace IDs: {unknown}")
+        return self
+
 
 class RunManifest(StrictModel):
     run_id: str
@@ -359,6 +464,10 @@ class RunManifest(StrictModel):
     random_seed: int = 42
     mode: Literal["deterministic", "hybrid", "llm"] = "deterministic"
     llm_model: str | None = None
+    # Backward-compatible: absent in pre-WP2 manifests. The resolved as_of_date every
+    # recency-dependent calculation in this run actually used (explicit config value, or
+    # the convenience current-date fallback -- see kdaa.pipeline.KDAAPipeline.analyze).
+    analysis_as_of_date: date | None = None
     notes: list[str] = Field(default_factory=list)
 
 

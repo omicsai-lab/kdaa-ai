@@ -16,6 +16,7 @@ from kdaa.models import (
     EvidenceLink,
     EvidenceRole,
     EvidenceTrace,
+    OwnershipState,
     TraceType,
     UnitBundle,
 )
@@ -141,6 +142,12 @@ def _build_asset(
         alternative_explanations=_standard_alternatives(evidence),
         dependencies=dependencies or [],
         hypothesized_owner=bundle.unit.name,
+        ownership_state=OwnershipState.UNRESOLVED,
+        ownership_rationale=(
+            "Deterministic discovery rules identify supporting traces but do not resolve "
+            "individual, shared, organizational, or external ownership; ownership state "
+            "defaults to unresolved pending human calibration."
+        ),
         epistemic_state=AssetState.HYPOTHESIS,
         discovery_method="deterministic_provenance_rules_v0.1",
         discovery_confidence=round(discovery_confidence, 4),

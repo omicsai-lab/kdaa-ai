@@ -13,6 +13,7 @@ from kdaa.models import (
     AssetState,
     EvidenceLink,
     EvidenceRole,
+    OwnershipState,
     UnitBundle,
 )
 from kdaa.providers.base import JSONProvider
@@ -139,6 +140,11 @@ def discover_with_llm(
                 alternative_explanations=suggestion.alternative_explanations,
                 dependencies=suggestion.dependencies,
                 hypothesized_owner=bundle.unit.name,
+                ownership_state=OwnershipState.UNRESOLVED,
+                ownership_rationale=(
+                    "LLM-suggested asset carries no independently verified ownership evidence; "
+                    "ownership state defaults to unresolved pending human calibration."
+                ),
                 epistemic_state=AssetState.HYPOTHESIS,
                 discovery_method=f"llm_provenance_gated:{provider.model_name}",
                 discovery_confidence=suggestion.confidence,

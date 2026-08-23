@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+from datetime import date
 from pathlib import Path
 from typing import Literal
 
@@ -86,6 +87,11 @@ class KDAAConfig(ConfigModel):
     version: str = "0.1.0"
     random_seed: int = 42
     mode: Literal["deterministic", "hybrid", "llm"] = "deterministic"
+    # Frozen analysis date for recency scoring. None (the default) means "use the current
+    # local/system date" -- a convenience fallback for ordinary non-Paper-B use. Paper B
+    # runs must set this explicitly so recency is reproducible regardless of execution day.
+    # Resolved exactly once, at the KDAAPipeline.analyze boundary (see kdaa.pipeline).
+    as_of_date: date | None = None
     discovery: DiscoveryConfig = Field(default_factory=DiscoveryConfig)
     assessment: AssessmentConfig = Field(default_factory=AssessmentConfig)
     opportunities: OpportunityConfig = Field(default_factory=OpportunityConfig)

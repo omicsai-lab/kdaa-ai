@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import uuid
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -12,7 +13,7 @@ from kdaa.amplification import generate_opportunities
 from kdaa.assessment import assess_asset_records
 from kdaa.config import KDAAConfig
 from kdaa.discovery import (
-    add_duplicate_trace_edges,
+    add_trace_relation_edges,
     build_evidence_graph,
     discover_asset_hypotheses,
     enrich_graph_with_analysis,
@@ -99,6 +100,8 @@ class KDAAPipeline:
         *,
         output_dir: str | Path | None = None,
     ) -> tuple[AnalysisRun, Any]:
+        effective_as_of_date = self.config.as_of_date or date.today()
+
         deduplication = deduplicate_traces(bundle.traces)
         analysis_bundle = bundle.model_copy(
             update={
@@ -110,8 +113,8 @@ class KDAAPipeline:
             }
         )
         features = extract_trace_features(analysis_bundle.traces, self.ontology)
-        base_graph = add_duplicate_trace_edges(
-            build_evidence_graph(bundle), deduplication.duplicate_to_canonical
+        base_graph = add_trace_relation_edges(
+            build_evidence_graph(bundle), deduplication.trace_relations
         )
 
         deterministic_assets: list[AssetRecord] = []
@@ -138,6 +141,7 @@ class KDAAPipeline:
             features,
             self.ontology,
             self.config.assessment,
+            as_of_date=effective_as_of_date,
         )
         opportunities = generate_opportunities(
             bundle.unit.id,
@@ -168,6 +172,7 @@ class KDAAPipeline:
             random_seed=self.config.random_seed,
             mode=self.config.mode,
             llm_model=(self.provider.model_name if self.provider else None),
+            analysis_as_of_date=effective_as_of_date,
             notes=notes,
         )
         warnings = [

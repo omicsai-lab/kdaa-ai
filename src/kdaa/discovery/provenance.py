@@ -7,7 +7,14 @@ from pathlib import Path
 
 import networkx as nx
 
-from kdaa.models import AnalysisRun, UnitBundle
+from kdaa.models import AnalysisRun, TraceRelation, TraceRelationType, UnitBundle
+
+# Relation types that mean "this trace's support should not be counted independently of
+# its target" -- the same audit-trail exclusion previously expressed only via
+# `add_duplicate_trace_edges`'s dict-based dict[str, str] mapping.
+_ANALYSIS_EXCLUDING_RELATION_TYPES = frozenset(
+    {TraceRelationType.EXACT_DUPLICATE, TraceRelationType.SOURCE_RECORD_EQUIVALENT}
+)
 
 
 def build_evidence_graph(bundle: UnitBundle) -> nx.MultiDiGraph:
@@ -58,7 +65,12 @@ def build_evidence_graph(bundle: UnitBundle) -> nx.MultiDiGraph:
 def add_duplicate_trace_edges(
     graph: nx.MultiDiGraph, duplicate_to_canonical: dict[str, str]
 ) -> nx.MultiDiGraph:
-    """Annotate retained input traces that were excluded as duplicate evidence."""
+    """Annotate retained input traces that were excluded as duplicate evidence.
+
+    Deprecated in favor of `add_trace_relation_edges`, which carries the typed relation,
+    confidence, rationale, and detection method. Retained unchanged for existing callers
+    (the Streamlit app) that still pass a plain duplicate-to-canonical mapping.
+    """
 
     for duplicate_id, canonical_id in duplicate_to_canonical.items():
         if duplicate_id in graph and canonical_id in graph:
@@ -69,6 +81,33 @@ def add_duplicate_trace_edges(
                 canonical_id,
                 relation="possible_duplicate_of",
             )
+    return graph
+
+
+def add_trace_relation_edges(
+    graph: nx.MultiDiGraph, relations: list[TraceRelation]
+) -> nx.MultiDiGraph:
+    """Add typed trace-relation edges (relation type, confidence, rationale, detection
+    method) to the provenance graph, preserving the same audit trail that
+    `add_duplicate_trace_edges` provided for exact/source-record-equivalent duplicates:
+    the excluded (source) trace node is still marked `analysis_excluded` with an
+    `exclusion_reason`, and the original node is never removed.
+    """
+
+    for relation in relations:
+        if relation.source_trace_id not in graph or relation.target_trace_id not in graph:
+            continue
+        if relation.relation_type in _ANALYSIS_EXCLUDING_RELATION_TYPES:
+            graph.nodes[relation.source_trace_id]["analysis_excluded"] = True
+            graph.nodes[relation.source_trace_id]["exclusion_reason"] = relation.relation_type.value
+        graph.add_edge(
+            relation.source_trace_id,
+            relation.target_trace_id,
+            relation=relation.relation_type.value,
+            confidence=relation.confidence,
+            rationale=relation.rationale,
+            detection_method=relation.detection_method,
+        )
     return graph
 
 

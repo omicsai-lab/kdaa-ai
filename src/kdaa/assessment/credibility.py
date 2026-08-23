@@ -19,10 +19,22 @@ from kdaa.models import (
     AssetState,
     EvidenceRole,
     EvidenceTrace,
+    OwnershipState,
     ScoreDimension,
     TraceType,
 )
 from kdaa.ontology import Ontology
+
+# Conservative dependency-intensity increment by typed ownership state (WP2 requirement
+# A6). UNRESOLVED must not be treated as proof of external dependency -- it increases
+# attribution uncertainty elsewhere, not this dependency proxy.
+_OWNERSHIP_DEPENDENCY_INCREMENT: dict[OwnershipState, float] = {
+    OwnershipState.FOCAL_UNIT: 0.00,
+    OwnershipState.UNRESOLVED: 0.00,
+    OwnershipState.SHARED: 0.10,
+    OwnershipState.ORGANIZATIONAL: 0.10,
+    OwnershipState.EXTERNAL: 0.10,
+}
 
 
 def _clamp(value: float) -> float:
@@ -46,16 +58,17 @@ def _dimension(
     )
 
 
-def _recency_score(traces: list[EvidenceTrace], half_life_years: float) -> tuple[float, str]:
+def _recency_score(
+    traces: list[EvidenceTrace], half_life_years: float, as_of_date: date
+) -> tuple[float, str]:
     dated = [trace.event_date for trace in traces if trace.event_date]
     if not dated:
         return 0.45, "No reliable event dates; neutral-low recency proxy used."
-    today = date.today()
     values = []
     for event_date in dated:
-        age_years = max(0.0, (today - event_date).days / 365.25)
+        age_years = max(0.0, (as_of_date - event_date).days / 365.25)
         values.append(math.exp(-math.log(2) * age_years / half_life_years))
-    return mean(values), f"Exponential decay over {len(values)} dated traces."
+    return mean(values), f"Exponential decay over {len(values)} dated traces as of {as_of_date.isoformat()}."
 
 
 def assess_asset_records(
@@ -64,6 +77,8 @@ def assess_asset_records(
     features: dict[str, TraceFeatures],
     ontology: Ontology,
     config: AssessmentConfig,
+    *,
+    as_of_date: date,
 ) -> list[AssetRecord]:
     trace_by_id = {trace.id: trace for trace in traces}
     assessed: list[AssetRecord] = []
@@ -112,7 +127,11 @@ def assess_asset_records(
         attribution_confidence = _dimension(
             attribution_value,
             "contribution_role_weight_average_v0.1",
-            "Average of explicit contribution-role weights across supporting traces.",
+            (
+                "Average of explicit contribution-role weights across supporting traces. "
+                "Contribution role is trace-level evidence about how a trace was produced; "
+                "it is not ownership and does not by itself establish sole ownership."
+            ),
             uncertainty=0.15 if all(trace.contribution_role.value != "unknown" for trace in linked) else 0.42,
         )
 
@@ -188,21 +207,30 @@ def assess_asset_records(
             for contributor in trace.authors_or_contributors
             if contributor.strip()
         }
+        ownership_increment = _OWNERSHIP_DEPENDENCY_INCREMENT.get(asset.ownership_state, 0.0)
         dependency_value = _clamp(
             0.10
             + 0.10 * min(1.0, len(asset.dependencies) / 4.0)
             + 0.35 * min(1.0, len(unique_people) / 6.0)
             + (0.20 if AssetCategory.RELATIONAL in asset.categories else 0.0)
-            + (0.10 if asset.hypothesized_owner != "focal_unit" else 0.0)
+            + ownership_increment
         )
         dependency_intensity = _dimension(
             dependency_value,
-            "people_and_declared_dependency_proxy_v0.1",
-            "Counts recurring people, declared dependencies, and relational/collective characteristics.",
+            "people_and_declared_dependency_proxy_typed_ownership_v0.2",
+            (
+                "Counts recurring people, declared dependencies, and relational/collective "
+                "characteristics, plus a conservative increment from the typed ownership_state "
+                f"({asset.ownership_state.value}: +{ownership_increment:.2f}). UNRESOLVED ownership "
+                "is not treated as proof of external dependency; it contributes no increment here "
+                "and instead widens attribution uncertainty elsewhere."
+            ),
             uncertainty=0.42,
         )
 
-        recency_value, recency_rationale = _recency_score(linked, config.recency_half_life_years)
+        recency_value, recency_rationale = _recency_score(
+            linked, config.recency_half_life_years, as_of_date
+        )
         decay_risk = _dimension(
             1.0 - recency_value,
             "inverse_exponential_recency_v0.1",
