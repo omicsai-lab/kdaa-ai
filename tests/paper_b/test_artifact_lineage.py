@@ -85,7 +85,7 @@ def test_artifact_record_requires_parent_unless_raw() -> None:
             content_hash="deadbeef",
             producer="ingest",
             producer_version="0.1",
-            parent_hashes=("someparent",),
+            parent_ids=("some-parent-id",),
         )
 
 
@@ -104,7 +104,7 @@ def test_raw_parsed_validated_lineage_chain() -> None:
         artifact_type=ArtifactType.PARSED,
         producer="parser",
         producer_version="0.1",
-        parent_hashes=[raw.content_hash],
+        parent_ids=[raw.artifact_id],
     )
     index.add(parsed)
 
@@ -114,11 +114,11 @@ def test_raw_parsed_validated_lineage_chain() -> None:
         artifact_type=ArtifactType.VALIDATED,
         producer="validator",
         producer_version="0.1",
-        parent_hashes=[parsed.content_hash],
+        parent_ids=[parsed.artifact_id],
     )
     index.add(validated)
 
-    chain = index.lineage(validated.content_hash)
+    chain = index.lineage(validated.artifact_id)
     assert [record.artifact_type for record in chain] == [
         ArtifactType.VALIDATED,
         ArtifactType.PARSED,
@@ -127,45 +127,153 @@ def test_raw_parsed_validated_lineage_chain() -> None:
     assert index.by_type(ArtifactType.RAW) == [raw]
 
 
-def test_artifact_index_rejects_unknown_parent_hash() -> None:
+def test_artifact_index_rejects_unknown_parent_id() -> None:
     index = ArtifactIndex(experiment_id="exp-1")
     orphan = ArtifactRecord.for_payload(
         {"x": 1},
         artifact_type=ArtifactType.PARSED,
         producer="parser",
         producer_version="0.1",
-        parent_hashes=["does-not-exist"],
+        parent_ids=["does-not-exist"],
     )
     with pytest.raises(ArtifactLineageError):
         index.add(orphan)
 
 
-def test_artifact_index_reindexing_identical_content_is_a_no_op() -> None:
+def test_artifact_index_reregistering_same_occurrence_is_a_no_op() -> None:
     index = ArtifactIndex(experiment_id="exp-1")
     record = ArtifactRecord.for_payload(
-        {"x": 1}, artifact_type=ArtifactType.RAW, producer="ingest", producer_version="0.1"
+        {"x": 1},
+        artifact_type=ArtifactType.RAW,
+        producer="ingest",
+        producer_version="0.1",
+        artifact_id="occurrence-1",
     )
     stored_first = index.add(record)
-    duplicate = ArtifactRecord.for_payload(
-        {"x": 1}, artifact_type=ArtifactType.RAW, producer="ingest", producer_version="0.1"
-    )
-    stored_second = index.add(duplicate)
-    assert stored_first.content_hash == stored_second.content_hash
+    stored_second = index.add(record.model_copy())
+    assert stored_first.artifact_id == stored_second.artifact_id
     assert len(index.records) == 1
 
 
-def test_artifact_index_rejects_hash_collision_with_different_metadata() -> None:
-    # Two records that happen to share a content_hash but disagree on lineage metadata
-    # indicate corrupted bookkeeping, not a legitimate re-run, and must not overwrite
-    # each other silently.
+def test_same_artifact_id_with_contradictory_metadata_is_rejected() -> None:
     index = ArtifactIndex(experiment_id="exp-1")
     first = ArtifactRecord.for_payload(
-        {"x": 1}, artifact_type=ArtifactType.RAW, producer="ingest", producer_version="0.1"
+        {"x": 1},
+        artifact_type=ArtifactType.RAW,
+        producer="ingest",
+        producer_version="0.1",
+        artifact_id="occurrence-1",
     )
     index.add(first)
+    # Same artifact_id, different producer -- corrupted bookkeeping, not a legitimate
+    # re-run, and must not silently overwrite the original occurrence.
     conflicting = first.model_copy(update={"producer": "different-producer"})
     with pytest.raises(ArtifactLineageError):
         index.add(conflicting)
+
+
+def test_same_content_different_cases_or_runs_is_allowed() -> None:
+    # An empty {} raw output, or a repeated identical refusal, may legitimately recur
+    # across different attempts/cases; each occurrence must be independently retrievable.
+    index = ArtifactIndex(experiment_id="exp-1")
+    empty_payload: dict = {}
+    occurrence_case_a = ArtifactRecord.for_payload(
+        empty_payload,
+        artifact_type=ArtifactType.RAW,
+        producer="c1-provider",
+        producer_version="0.1",
+        case_id="case-a",
+    )
+    occurrence_case_b = ArtifactRecord.for_payload(
+        empty_payload,
+        artifact_type=ArtifactType.RAW,
+        producer="c1-provider",
+        producer_version="0.1",
+        case_id="case-b",
+    )
+    index.add(occurrence_case_a)
+    index.add(occurrence_case_b)
+    assert occurrence_case_a.content_hash == occurrence_case_b.content_hash
+    assert occurrence_case_a.artifact_id != occurrence_case_b.artifact_id
+    assert len(index.records) == 2
+
+
+def test_same_content_different_artifact_ids_are_both_retrievable() -> None:
+    index = ArtifactIndex(experiment_id="exp-1")
+    payload = {"refusal": True}
+    first = ArtifactRecord.for_payload(
+        payload, artifact_type=ArtifactType.RAW, producer="c1-provider", producer_version="0.1"
+    )
+    second = ArtifactRecord.for_payload(
+        payload, artifact_type=ArtifactType.RAW, producer="c1-provider", producer_version="0.1"
+    )
+    index.add(first)
+    index.add(second)
+
+    matches = index.find_by_content_hash(first.content_hash)
+    assert {record.artifact_id for record in matches} == {first.artifact_id, second.artifact_id}
+    assert index.records[first.artifact_id] is not index.records[second.artifact_id]
+
+
+def test_content_mutation_changes_content_hash_but_not_artifact_id_identity() -> None:
+    first = ArtifactRecord.for_payload(
+        {"x": 1}, artifact_type=ArtifactType.RAW, producer="ingest", producer_version="0.1"
+    )
+    second = ArtifactRecord.for_payload(
+        {"x": 2}, artifact_type=ArtifactType.RAW, producer="ingest", producer_version="0.1"
+    )
+    assert first.content_hash != second.content_hash
+    assert first.artifact_id != second.artifact_id
+
+
+def test_duplicate_content_does_not_collapse_distinct_attempts() -> None:
+    # Three separate attempts that all happen to fail with an identical error payload
+    # must all be retained as three distinct occurrences, not merged into one.
+    index = ArtifactIndex(experiment_id="exp-1")
+    error_payload = {"error": "rate_limited"}
+    occurrences = [
+        ArtifactRecord.for_payload(
+            error_payload,
+            artifact_type=ArtifactType.RAW,
+            producer="c2-provider",
+            producer_version="0.1",
+            case_id="case-x",
+        )
+        for _ in range(3)
+    ]
+    for occurrence in occurrences:
+        index.add(occurrence)
+    assert len({o.artifact_id for o in occurrences}) == 3
+    assert len(index.records) == 3
+    assert len(index.find_by_content_hash(occurrences[0].content_hash)) == 3
+
+
+def test_lineage_still_resolves_with_shared_content_hash_among_parents() -> None:
+    # Two RAW occurrences share content; a PARSED record derived from one of them must
+    # resolve lineage to exactly that occurrence, not be confused by the shared hash.
+    index = ArtifactIndex(experiment_id="exp-1")
+    shared_payload = {"text": "same raw text"}
+    raw_a = ArtifactRecord.for_payload(
+        shared_payload, artifact_type=ArtifactType.RAW, producer="ingest", producer_version="0.1"
+    )
+    raw_b = ArtifactRecord.for_payload(
+        shared_payload, artifact_type=ArtifactType.RAW, producer="ingest", producer_version="0.1"
+    )
+    index.add(raw_a)
+    index.add(raw_b)
+
+    parsed_from_b = ArtifactRecord.for_payload(
+        {**shared_payload, "tokens": ["same", "raw", "text"]},
+        artifact_type=ArtifactType.PARSED,
+        producer="parser",
+        producer_version="0.1",
+        parent_ids=[raw_b.artifact_id],
+    )
+    index.add(parsed_from_b)
+
+    chain = index.lineage(parsed_from_b.artifact_id)
+    assert [record.artifact_id for record in chain] == [parsed_from_b.artifact_id, raw_b.artifact_id]
+    assert raw_a.artifact_id not in [record.artifact_id for record in chain]
 
 
 def test_failed_and_successful_attempts_are_both_representable() -> None:

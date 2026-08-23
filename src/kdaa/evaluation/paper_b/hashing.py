@@ -9,7 +9,14 @@ once, at the point it is declared, via ``Field(json_schema_extra={VOLATILE_MARKE
 volatile fields are still visible as such) and drops every field so marked before hashing.
 
 Identical scientific content always produces an identical canonical hash; volatile fields
-never affect it.
+never affect it. ``list``/``tuple`` preserve their given order (order is scientific content
+for these schemas -- e.g. ``InputSnapshot.traces``). ``set``/``frozenset`` have no inherent
+order, and Python's iteration order for them is not guaranteed stable across processes or
+environments (it depends on hash randomization and insertion history), so each element is
+canonicalized first and the results are then sorted by their own canonical JSON string
+before hashing. Sorting by that string -- rather than the raw Python values with ``<`` --
+avoids ``TypeError`` on heterogeneous or unorderable elements (e.g. a set of dicts) while
+still being fully deterministic, since JSON string comparison is always well-defined.
 """
 
 from __future__ import annotations
@@ -36,6 +43,16 @@ def _is_volatile_field(model_cls: type[BaseModel], field_name: str) -> bool:
     return bool(extra.get(VOLATILE_MARKER))
 
 
+def _canonical_sort_key(payload: Any) -> str:
+    """A total, deterministic ordering key for an already-canonicalized value.
+
+    Sorts by the value's own canonical JSON string rather than by Python's ``<`` operator,
+    so heterogeneous or unorderable elements (e.g. a set containing both dicts and strings)
+    never raise ``TypeError``, and the resulting order depends only on content.
+    """
+    return json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+
+
 def canonical_payload(value: Any) -> Any:
     """Recursively reduce ``value`` to a JSON-safe structure with volatile fields removed.
 
@@ -52,8 +69,12 @@ def canonical_payload(value: Any) -> Any:
         }
     if isinstance(value, dict):
         return {str(key): canonical_payload(item) for key, item in value.items()}
-    if isinstance(value, (list, tuple, set, frozenset)):
+    if isinstance(value, (list, tuple)):
         return [canonical_payload(item) for item in value]
+    if isinstance(value, (set, frozenset)):
+        canonicalized_items = [canonical_payload(item) for item in value]
+        canonicalized_items.sort(key=_canonical_sort_key)
+        return canonicalized_items
     if isinstance(value, Enum):
         return value.value
     if isinstance(value, (datetime, date)):

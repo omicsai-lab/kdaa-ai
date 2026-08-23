@@ -1,12 +1,16 @@
 """Truth-side ground-truth records for Paper B (KBS).
 
-STRUCTURAL ISOLATION: nothing in this module may be imported, directly or indirectly, by
-inference-side code -- comparator/adapter implementations, ``kdaa.discovery``,
-``kdaa.providers``, or ``kdaa.pipeline``. That boundary is not merely a naming convention:
+STRUCTURAL ISOLATION: nothing in this module may be imported by inference-side code --
+comparator/adapter implementations, ``kdaa.discovery``, ``kdaa.providers``, or
+``kdaa.pipeline``. That boundary is not merely a naming convention:
 ``kdaa.evaluation.paper_b.__init__`` deliberately does not re-export anything from this
 module, and ``boundary.find_truth_leakage`` statically scans the inference-side namespaces
-listed in ``boundary.INFERENCE_BOUNDARY_PREFIXES`` for any import of this module, so a
-future violation fails a test rather than depending on reviewers noticing it. See
+listed in ``boundary.INFERENCE_BOUNDARY_PREFIXES`` for any direct import of this module
+(absolute, aliased, ``from ... import ...``, or relative), so a future direct-import
+violation fails a test rather than depending on reviewers noticing it. This is direct
+import-boundary enforcement, not transitive dependency-graph enforcement: a boundary module
+that imports some other, non-boundary module which itself imports ``truth`` would not be
+caught by this check today -- see ``boundary.py`` and
 ``tests/paper_b/test_truth_isolation.py``.
 
 Per Freeze Section 9.4 (leakage prevention), final truth must live outside model-visible
