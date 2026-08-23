@@ -1,4 +1,4 @@
-.PHONY: install install-app test lint format demo demo-all benchmark stress-test figures schemas api app docker release-check package clean
+.PHONY: install install-app test lint format demo demo-all benchmark stress-test figures schemas api app docker release-check package clean paper-b-dev
 
 install:
 	python -m pip install -e .
@@ -28,6 +28,9 @@ benchmark:
 
 stress-test:
 	bash scripts/run_robustness.sh
+
+paper-b-dev:
+	python scripts/run_paper_b_dev_pilot.py
 
 figures:
 	python scripts/build_figures.py
