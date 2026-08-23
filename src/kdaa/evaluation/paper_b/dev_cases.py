@@ -31,7 +31,8 @@ from kdaa.models import (
 )
 from kdaa.ontology import Ontology
 
-from .opportunity_catalog import DEV_OPPORTUNITY_CATALOG, relevance_grade
+from .opportunity_catalog import DEV_OPPORTUNITY_CATALOG
+from .opportunity_truth import compute_relevance_grade
 from .schemas import (
     AttributionRegime,
     CaseManifest,
@@ -222,7 +223,7 @@ def generate_development_case(case_index: int, *, ontology: Ontology | None = No
     opportunity_relevance = [
         TrueOpportunityRelevance(
             opportunity_id=candidate.opportunity_id,
-            relevance_grade=relevance_grade(true_concept_keys, candidate.opportunity_id),
+            relevance_grade=compute_relevance_grade(true_concept_keys, candidate.opportunity_id),
         )
         for candidate in DEV_OPPORTUNITY_CATALOG
     ]
