@@ -34,7 +34,7 @@ from kdaa.providers.base import JSONProvider
 from ..schemas import InputSnapshot
 from ..telemetry import AttemptStatus, ExperimentAttempt, ResourceUsage
 from .kdaa_common import adapt_kdaa_run
-from .llm_harness import MAX_AUTOMATIC_RETRIES, classify_exception
+from .llm_harness import MAX_AUTOMATIC_RETRIES, _usage_fields, classify_exception
 
 COMPARATOR_ID = "C4"
 
@@ -77,6 +77,7 @@ def run_c4(
         model_identifier=getattr(provider, "model_name", ""),
         attempt_number=attempt_number,
         latency_seconds=latency,
+        **_usage_fields(provider),
     )
     return ExperimentAttempt(
         attempt_id=str(uuid.uuid4()),

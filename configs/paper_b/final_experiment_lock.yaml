@@ -1,0 +1,204 @@
+document_id: KDAA-PB-FINAL-EXP-001
+version: "1.0"
+status: FINAL PROTOCOL FROZEN BEFORE FINAL DATA GENERATION
+freeze_date: "2026-08-23"
+branch: paper-b/evaluation
+intended_parent_commit: HEAD of paper-b/evaluation at freeze time (see
+  docs/paper_b_final_evaluation_freeze.md "Intended parent state" for the exact recorded
+  commit hash -- this file is committed together with that record, not before it)
+
+# This file narrows nothing in the two documents below; it operationalizes them into the
+# exact parameters the (not-yet-written) final case generator and final run scripts must
+# read. Any apparent narrowing (e.g. the ablation/robustness subsets below) is a deliberate
+# scope decision for the Paper B primary result package and is logged as a clarification in
+# docs/protocol_deviations.md, not a silent contradiction of the frozen scientific protocol.
+authoritative_scientific_source: docs/paper_b_kbs_claims_evaluation_freeze.md
+authoritative_experiment_lock: configs/paper_b/experiment_lock.yaml
+clarifications_log: docs/protocol_deviations.md
+
+as_of_date: "2026-06-01"
+as_of_date_note: >
+  Inherited unchanged from development (Checkpoint A/B) for continuity; the master
+  experiment_lock.yaml did not previously carry an as_of_date field even though PC-01
+  requires one -- this file is now the authoritative source for it (see
+  docs/protocol_deviations.md PC-06). No case content has been generated against it yet,
+  so this is a freeze-time clarification, not a post hoc change.
+
+final_dataset:
+  total_n: 240
+  core_n: 180
+  challenge_n: 60
+  structure: unchanged from docs/paper_b_kbs_claims_evaluation_freeze.md Section 9.2
+    (3 unit_type x 2 evidence_density x 2 domain_breadth x 3 attribution_regime x 5
+    replicates = 180 core; 10 challenge categories x 6 cases = 60 challenge)
+  case_generation_code_status: not_yet_implemented
+  case_generation_must_occur: only_after_this_freeze_is_reviewed_committed_and_pushed
+  truth_evidence_physical_separation_required: true
+  truth_isolation_mechanism: kdaa.evaluation.paper_b.truth module + direct import-boundary
+    enforcement (kdaa.evaluation.paper_b.boundary.find_truth_leakage) -- same WP1
+    architecture already validated for the development set, extended unchanged to final
+  truth_must_not_be_visible_to:
+    - C0-S
+    - C1
+    - C2
+    - C3
+    - C4
+    - prompts
+    - inference_adapters
+    - visible_filenames_or_metadata
+
+final_llm_subset:
+  n: 60
+  core_n: 30
+  challenge_n: 30
+  intended_repeats_per_case: 3
+  comparators: [C1, C2, C4]
+  intended_primary_live_llm_calls: 540
+  intended_primary_live_llm_calls_formula: "60 cases * 3 repeats * 3 comparators"
+  selection_algorithm: >
+    Deterministic, order-only selection, extending the already-proven Checkpoint B
+    kdaa.evaluation.paper_b.dev_llm_subset design to two independent strata: take the
+    first 30 final core-set cases and the first 30 final challenge-set cases, each by
+    canonical case-generation index within its own stratum. Selection reads only
+    generation order/case IDs -- never a prediction, a truth value, or any comparator
+    output (same structural guarantee as dev_llm_subset.select_development_llm_subset,
+    verified by tests/paper_b/test_dev_llm_subset.py's AST-based purity check).
+  must_be_fixed_before: any_live_model_result_is_observed
+  best_of_n_selection: prohibited
+  primary_case_value: mean_of_all_intended_repeats
+  failed_attempts_policy: retained_per_wp1_failure_policy (see
+    configs/paper_b/experiment_lock.yaml failure_policy; f1/ndcg failed-run value = 0.0)
+
+comparator_set:
+  primary_comparisons:
+    - [C3, C0_S]
+    - [C4, C1]
+    - [C4, C2]
+  important_secondary_comparison:
+    contrast: [C4, C3]
+    interpretation: breadth_flexibility_grounding_latency_tradeoff
+    required_superiority_test: false
+  retained_comparator_c2:
+    rationale: >
+      Development Checkpoint B (live gpt-5.4-2026-03-05 run, N=30) showed C2 did not
+      outperform C1 on concept F1 (paired diff -0.0002, 95% CI crosses 0) or nDCG@5
+      (paired diff -0.006, 95% CI crosses 0), and had a marginally higher unsupported-
+      claim rate (paired diff +0.023, 95% CI [0.005, 0.045]). C2 is retained anyway: its
+      scientific role is to test whether simple evidence-linking/citation prompting alone
+      reproduces provenance-constrained reasoning, independent of whether it wins.
+
+endpoints:
+  E1:
+    name: concept_recovery
+    metrics: [precision, recall, f1]
+    matching: one_to_one_bipartite_frozen_scoring (unchanged, existing scorer)
+  E2:
+    name: semantic_unsupported_claim_rate
+    role: primary_paper_b_endpoint
+    measures: substantive_unsupported_inference (nonexistent capability, overbroad scope,
+      unsupported currentness, unsupported sole ownership, unsupported dependency) --
+      NOT merely "cites a valid evidence ID"
+  E3:
+    name: attribution_safety_profile
+    explicitly_not: ownership_attribution_accuracy
+    metrics: [false_individualization_rate, attribution_coverage, unresolved_abstention_rate]
+    interpretation_lock: >
+      Low false-individualization combined with zero attribution coverage represents
+      conservative abstention, not successful ownership inference. This reading is
+      required, not optional, in the final manuscript (see docs/protocol_deviations.md
+      PC-07 and the live Checkpoint B finding it generalizes from: C4 showed 0.0 false-
+      individualization and 0.0 attribution coverage in every applicable case, while C1/C2
+      showed ~1.0 attribution coverage and ~1.0 false-individualization).
+    no_new_ownership_classifier_before_final_study: true
+  E4:
+    name: opportunity_ranking
+    metric: ndcg_at_5
+    catalog_scope: case_specific  # see final_opportunity_design below
+    candidates_per_case: 10
+    truth_side_independent_of_comparator_ranking_mechanism: true
+    independence_mechanism: kdaa.evaluation.paper_b.opportunity_truth pattern (Checkpoint
+      B E4-circularity fix), generalized from one shared development catalog to per-case
+      authored requirements
+
+final_opportunity_design:
+  candidates_per_case: 10
+  visible_fields_per_opportunity: [title, description]
+  description_packs: [beneficiary, problem, expected_output, context]
+  description_packs_note: plain text inside the existing description field, no WP1 schema
+    change (same convention as Checkpoint B)
+  hidden_fields: truth_side_relevance_requirements_and_grades (required/optional/
+    disqualifying concepts per opportunity, per case)
+  grade_scale: [0, 1, 2, 3]
+  same_10_ranked_by_every_comparator_for_that_case: true
+  general_opportunity_ontology: explicitly_not_built
+  implementation_status: design_frozen_generator_not_yet_implemented
+  generator_must_not_share_code_path_with: comparator ranking mechanisms (statically
+    verifiable the same way tests/paper_b/test_e4_independence.py verifies it today)
+
+ablations:
+  final_primary_set: [A1, A4, A6]
+  A1: {name: no_provenance_gate, primary_diagnostic: E2}
+  A4: {name: no_asset_level_structure_flat_unit_representation, primary_diagnostic: E1}
+  A6: {name: no_opportunity_specific_matching, primary_diagnostic: E4}
+  ownership_attribution_ablation_A3: excluded_from_final_primary_set
+  additional_ablations_without_defect_justification: prohibited
+  scope_note: >
+    docs/paper_b_kbs_claims_evaluation_freeze.md Section 13 lists six main-text
+    ablations (A1,A2,A3,A4,A6,A7); this freeze narrows the FINAL primary result package
+    to A1/A4/A6 only, per explicit instruction at this freeze checkpoint. Logged as
+    docs/protocol_deviations.md PC-08.
+
+robustness:
+  final_primary_set: [R1, R2, R3]
+  R1: duplicate_or_dependence
+  R2: irrelevant_noise_or_simple_contradiction
+  R3: ontology_or_surface_shift
+  R4_opportunity_context_reversal: secondary_only_if_already_implemented_cleanly
+  expansion_without_defect_justification: prohibited
+  scope_note: >
+    docs/paper_b_kbs_claims_evaluation_freeze.md Section 14 lists nine perturbation
+    families; this freeze narrows the FINAL primary result package to R1/R2/R3 (plus
+    optional secondary R4). Logged as docs/protocol_deviations.md PC-08.
+
+development_derived_prospective_decisions:
+  decisions:
+    - id: DD-01
+      decision: E4 circularity discovered in development was removed before final freeze.
+    - id: DD-02
+      decision: E3 reinterpreted as attribution safety rather than attribution accuracy.
+    - id: DD-03
+      decision: C2 retained because evidence linking alone is scientifically informative
+        even when it does not improve performance.
+    - id: DD-04
+      decision: No ownership classifier will be added before final evaluation.
+    - id: DD-05
+      decision: No additional model/prompt shopping will occur.
+    - id: DD-06
+      decision: Development data/results are not final-paper evidence.
+  note: These are prospective final-design decisions recorded before any final data
+    exist, not post hoc adjustments made in response to final results.
+
+analysis_policy:
+  unit_of_analysis: focal_case
+  reporting_per_primary_contrast_endpoint:
+    - comparator_means
+    - paired_mean_difference
+    - paired_median_difference
+    - ci95_paired_case_level_bootstrap
+  bootstrap_framework: kdaa.evaluation.paper_b.analysis.summarize_paired (already approved
+    and used unchanged since Checkpoint A/B; same seed=42, 2000-resample percentile method)
+  composite_overall_kdaa_score: prohibited
+  p_values: optional; effect_sizes_and_confidence_intervals_are_primary
+  retain_unfavorable_null_and_adverse_results: true
+
+change_control:
+  after_this_freeze_commit_prohibited_without_a_documented_software_defect:
+    - prompt tuning
+    - scorer tuning
+    - threshold tuning
+    - model change
+    - ontology change
+    - case-generation tuning
+  amendment_process: versioned, dated entry in docs/protocol_deviations.md; a software-
+    defect fix invalidates and requires rerunning affected comparators under identical
+    conditions (Freeze Section 23)

@@ -32,6 +32,11 @@ class OpenAICompatibleProvider:
         self.model_name = model
         self.timeout_seconds = timeout_seconds
         self.temperature = temperature
+        # Usage from the most recent `generate_json` call, if the endpoint returned one
+        # (OpenAI-compatible chat-completions responses carry a top-level "usage" object).
+        # Not part of the JSONProvider protocol -- callers that want it read this attribute
+        # via getattr(provider, "last_usage", None) immediately after a call.
+        self.last_usage: dict[str, Any] | None = None
 
     def generate_json(self, *, system: str, user: str) -> dict[str, Any]:
         payload = {
@@ -54,6 +59,8 @@ class OpenAICompatibleProvider:
                 response = client.post(f"{self.base_url}/chat/completions", json=payload)
             response.raise_for_status()
             body = response.json()
+        usage = body.get("usage")
+        self.last_usage = usage if isinstance(usage, dict) else None
         content = body["choices"][0]["message"]["content"]
         if isinstance(content, list):
             content = "".join(

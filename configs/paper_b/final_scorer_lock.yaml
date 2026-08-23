@@ -1,0 +1,61 @@
+document_id: KDAA-PB-FINAL-SCORER-001
+version: "1.0"
+status: FINAL PROTOCOL FROZEN BEFORE FINAL DATA GENERATION
+freeze_date: "2026-08-23"
+branch: paper-b/evaluation
+
+# Whole-file content hashes over exactly the committed source that will score the final
+# study, so that any post hoc scorer edit made in response to final results is detectable.
+# This is distinct from kdaa.evaluation.paper_b.hashing.content_hash, which hashes scored
+# *data objects* (WP1 canonical scientific payload), not source code.
+hash_algorithm: sha256
+hash_values_recorded_in: docs/paper_b_final_evaluation_freeze.md ("Locked hashes" section)
+hash_computed_by: scripts/validate_paper_b_final_freeze.py
+
+scoring_modules:
+  - src/kdaa/evaluation/paper_b/scoring/__init__.py
+  - src/kdaa/evaluation/paper_b/scoring/concept_matching.py
+  - src/kdaa/evaluation/paper_b/scoring/attribution.py
+  # remaining scoring/*.py files are included in the hash by directory enumeration in the
+  # validation script -- this list is descriptive, not the enumeration source of truth.
+scoring_module_directory: src/kdaa/evaluation/paper_b/scoring/
+
+analysis_module: src/kdaa/evaluation/paper_b/analysis.py
+hashing_module: src/kdaa/evaluation/paper_b/hashing.py
+
+ontology:
+  path: src/kdaa/resources/ontology.yaml
+  declared_version: "0.1.0"  # Ontology.default().version
+  same_ontology_across_dev_and_final: true
+
+prompts_and_schemas:
+  C1:
+    prompt_module: src/kdaa/evaluation/paper_b/adapters/c1_generic_llm.py
+  C2:
+    prompt_module: src/kdaa/evaluation/paper_b/adapters/c2_evidence_linked.py
+  C4:
+    production_llm_prompt_module: src/kdaa/discovery/llm.py
+    adapter_wrapper_module: src/kdaa/evaluation/paper_b/adapters/c4_hybrid.py
+  shared_response_schema_module: src/kdaa/evaluation/paper_b/adapters/llm_harness.py
+    # LLMResponseSchema / LLMConceptSuggestion -- shared by C1/C2; retry policy also lives
+    # here (MAX_AUTOMATIC_RETRIES)
+
+case_generation_configuration:
+  final_generator_status: not_yet_implemented
+  frozen_parameters_source: configs/paper_b/final_experiment_lock.yaml (final_dataset,
+    final_llm_subset sections)
+  frozen_parameters_authoritative_document: docs/paper_b_kbs_claims_evaluation_freeze.md
+    Section 9
+
+subset_selection_configuration:
+  proven_algorithm_reused_from: src/kdaa/evaluation/paper_b/dev_llm_subset.py
+  final_extension_described_in: configs/paper_b/final_experiment_lock.yaml
+    (final_llm_subset.selection_algorithm)
+
+as_of_date: "2026-06-01"
+as_of_date_source: configs/paper_b/final_experiment_lock.yaml (authoritative)
+
+change_control_note: >
+  After this freeze commit, none of the files listed above may be edited in response to
+  final results without a documented software defect (docs/protocol_deviations.md entry)
+  that invalidates and requires rerunning affected comparators.

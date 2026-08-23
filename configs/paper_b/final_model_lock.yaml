@@ -1,0 +1,69 @@
+document_id: KDAA-PB-FINAL-MODEL-001
+version: "1.0"
+status: FINAL PROTOCOL FROZEN BEFORE FINAL DATA GENERATION
+freeze_date: "2026-08-23"
+branch: paper-b/evaluation
+parent_experiment_lock: configs/paper_b/experiment_lock.yaml
+
+# Frozen final-study model configuration. C1, C2, and C4 SHALL use this exact
+# provider/model/settings via a single shared provider instance/configuration -- no
+# per-comparator variation, no post hoc model change in response to final results.
+provider:
+  kind: openai_compatible
+  base_url: https://api.openai.com/v1
+  api_key_env_var: KDAA_LLM_API_KEY
+  model_env_var: KDAA_LLM_MODEL
+  credential_source: repo-root .env, sourced only via `set -a; source .env; set +a`
+  credential_handling: never printed, logged, copied, or otherwise exposed
+
+model:
+  identifier: gpt-5.4-2026-03-05
+  temperature: 0.1
+  response_format: json_object
+  decoding_notes: >
+    Provider retries once without response_format if the endpoint 4xx's and mentions
+    response_format in its error text (existing OpenAICompatibleProvider fallback,
+    unchanged by this freeze).
+
+shared_instance_policy:
+  applies_to: [C1, C2, C4]
+  same_exact_model_config_required: true
+  model_shopping_prohibited: true
+  post_hoc_model_change_on_final_results_prohibited: true
+  primary_model_selection_basis: stable_structured_output_and_reproducible_availability
+  selection_not_based_on_comparing_final_benchmark_performance: true
+
+retry_policy:
+  max_automatic_retries: 2
+  source: src/kdaa/evaluation/paper_b/adapters/llm_harness.py (MAX_AUTOMATIC_RETRIES)
+  retries_are_not_separate_intended_runs: true
+  failed_intended_run_after_exhausted_retries: retained_never_dropped_or_replaced
+
+telemetry:
+  latency_seconds: captured
+  input_tokens: captured_when_provider_exposes_usage
+  output_tokens: captured_when_provider_exposes_usage
+  total_tokens: captured_when_provider_exposes_usage
+  estimated_cost_usd: not_computed_locally
+  small_isolated_change_made_at_this_freeze: true
+  change_description: >
+    OpenAICompatibleProvider now records the OpenAI chat-completions response's top-level
+    "usage" object as self.last_usage after each call (src/kdaa/providers/
+    openai_compatible.py). kdaa.evaluation.paper_b.adapters.llm_harness._usage_fields
+    reads it via getattr(provider, "last_usage", None) -- absent for providers that don't
+    expose usage (e.g. FakeJSONProvider), so ResourceUsage token fields stay None exactly
+    as before this change (Freeze Section 12: "Do not invent token/cost values if the
+    provider response does not expose them."). Cost estimation was not attempted: no
+    price-schedule lock exists yet, and adding one was judged outside "small, isolated."
+  unavailable_locally: estimated_cost_usd
+  available_separately: aggregate provider-side usage/cost, observed in the OpenAI
+    dashboard during the live Checkpoint B development run (not final evidence).
+
+live_precedent:
+  source: Live Checkpoint B Development Run (this branch, development only)
+  provider_and_model_verified_reachable: true
+  n_live_calls_observed: 270
+  all_succeeded: true
+  note: Development-only precedent. Confirms the locked provider/model/settings are
+    operationally viable; does not constitute final evidence and does not license any
+    further model comparison before the final study.

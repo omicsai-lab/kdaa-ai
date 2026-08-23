@@ -85,3 +85,37 @@ def test_resource_usage_records_latency_and_model_identifier() -> None:
     assert result.resource_usage.model_identifier == "my-fake-model"
     assert result.resource_usage.latency_seconds is not None
     assert result.resource_usage.latency_seconds >= 0.0
+
+
+def test_resource_usage_token_fields_stay_none_when_provider_exposes_no_usage() -> None:
+    # FakeJSONProvider has no `last_usage` attribute -- confirms the freeze-item-12
+    # telemetry hook is a true no-op for providers that don't expose usage, per Freeze
+    # Section 12: "Do not invent token/cost values if the provider response does not
+    # expose them."
+    provider = FakeJSONProvider([_VALID_RESPONSE])
+    result = call_llm_with_retries(provider=provider, system_prompt="s", user_prompt="u", attempt_number=1)
+    assert result.resource_usage.input_tokens is None
+    assert result.resource_usage.output_tokens is None
+    assert result.resource_usage.total_tokens is None
+    assert result.resource_usage.provider_usage_metadata == {}
+
+
+def test_resource_usage_captures_token_counts_when_provider_exposes_last_usage() -> None:
+    provider = FakeJSONProvider([_VALID_RESPONSE])
+    provider.last_usage = {"prompt_tokens": 120, "completion_tokens": 45, "total_tokens": 165}
+    result = call_llm_with_retries(provider=provider, system_prompt="s", user_prompt="u", attempt_number=1)
+    assert result.resource_usage.input_tokens == 120
+    assert result.resource_usage.output_tokens == 45
+    assert result.resource_usage.total_tokens == 165
+    assert result.resource_usage.provider_usage_metadata == {
+        "prompt_tokens": 120,
+        "completion_tokens": 45,
+        "total_tokens": 165,
+    }
+
+
+def test_malformed_last_usage_is_ignored_not_invented() -> None:
+    provider = FakeJSONProvider([_VALID_RESPONSE])
+    provider.last_usage = "not-a-dict"  # a misbehaving provider should never crash the harness
+    result = call_llm_with_retries(provider=provider, system_prompt="s", user_prompt="u", attempt_number=1)
+    assert result.resource_usage.input_tokens is None

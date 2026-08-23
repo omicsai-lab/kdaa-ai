@@ -1,10 +1,11 @@
+import httpx
 import pytest
 
 from kdaa.config import KDAAConfig
 from kdaa.discovery.llm import discover_with_llm
 from kdaa.ingestion.synthetic import build_demo_bundle
 from kdaa.pipeline import KDAAPipeline
-from kdaa.providers.openai_compatible import _parse_json_object
+from kdaa.providers.openai_compatible import OpenAICompatibleProvider, _parse_json_object
 
 
 class FakeProvider:
@@ -71,3 +72,43 @@ def test_provider_json_parser() -> None:
         _parse_json_object("no object")
     with pytest.raises(ValueError):
         _parse_json_object("[1, 2, 3]")
+
+
+class _FakeHTTPResponse:
+    def __init__(self, payload: dict) -> None:
+        self._payload = payload
+        self.status_code = 200
+        self.text = ""
+
+    def raise_for_status(self) -> None:
+        return None
+
+    def json(self) -> dict:
+        return self._payload
+
+
+def test_openai_compatible_provider_captures_usage_from_response(monkeypatch) -> None:
+    # Freeze item 12 (token/cost telemetry): OpenAI-compatible chat-completions responses
+    # carry a top-level "usage" object that the provider previously discarded after
+    # extracting message content. This confirms the small, isolated capture added for the
+    # final freeze actually reads it, without changing the provider's return contract.
+    body = {
+        "choices": [{"message": {"content": '{"suggestions": []}'}}],
+        "usage": {"prompt_tokens": 210, "completion_tokens": 33, "total_tokens": 243},
+    }
+    monkeypatch.setattr(httpx.Client, "post", lambda self, url, json: _FakeHTTPResponse(body))
+
+    provider = OpenAICompatibleProvider(base_url="https://example.invalid/v1", api_key="k", model="m")
+    assert provider.last_usage is None
+    result = provider.generate_json(system="s", user="u")
+    assert result == {"suggestions": []}
+    assert provider.last_usage == {"prompt_tokens": 210, "completion_tokens": 33, "total_tokens": 243}
+
+
+def test_openai_compatible_provider_last_usage_none_when_response_omits_usage(monkeypatch) -> None:
+    body = {"choices": [{"message": {"content": "{}"}}]}
+    monkeypatch.setattr(httpx.Client, "post", lambda self, url, json: _FakeHTTPResponse(body))
+
+    provider = OpenAICompatibleProvider(base_url="https://example.invalid/v1", api_key="k", model="m")
+    provider.generate_json(system="s", user="u")
+    assert provider.last_usage is None

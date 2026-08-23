@@ -74,6 +74,32 @@ def classify_exception(exc: Exception) -> AttemptStatus:
     return AttemptStatus.OTHER_FAILURE
 
 
+def _usage_fields(provider: JSONProvider) -> dict[str, Any]:
+    """Best-effort token usage from the most recent call, if the provider exposes one.
+
+    ``JSONProvider`` does not declare a usage field (Checkpoint B's known simplification,
+    see module docstring), so this reads the optional, non-protocol ``last_usage``
+    attribute some providers set (e.g. ``OpenAICompatibleProvider``) rather than widening
+    the protocol. Absent or malformed usage yields an empty dict -- ``ResourceUsage``'s
+    token fields stay ``None`` exactly as before this existed (Freeze Section 12: "Do not
+    invent token/cost values if the provider response does not expose them.").
+    """
+    usage = getattr(provider, "last_usage", None)
+    if not isinstance(usage, dict):
+        return {}
+    fields: dict[str, Any] = {}
+    if isinstance(usage.get("prompt_tokens"), int):
+        fields["input_tokens"] = usage["prompt_tokens"]
+    if isinstance(usage.get("completion_tokens"), int):
+        fields["output_tokens"] = usage["completion_tokens"]
+    if isinstance(usage.get("total_tokens"), int):
+        fields["total_tokens"] = usage["total_tokens"]
+    metadata = {k: v for k, v in usage.items() if isinstance(v, (str, int, float, bool))}
+    if metadata:
+        fields["provider_usage_metadata"] = metadata
+    return fields
+
+
 def call_llm_with_retries(
     *,
     provider: JSONProvider,
@@ -111,6 +137,7 @@ def call_llm_with_retries(
         model_identifier=getattr(provider, "model_name", ""),
         attempt_number=attempt_number,
         latency_seconds=latency,
+        **_usage_fields(provider),
     )
     return LLMCallResult(
         status=status,
