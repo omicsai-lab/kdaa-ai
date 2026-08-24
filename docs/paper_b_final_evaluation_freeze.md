@@ -214,6 +214,11 @@ without a genuine defect justification. This narrows the six main-text ablations
 `paper_b_kbs_claims_evaluation_freeze.md` §13 (A1, A2, A3, A4, A6, A7) to three for the
 final primary result package — logged as PC-08.
 
+**Subset (PC-09):** A1/A4/A6 run on the same already-frozen 60-case final LLM subset (see
+§4) — no second ablation selector exists or is defined. This closes a gap this document
+originally left open (§14 item 4 in the prior revision): PC-08 named which ablations run
+in the final package but never specified which cases they run on.
+
 ---
 
 ## 9. Final robustness tests
@@ -228,6 +233,10 @@ final primary result package — logged as PC-08.
 Narrows the nine perturbation families in `paper_b_kbs_claims_evaluation_freeze.md` §14 to
 three primary families (plus optional secondary R4) for the final primary result package —
 logged as PC-08 alongside the ablation narrowing.
+
+**Subset (PC-09):** R1/R2/R3 run on the same already-frozen 60-case final LLM subset — no
+second robustness selector exists or is defined, for the same reason as the ablation subset
+above.
 
 ---
 
@@ -316,11 +325,11 @@ exists. **No live API call was made. No final case was generated.**
 
 ## 14. Unresolved issues for human review
 
-1. **Final opportunity-catalog generator does not exist yet.** §7 freezes the design; a
-   future checkpoint must implement it and verify (the same way
-   `tests/paper_b/test_e4_independence.py` verifies development's version) that the
-   generator's truth-side and inference-side code paths remain genuinely independent at
-   N=240 scale.
+1. **~~Final opportunity-catalog generator does not exist yet~~ — RESOLVED.** Implemented
+   in `final_opportunities.build_case_opportunity_catalog` and exercised by
+   `final_cases.py`'s core and challenge generators; independence from hidden truth is
+   verified by `tests/paper_b/test_final_cases.py` (structural: no truth import; behavioral:
+   mutating hidden truth with evidence fixed does not change the visible catalog).
 2. **`as_of_date` continuity vs. re-freshness.** 2026-06-01 is inherited from development
    for continuity; nothing found it broken, but it has not been re-justified specifically
    for a 240-case final dataset with its own timeline requirements (e.g. whether any
@@ -334,3 +343,12 @@ exists. **No live API call was made. No final case was generated.**
    It is logged as PC-08, but a human should confirm this narrowing is acceptable for the
    Paper B primary result package before final case generation begins, since it affects
    what the manuscript can claim under §22 (KBS-readiness gate) of the scientific freeze.
+   **Partially addressed:** the *subset* these ablations/robustness tests run on was a
+   separate, previously-unspecified gap (surfaced when execution was first attempted);
+   PC-09 closes that specific gap by reusing the frozen 60-case LLM subset. The *family*
+   scope question above (why only A1/A4/A6 and R1/R2/R3) is unrelated and still open.
+5. **Final execution orchestration (`final_run.py` / `scripts/run_paper_b_final.py`) is
+   now implemented and dry-validated** (fake provider, in-memory/temporary-directory
+   cases only) but has never been run against the real frozen N=240 dataset or a live
+   model. A human must still decide when to generate the real dataset and execute the
+   real final study — nothing in this checkpoint does either.

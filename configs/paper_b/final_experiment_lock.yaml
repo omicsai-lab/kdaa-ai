@@ -51,6 +51,7 @@ final_llm_subset:
   n: 60
   core_n: 30
   challenge_n: 30
+  also_used_for: [A1, A4, A6, R1, R2, R3]  # PC-09: no second ablation/robustness selector
   intended_repeats_per_case: 3
   comparators: [C1, C2, C4]
   intended_primary_live_llm_calls: 540
@@ -142,11 +143,16 @@ ablations:
   A6: {name: no_opportunity_specific_matching, primary_diagnostic: E4}
   ownership_attribution_ablation_A3: excluded_from_final_primary_set
   additional_ablations_without_defect_justification: prohibited
+  subset: reuses_frozen_final_llm_subset  # PC-09 -- see final_llm_subset below; no second selector
+  subset_n: 60
   scope_note: >
     docs/paper_b_kbs_claims_evaluation_freeze.md Section 13 lists six main-text
     ablations (A1,A2,A3,A4,A6,A7); this freeze narrows the FINAL primary result package
     to A1/A4/A6 only, per explicit instruction at this freeze checkpoint. Logged as
-    docs/protocol_deviations.md PC-08.
+    docs/protocol_deviations.md PC-08. The subset these ablations run on was originally
+    unspecified at freeze time (a gap surfaced by attempting final execution); PC-09
+    closes it by reusing the already-frozen 60-case LLM subset rather than defining a
+    second selector.
 
 robustness:
   final_primary_set: [R1, R2, R3]
@@ -155,10 +161,14 @@ robustness:
   R3: ontology_or_surface_shift
   R4_opportunity_context_reversal: secondary_only_if_already_implemented_cleanly
   expansion_without_defect_justification: prohibited
+  subset: reuses_frozen_final_llm_subset  # PC-09 -- see final_llm_subset below; no second selector
+  subset_n: 60
   scope_note: >
     docs/paper_b_kbs_claims_evaluation_freeze.md Section 14 lists nine perturbation
     families; this freeze narrows the FINAL primary result package to R1/R2/R3 (plus
-    optional secondary R4). Logged as docs/protocol_deviations.md PC-08.
+    optional secondary R4). Logged as docs/protocol_deviations.md PC-08. The subset
+    these robustness tests run on was originally unspecified at freeze time (the same
+    gap ablations had); PC-09 closes it the same way, by reuse rather than a new selector.
 
 development_derived_prospective_decisions:
   decisions:
